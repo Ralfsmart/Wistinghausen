@@ -1,0 +1,7 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Icon-Übersicht</title>
+<style>body{margin:0;padding:24px 16px;background:#ECEAE6;font:16px system-ui;color:#3E2A1E}h1{font:600 22px Georgia,serif}
+.g{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px}.c{background:#F8F6F3;border:1px solid #D9D4CC;border-radius:14px;padding:16px;text-align:center}
+.c img{width:128px;height:128px;margin:0 auto}.s{display:flex;gap:10px;justify-content:center;margin-top:10px;align-items:end}.s img{margin:0}</style></head><body>
+<h1>Navigationssymbole – SVG, 64er-Raster, Linienstärke 2,5</h1><div class="g" id="g"></div>
+<script>for(const[f,n]of[["start","Start"],["kuechen","Küchen"],["moebel","Möbel"],["innenausbau","Innenausbau"],["tueren","Türen"],["aussen","Außen"],["faesser","Fässer"],["kontakt","Kontakt"]])
+g.insertAdjacentHTML("beforeend",`<div class="c"><img src="icons/${f}.svg" alt=""><div class="s"><img src="icons/${f}.svg" style="width:48px;height:48px"><img src="icons/${f}.svg" style="width:32px;height:32px"><img src="icons/${f}.svg" style="width:24px;height:24px"></div><b>${n}</b><br><small>${f}.svg</small></div>`)</script></body></html>

@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Schreinerei Wistinghausen – Entwurf</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ECEAE6;          /* warmes Hellgrau */
+  --surface:#F8F6F3;
+  --line:#D9D4CC;
+  --text:#3E2A1E;        /* dunkles Nussbraun */
+  --text-soft:#6B5444;
+  --accent:#8A4B34;      /* Rostbraun der Icons */
+  --accent-dark:#6E3A27;
+  --wood-a:#8B5A36; --wood-b:#6F4428;
+  --radius:14px;
+  --serif:"Source Serif 4",Georgia,serif;
+  --sans:"Source Sans 3",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:400 18px/1.6 var(--sans)}
+img{max-width:100%;display:block}
+a{color:var(--accent)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+
+/* Holz nur als Akzent: Kopfband + schmale Leiste */
+.wood{
+  background-color:var(--wood-a);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.004 0.09' numOctaves='3' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 0.28  0 0 0 0 0.17  0 0 0 0 0.09  0 0 0 1.1 -0.35'/%3E%3C/filter%3E%3Crect width='600' height='300' filter='url(%23g)'/%3E%3C/svg%3E"),
+    linear-gradient(180deg,var(--wood-a),var(--wood-b));
+  background-size:600px 300px,cover;
+}
+header.site{color:#F6EFE6}
+.top{display:flex;align-items:center;gap:16px;padding:14px 0}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit}
+.brand img{width:64px;height:64px;background:#F8F6F3;border-radius:50%;padding:6px}
+.brand b{display:block;font:600 24px/1.1 var(--serif);letter-spacing:.01em}
+.brand span{font-size:14px;opacity:.85;letter-spacing:.08em;text-transform:uppercase}
+nav.main{margin-left:auto}
+nav.main ul{list-style:none;margin:0;padding:0;display:flex;gap:4px;flex-wrap:wrap}
+nav.main a{color:#F6EFE6;text-decoration:none;font-size:16px;padding:6px 10px;border-radius:8px}
+nav.main a:hover,nav.main a[aria-current]{background:rgba(255,255,255,.15)}
+.menu-btn{display:none;margin-left:auto;background:none;border:1px solid rgba(255,255,255,.5);color:#fff;border-radius:8px;padding:6px 12px;font:inherit;font-size:16px}
+@media (max-width:860px){
+  .menu-btn{display:block}
+  nav.main{display:none;width:100%;margin:0}
+  nav.main.open{display:block}
+  .top{flex-wrap:wrap}
+  nav.main ul{flex-direction:column;padding-bottom:12px}
+}
+
+.hero{padding:56px 0 40px}
+.hero h1{font:600 clamp(30px,5vw,46px)/1.15 var(--serif);margin:0 0 14px;max-width:18ch}
+.hero p{font-size:20px;color:var(--text-soft);max-width:58ch;margin:0 0 24px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:12px 20px;border-radius:10px;font-weight:600}
+.btn:hover{background:var(--accent-dark)}
+.btn.ghost{background:transparent;color:var(--accent);border:2px solid var(--accent);margin-left:8px}
+
+/* Leistungs-Kacheln mit den Icons */
+.tiles{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin:8px 0 56px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px 12px 16px;text-align:center;text-decoration:none;color:var(--text);transition:transform .15s,box-shadow .15s,border-color .15s}
+@media (max-width:900px){.tiles{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:520px){.tiles{grid-template-columns:repeat(2,1fr)}}
+.tile img{width:72px;height:72px;margin:0 auto 10px}
+.tile b{font:600 18px/1.2 var(--serif)}
+.tile:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 6px 18px rgba(62,42,30,.12)}
+
+.split{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;margin-bottom:56px}
+@media (max-width:760px){.split{grid-template-columns:1fr}}
+h2{font:600 30px/1.2 var(--serif);margin:0 0 12px}
+.split ul{padding-left:20px;color:var(--text-soft)}
+.photos{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.photos img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:10px}
+
+.strip{height:10px}
+.contact{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;margin-bottom:56px}
+.contact h3{font:600 18px/1.3 var(--serif);margin:0 0 6px}
+.contact p{margin:0;color:var(--text-soft)}
+.contact a{text-decoration:none;font-weight:600}
+
+footer{color:#F6EFE6;font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;padding:22px 16px}
+footer a{color:#F6EFE6}
+
+.note{background:#FFF7D6;border:1px dashed #C9A94B;color:#5A4A1A;font-size:14px;border-radius:10px;padding:10px 14px;margin:16px 0 0}
+</style>
+</head>
+<body>
+
+<header class="site wood">
+  <div class="wrap top">
+    <a class="brand" href="#">
+      <img src="bilder/Wappen-2.gif" alt="Wappen der Schreinerei">
+      <div><b>Schreinerei Wistinghausen</b><span>Meisterbetrieb</span></div>
+    </a>
+    <button class="menu-btn" aria-expanded="false" onclick="const n=document.querySelector('nav.main');this.setAttribute('aria-expanded',n.classList.toggle('open'))">☰ Menü</button>
+    <nav class="main" aria-label="Hauptmenü">
+      <ul>
+        <li><a href="#" aria-current="page">Start</a></li>
+        <li><a href="#">Küchen</a></li>
+        <li><a href="#">Möbel</a></li>
+        <li><a href="#">Innenausbau</a></li>
+        <li><a href="#">Türen</a></li>
+        <li><a href="#">Außen</a></li>
+        <li><a href="#">Fässer</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>In der kleinen Werkstatt am Ralzhof entstehen Träume aus Holz</h1>
+    <p>Massive Bauweise, fast alle Wünsche realisierbar – alles aus einer Hand, von der Planung bis zur Montage.</p>
+    <a class="btn" href="tel:+497556932948">07556 / 932 948 anrufen</a>
+    <a class="btn ghost" href="#kontakt">Kontakt</a>
+  </section>
+
+  <nav class="tiles" aria-label="Leistungen">
+    <a class="tile" href="#"><img src="icons/kuechen.svg" alt=""><b>Küchen</b></a>
+    <a class="tile" href="#"><img src="icons/moebel.svg" alt=""><b>Möbel</b></a>
+    <a class="tile" href="#"><img src="icons/innenausbau.svg" alt=""><b>Innenausbau</b></a>
+    <a class="tile" href="#"><img src="icons/tueren.svg" alt=""><b>Türen</b></a>
+    <a class="tile" href="#"><img src="icons/aussen.svg" alt=""><b>Außen</b></a>
+    <a class="tile" href="#"><img src="icons/faesser.svg" alt=""><b>Fässer</b></a>
+  </nav>
+
+  <section class="split">
+    <div>
+      <h2>Handwerk mit Sorgfalt</h2>
+      <p>Eine schnelle und sorgfältige Durchführung der Aufträge ist mir ein besonderes Anliegen.</p>
+      <ul>
+        <li>Individuelle, passgenaue Einbauküchen</li>
+        <li>Möbel und Innenausbau nach Maß</li>
+        <li>Rührfässer für die biodynamische Landwirtschaft, 75 – 750 L</li>
+      </ul>
+    </div>
+    <div class="photos">
+      <img src="bilder/main1.jpg" alt="Küche">
+      <img src="bilder/main2.jpg" alt="Möbel">
+      <img src="bilder/main3.jpg" alt="Innenausbau">
+      <img src="bilder/main4.jpg" alt="Tür">
+      <img src="bilder/main6.jpg" alt="Fässer">
+      <img src="bilder/kontakt1.jpg" alt="Werkstatt">
+    </div>
+  </section>
+  <p class="note">Entwurf: Die Fotos stammen von der alten Seite und sind nur 120–300 px groß. Für die neue Seite werden größere Aufnahmen gebraucht.</p>
+</main>
+
+<div class="strip wood" aria-hidden="true"></div>
+
+<section class="wrap" id="kontakt" style="padding-top:48px">
+  <h2>Kontakt</h2>
+  <div class="contact">
+    <div><h3>Schreinerei Arnim v. Wistinghausen</h3><p>Untere Weitfeld Str. 14<br>88690 Mühlhofen</p></div>
+    <div><h3>Werkstatt</h3><p>Ralzhof 1<br>88682 Salem</p></div>
+    <div><h3>Telefon</h3><p><a href="tel:+497556932948">07556 / 932 948</a><br>Mobil <a href="tel:+4915221621601">01522 / 162 1601</a></p></div>
+    <div><h3>E-Mail</h3><p><a href="mailto:info@schreinerei-wistinghausen.de">info@schreinerei-<wbr>wistinghausen.de</a></p></div>
+  </div>
+</section>
+
+<footer class="wood">
+  <div class="wrap">
+    <span>© Schreinerei Arnim v. Wistinghausen · Meisterbetrieb</span>
+    <span><a href="#">Impressum</a> · <a href="#">Datenschutz</a></span>
+  </div>
+</footer>
+</body>
+</html>
