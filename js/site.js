@@ -75,11 +75,12 @@
         ${leistungen ? `<aside class="r-list"><h2>Leistungen</h2><ul>${leistungen}</ul></aside>` : ''}
       </div>
       ${bilder ? `<h2>Einblicke</h2><div class="galerie">${bilder}</div>` : ''}
-      <section class="cta wood">
+      <section class="cta">
+        <span class="cta-leiste wood" aria-hidden="true"></span>
         <div><h2 data-firma="aufruf_titel"></h2><p data-firma="aufruf_text"></p></div>
-        <div>
-          <a class="btn light" data-firma-tel="telefon" href="#"><span data-firma="telefon"></span></a>
-          <a class="btn ghost light" data-firma-mail href="#">E-Mail schreiben</a>
+        <div class="cta-knoepfe">
+          <a class="btn" data-firma-tel="telefon" href="#"><span data-firma="telefon"></span></a>
+          <a class="btn ghost" data-firma-mail href="#">E-Mail schreiben</a>
         </div>
       </section>`;
     lightbox();

@@ -9,7 +9,7 @@ from pathlib import Path
 
 WURZEL = Path(__file__).resolve().parent.parent
 TEILE = Path(__file__).resolve().parent / "teile"
-VERSION = "9"  # bei Änderungen an CSS/JS erhöhen, damit Browser neu laden
+VERSION = "10"  # bei Änderungen an CSS/JS erhöhen, damit Browser neu laden
 
 MENUE = [
     ("Start", "index.html", "start"),

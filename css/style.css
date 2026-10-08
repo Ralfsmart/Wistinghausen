@@ -182,4 +182,12 @@ footer a{color:#F6EFE6}
 .lb-next{right:16px;top:50%;transform:translateY(-50%)}
 @media (max-width:760px){.r-head{align-items:flex-start}}
 h1,h2,h3,.r-head h1,.hero h1,.galerie figcaption b,.tile b{color:var(--heading)}
-.cta h2,.lightbox figcaption b{color:#fff}
+.lightbox figcaption b{color:#fff}
+
+/* Aufruf am Seitenende: hell, nur eine schmale Holzleiste als Akzent */
+.cta{position:relative;overflow:hidden;background:var(--surface);color:var(--text);border:1px solid var(--line);padding:24px 28px 24px 40px}
+.cta-leiste{position:absolute;left:0;top:0;bottom:0;width:10px}
+.cta h2{color:var(--heading);font-size:26px}
+.cta p{color:var(--text-soft);opacity:1}
+.cta-knoepfe{display:flex;flex-wrap:wrap;gap:10px}
+.cta-knoepfe .btn.ghost{margin-left:0}
