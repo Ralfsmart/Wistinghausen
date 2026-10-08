@@ -2,14 +2,13 @@
 
 Kopf, Menü und Fußzeile stehen so nur an einer Stelle. Die eigentlichen Inhalte
 kommen zur Laufzeit aus /inhalt/*.json (siehe js/site.js) und werden über /admin gepflegt.
-Nur nötig, wenn sich Menü, Seitenaufbau oder Impressum/Datenschutz ändern.
+Nur nötig, wenn sich Menü oder Seitenaufbau ändern.
 Aufruf:  python werkzeuge/seiten_erzeugen.py
 """
 from pathlib import Path
 
 WURZEL = Path(__file__).resolve().parent.parent
-TEILE = Path(__file__).resolve().parent / "teile"
-VERSION = "10"  # bei Änderungen an CSS/JS erhöhen, damit Browser neu laden
+VERSION = "11"  # bei Änderungen an CSS/JS erhöhen, damit Browser neu laden
 
 MENUE = [
     ("Start", "index.html", "start"),
@@ -94,5 +93,5 @@ if __name__ == "__main__":
         seite(datei, f"{name} – Schreinerei Wistinghausen", kennung,
               f'<main class="wrap rubrik" id="inhalt">{NOSCRIPT}</main>')
     for datei, titel in [("impressum.html", "Impressum"), ("datenschutz.html", "Datenschutz")]:
-        teil = (TEILE / datei).read_text(encoding="utf-8")
-        seite(datei, f"{titel} – Schreinerei Wistinghausen", "text", teil)
+        seite(datei, f"{titel} – Schreinerei Wistinghausen", datei.removesuffix(".html"),
+              f'<main class="wrap legal" id="inhalt">{NOSCRIPT}</main>')

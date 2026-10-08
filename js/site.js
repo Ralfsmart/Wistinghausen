@@ -7,10 +7,35 @@
   const seite = document.body.dataset.seite;
 
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-  // Leerzeile = neuer Absatz, einfacher Zeilenumbruch = <br>
-  const absaetze = s => String(s ?? '').trim().split(/\n\s*\n/).filter(Boolean)
-    .map(p => `<p>${esc(p).replace(/\n/g, '<br>')}</p>`).join('');
   const telLink = t => 'tel:' + String(t ?? '').replace(/[^\d+]/g, '');
+  let firma = {};
+
+  /* Einfache Textformatierung für alle Texte aus dem Admin-Bereich:
+     Leerzeile = neuer Absatz · Zeilenumbruch bleibt erhalten · Zeilen mit "- " = Aufzählung
+     **fett** · ==gelb markiert== · Web-Adressen werden zu Links
+     {telefon}, {email}, {name} … werden durch die Kontaktdaten ersetzt */
+  function zeile(text) {
+    let h = esc(text)
+      // nur echte Adressen mit Domain verlinken (nicht z. B. ein alleinstehendes „https://“)
+      .replace(/\b(https?:\/\/[\w-]+\.[^\s<“”"]*[^\s<.,;:!?)“”"])/g, '<a href="$1" rel="noopener">$1</a>')
+      .replace(/(^|[\s(])(www\.[\w-]+\.[^\s<“”"]*[^\s<.,;:!?)“”"])/g, '$1<a href="https://$2" rel="noopener">$2</a>');
+    h = h.replace(/\{([a-z_]+)\}/g, (m, k) => {
+      if (!(k in firma)) return m;
+      const w = esc(firma[k]);
+      if (k === 'telefon' || k === 'mobil') return `<a href="${telLink(firma[k])}">${w}</a>`;
+      if (k === 'email') return `<a href="mailto:${w}">${w}</a>`;
+      return w;
+    });
+    return h.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+            .replace(/==(.+?)==/g, '<mark class="todo">$1</mark>');
+  }
+  const absaetze = s => String(s ?? '').trim().split(/\n\s*\n/).filter(Boolean).map(block => {
+    const zeilen = block.split('\n');
+    if (zeilen.every(z => /^\s*- /.test(z))) {
+      return `<ul>${zeilen.map(z => `<li>${zeile(z.replace(/^\s*- /, ''))}</li>`).join('')}</ul>`;
+    }
+    return `<p>${zeilen.map(zeile).join('<br>')}</p>`;
+  }).join('');
   const url = pfad => BASIS + pfad;
 
   const laden = name => fetch(url(`inhalt/${name}.json`), { cache: 'no-cache' })
@@ -122,6 +147,18 @@
     });
   }
 
+  /* ---------- Impressum, Datenschutz ---------- */
+  function textseite(d) {
+    document.title = `${d.titel} – Schreinerei Wistinghausen`;
+    const teile = (d.abschnitte || []).map(a =>
+      `${a.ueberschrift ? `<h2>${esc(a.ueberschrift)}</h2>` : ''}${absaetze(a.text)}`).join('');
+    document.getElementById('inhalt').innerHTML = `
+      <h1>${esc(d.titel)}</h1>
+      ${d.hinweis ? `<p class="note">${esc(d.hinweis)}</p>` : ''}
+      ${teile}
+      ${d.stand ? `<p><em>Stand: ${esc(d.stand)}</em></p>` : ''}`;
+  }
+
   function fehler(e) {
     console.error(e);
     const ziel = document.getElementById('inhalt');
@@ -129,14 +166,17 @@
   }
 
   /* ---------- Ablauf ---------- */
-  const inhalt = seite === 'start' ? laden('start').then(startseite)
-    : seite && seite !== 'text' ? laden(seite).then(rubrik)
-    : Promise.resolve();
+  const TEXTSEITEN = ['impressum', 'datenschutz'];
+  const darstellen = seite === 'start' ? startseite : TEXTSEITEN.includes(seite) ? textseite : rubrik;
 
-  // Firmendaten erst nach dem Seiteninhalt einsetzen, weil der Inhalt Platzhalter dafür enthält
-  Promise.allSettled([laden('firma'), inhalt]).then(([firma, seitenInhalt]) => {
-    if (seitenInhalt.status === 'rejected') fehler(seitenInhalt.reason);
-    if (firma.status === 'fulfilled') firmaEinsetzen(firma.value);
-    else console.error(firma.reason);
-  });
+  // Kontaktdaten zuerst, weil die Texte Platzhalter dafür enthalten können
+  Promise.allSettled([laden('firma'), seite ? laden(seite) : Promise.resolve(null)])
+    .then(([f, inhalt]) => {
+      if (f.status === 'fulfilled') firma = f.value; else console.error(f.reason);
+      if (inhalt.status === 'rejected') fehler(inhalt.reason);
+      else if (inhalt.value) {
+        try { darstellen(inhalt.value); } catch (e) { fehler(e); }
+      }
+      firmaEinsetzen(firma);
+    });
 })();

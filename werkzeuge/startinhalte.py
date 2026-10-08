@@ -219,6 +219,84 @@ rubriken = {
 }
 
 
+HINWEIS_ENTWURF = "Entwurf: Gelb markierte Angaben bitte vor der Veröffentlichung prüfen bzw. ergänzen. Dieser Text ist keine Rechtsberatung."
+
+
+def abschnitt(ueberschrift, text):
+    return {"ueberschrift": ueberschrift, "text": text}
+
+
+impressum = {
+    "titel": "Impressum",
+    "hinweis": HINWEIS_ENTWURF,
+    "abschnitte": [
+        abschnitt("Angaben gemäß § 5 DDG",
+                  "{name}\nInhaber: {inhaber}\n{strasse}\n{ort}\n==Ortsname prüfen: „Uhldingen-Mühlhofen“?=="),
+        abschnitt("Werkstatt", "{werkstatt_strasse}\n{werkstatt_ort}"),
+        abschnitt("Kontakt", "Telefon: {telefon}\n==Fax: {fax}==\nMobil: {mobil}\nE-Mail: {email}"),
+        abschnitt("Umsatzsteuer-ID",
+                  "Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:\n==DE232952816=="),
+        abschnitt("Berufsbezeichnung und berufsrechtliche Regelungen",
+                  "Berufsbezeichnung: ==Schreinermeister== (verliehen in der Bundesrepublik Deutschland)\n"
+                  "Zuständige Kammer: ==Handwerkskammer Ulm, Olgastraße 72, 89073 Ulm==\n"
+                  "Eingetragen in die Handwerksrolle der ==Handwerkskammer Ulm==\n\n"
+                  "Es gilt die Handwerksordnung (HwO), einsehbar unter https://www.gesetze-im-internet.de/hwo/"),
+        abschnitt("Verbraucherstreitbeilegung",
+                  "Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer "
+                  "Verbraucherschlichtungsstelle teilzunehmen."),
+        abschnitt("Bildnachweis", "Fotos: {name}. Symbole: eigene Gestaltung."),
+    ],
+    "stand": "",
+}
+
+datenschutz = {
+    "titel": "Datenschutzerklärung",
+    "hinweis": HINWEIS_ENTWURF,
+    "abschnitte": [
+        abschnitt("1. Verantwortlicher", "{name}\n{strasse}, {ort}\nTelefon: {telefon}\nE-Mail: {email}"),
+        abschnitt("2. Das Wichtigste in Kürze",
+                  "Diese Website setzt **keine Cookies**, verwendet **keine Analyse- oder Tracking-Werkzeuge** und "
+                  "bindet **keine Inhalte von Drittanbietern** ein (keine Karten, Videos oder Social-Media-Schaltflächen). "
+                  "Die Schriftarten liegen auf unserem eigenen Server. Personenbezogene Daten werden nur verarbeitet, "
+                  "soweit das für den Betrieb der Website technisch nötig ist oder wenn Sie uns von sich aus kontaktieren."),
+        abschnitt("3. Hosting und Server-Logfiles",
+                  "Die Website wird bei ==greatnet.de (Name und Anschrift des Anbieters eintragen)== gehostet. "
+                  "Beim Aufruf der Seiten speichert der Server automatisch Informationen, die Ihr Browser übermittelt:\n\n"
+                  "- IP-Adresse des anfragenden Geräts\n- Datum und Uhrzeit des Zugriffs\n- aufgerufene Seite bzw. Datei\n"
+                  "- zuvor besuchte Seite (Referrer-URL)\n- verwendeter Browser und Betriebssystem\n\n"
+                  "Diese Daten sind nötig, um die Website auszuliefern und ihre Sicherheit und Stabilität zu gewährleisten. "
+                  "Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO; unser berechtigtes Interesse liegt im sicheren und "
+                  "fehlerfreien Betrieb der Website. Die Logfiles werden nach ==7 Tagen== gelöscht. Mit dem Hoster besteht "
+                  "ein Vertrag über die Auftragsverarbeitung nach Art. 28 DSGVO."),
+        abschnitt("4. Kontakt per E-Mail oder Telefon",
+                  "Wenn Sie uns per E-Mail oder Telefon kontaktieren, verarbeiten wir Ihre Angaben (z. B. Name, "
+                  "Kontaktdaten, Anliegen), um Ihre Anfrage zu bearbeiten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, "
+                  "wenn Ihre Anfrage mit einem Auftrag oder dessen Anbahnung zusammenhängt, ansonsten Art. 6 Abs. 1 lit. f "
+                  "DSGVO (berechtigtes Interesse an der Beantwortung von Anfragen). Wir löschen die Daten, sobald sie nicht "
+                  "mehr erforderlich sind, es sei denn, gesetzliche Aufbewahrungspflichten (z. B. nach Handels- und "
+                  "Steuerrecht bis zu 10 Jahre) stehen dem entgegen."),
+        abschnitt("5. Verschlüsselung",
+                  "Die Website wird über eine verschlüsselte Verbindung (SSL/TLS) ausgeliefert. Sie erkennen das am "
+                  "„https://“ und am Schloss-Symbol in der Adresszeile Ihres Browsers."),
+        abschnitt("6. Ihre Rechte",
+                  "Sie haben jederzeit das Recht auf\n\n"
+                  "- Auskunft über Ihre gespeicherten Daten (Art. 15 DSGVO),\n- Berichtigung unrichtiger Daten (Art. 16 DSGVO),\n"
+                  "- Löschung (Art. 17 DSGVO),\n- Einschränkung der Verarbeitung (Art. 18 DSGVO),\n"
+                  "- Datenübertragbarkeit (Art. 20 DSGVO).\n\n"
+                  "**Widerspruchsrecht:** Soweit wir Daten auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO verarbeiten, können "
+                  "Sie dieser Verarbeitung aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit "
+                  "widersprechen (Art. 21 DSGVO).\n\nWenden Sie sich dazu einfach an die oben genannten Kontaktdaten."),
+        abschnitt("7. Beschwerderecht bei der Aufsichtsbehörde",
+                  "Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Für uns zuständig ist:\n\n"
+                  "Der Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg\n"
+                  "Lautenschlagerstraße 20, 70173 Stuttgart\nwww.baden-wuerttemberg.datenschutz.de"),
+        abschnitt("8. Keine automatisierte Entscheidungsfindung",
+                  "Eine automatisierte Entscheidungsfindung einschließlich Profiling findet nicht statt."),
+    ],
+    "stand": "Oktober 2026",
+}
+
+
 def schreibe(name, daten):
     pfad = ZIEL / f"{name}.json"
     pfad.write_text(json.dumps(daten, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -231,3 +309,5 @@ if __name__ == "__main__":
     schreibe("start", start)
     for key, daten in rubriken.items():
         schreibe(key, daten)
+    schreibe("impressum", impressum)
+    schreibe("datenschutz", datenschutz)

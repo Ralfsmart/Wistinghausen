@@ -1,0 +1,35 @@
+{
+  "titel": "Impressum",
+  "hinweis": "Entwurf: Gelb markierte Angaben bitte vor der Veröffentlichung prüfen bzw. ergänzen. Dieser Text ist keine Rechtsberatung.",
+  "abschnitte": [
+    {
+      "ueberschrift": "Angaben gemäß § 5 DDG",
+      "text": "{name}\nInhaber: {inhaber}\n{strasse}\n{ort}\n==Ortsname prüfen: „Uhldingen-Mühlhofen“?=="
+    },
+    {
+      "ueberschrift": "Werkstatt",
+      "text": "{werkstatt_strasse}\n{werkstatt_ort}"
+    },
+    {
+      "ueberschrift": "Kontakt",
+      "text": "Telefon: {telefon}\n==Fax: {fax}==\nMobil: {mobil}\nE-Mail: {email}"
+    },
+    {
+      "ueberschrift": "Umsatzsteuer-ID",
+      "text": "Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:\n==DE232952816=="
+    },
+    {
+      "ueberschrift": "Berufsbezeichnung und berufsrechtliche Regelungen",
+      "text": "Berufsbezeichnung: ==Schreinermeister== (verliehen in der Bundesrepublik Deutschland)\nZuständige Kammer: ==Handwerkskammer Ulm, Olgastraße 72, 89073 Ulm==\nEingetragen in die Handwerksrolle der ==Handwerkskammer Ulm==\n\nEs gilt die Handwerksordnung (HwO), einsehbar unter https://www.gesetze-im-internet.de/hwo/"
+    },
+    {
+      "ueberschrift": "Verbraucherstreitbeilegung",
+      "text": "Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen."
+    },
+    {
+      "ueberschrift": "Bildnachweis",
+      "text": "Fotos: {name}. Symbole: eigene Gestaltung."
+    }
+  ],
+  "stand": ""
+}

@@ -20,6 +20,20 @@
     { key: 'bilder', label: 'Fotos', typ: 'fotos', beschreibung: true },
   ];
 
+  const FORMAT_HILFE = 'Leerzeile = neuer Absatz · Zeilen mit „- “ am Anfang = Aufzählung · **fett** · ==gelb markieren== · '
+    + 'Platzhalter wie {telefon}, {email}, {name}, {strasse}, {ort} werden automatisch durch die Kontaktdaten ersetzt.';
+
+  const TEXTSEITE_FELDER = [
+    { typ: 'info', text: FORMAT_HILFE },
+    { gruppe: 'Kopf' },
+    { key: 'titel', label: 'Überschrift', typ: 'text' },
+    { key: 'hinweis', label: 'Gelber Hinweis oben', typ: 'textfeld', hilfe: 'Leer lassen, wenn kein Hinweis erscheinen soll.' },
+    { gruppe: 'Abschnitte' },
+    { key: 'abschnitte', label: 'Abschnitte', typ: 'abschnitte' },
+    { gruppe: 'Abschluss' },
+    { key: 'stand', label: 'Stand (z. B. „Oktober 2026“)', typ: 'text', hilfe: 'Leer lassen, um keinen Stand anzuzeigen.' },
+  ];
+
   const BEREICHE = [
     { id: 'start', name: 'Startseite', icon: 'start', seite: 'index.html', felder: [
       { gruppe: 'Großer Einstieg' },
@@ -54,6 +68,9 @@
     ...[['kuechen', 'Küchen'], ['moebel', 'Möbel'], ['innenausbau', 'Innenausbau'],
         ['tueren', 'Türen'], ['aussen', 'Außen'], ['faesser', 'Fässer']]
       .map(([id, name]) => ({ id, name, icon: id, seite: `${id}.html`, felder: RUBRIK_FELDER })),
+    { trenner: true },
+    { id: 'impressum', name: 'Impressum', zeichen: '§', seite: 'impressum.html', felder: TEXTSEITE_FELDER },
+    { id: 'datenschutz', name: 'Datenschutz', zeichen: '§', seite: 'datenschutz.html', felder: TEXTSEITE_FELDER },
   ];
 
   /* ================= Hilfsfunktionen ================= */
@@ -233,7 +250,8 @@
     ul.replaceChildren(...BEREICHE.map(b => b.trenner
       ? el('li', { className: 'trenner', 'aria-hidden': 'true' })
       : el('li', {}, el('button', { type: 'button', 'data-id': b.id, onclick: () => oeffnen(b) },
-          el('img', { src: `../icons/${b.icon}.svg`, alt: '' }), b.name))));
+          b.icon ? el('img', { src: `../icons/${b.icon}.svg`, alt: '' }) : el('span', { className: 'a-zeichen', 'aria-hidden': 'true', textContent: b.zeichen }),
+          b.name))));
   }
 
   async function oeffnen(b) {
@@ -281,6 +299,10 @@
       case 'haken':
         return el('label', { className: 'a-check' },
           el('input', { type: 'checkbox', checked: !!daten[f.key], onchange: e => setze(e.target.checked) }), f.label);
+      case 'info':
+        return el('p', { className: 'a-info', textContent: f.text });
+      case 'abschnitte':
+        return abschnittFeld(f);
       case 'liste':
         return listenFeld(f);
       case 'fotos':
@@ -317,6 +339,41 @@
         el('div', { className: 'a-liste' }, zeilen),
         el('button', { type: 'button', className: 'a-plus',
           onclick: () => { liste.push(''); zeichnen(liste.length - 1); aenderungPruefen(); } }, `+ ${f.neu}`));
+    };
+    zeichnen();
+    return box;
+  }
+
+  // Abschnitte aus Überschrift + Text (Impressum, Datenschutz)
+  function abschnittFeld(f) {
+    if (!Array.isArray(daten[f.key])) daten[f.key] = [];
+    const box = el('div');
+    const zeichnen = (fokus = -1) => {
+      const liste = daten[f.key];
+      const karten = liste.map((a, i) => {
+        const titel = el('input', { type: 'text', value: a.ueberschrift ?? '',
+          oninput: e => { a.ueberschrift = e.target.value; aenderungPruefen(); } });
+        if (i === fokus) setTimeout(() => titel.focus());
+        return el('div', { className: 'a-abschnitt' },
+          el('div', { className: 'a-abschnitt-kopf' },
+            el('label', {}, `Überschrift ${i + 1}`, titel),
+            el('span', { className: 'a-abschnitt-knoepfe' },
+              el('button', { type: 'button', className: 'a-mini', title: 'Nach oben', disabled: i === 0,
+                onclick: () => { verschieben(liste, i, -1); zeichnen(); aenderungPruefen(); } }, '↑'),
+              el('button', { type: 'button', className: 'a-mini', title: 'Nach unten', disabled: i === liste.length - 1,
+                onclick: () => { verschieben(liste, i, 1); zeichnen(); aenderungPruefen(); } }, '↓'),
+              el('button', { type: 'button', className: 'a-mini loeschen', title: 'Abschnitt entfernen',
+                onclick: () => {
+                  if (!confirm('Diesen Abschnitt entfernen?')) return;
+                  liste.splice(i, 1); zeichnen(); aenderungPruefen();
+                } }, '✕'))),
+          el('label', {}, 'Text',
+            el('textarea', { value: a.text ?? '', oninput: e => { a.text = e.target.value; aenderungPruefen(); } })));
+      });
+      box.replaceChildren(...karten,
+        el('button', { type: 'button', className: 'a-plus',
+          onclick: () => { liste.push({ ueberschrift: '', text: '' }); zeichnen(liste.length - 1); aenderungPruefen(); } },
+          '+ Abschnitt hinzufügen'));
     };
     zeichnen();
     return box;

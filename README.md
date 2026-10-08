@@ -8,11 +8,10 @@ GitHub Pages und auf jedem Webspace (FTP-Upload genügt).
   `faesser.html`, `impressum.html`, `datenschutz.html` – Seitengerüste (erzeugt, nicht von Hand ändern)
 - `inhalt/*.json` – **alle Texte, Fotos und Bildbeschreibungen**; werden über `/admin` gepflegt
 - `js/site.js` – setzt die Inhalte in die Seiten ein, Foto-Großansicht
-- `admin/` – Admin-Bereich zum Bearbeiten (Texte, Stichpunkte, Fotos hochladen/sortieren/beschreiben, Kontaktdaten)
+- `admin/` – Admin-Bereich zum Bearbeiten (Texte, Stichpunkte, Fotos, Kontaktdaten, Impressum, Datenschutz)
 - `css/style.css`, `fonts/`, `icons/` – Gestaltung, lokale Schriften, Menüsymbole
 - `bilder/` – Fotos; neue Uploads landen in `bilder/uploads/`
-- `werkzeuge/seiten_erzeugen.py` – erzeugt die Seitengerüste neu (nur bei Änderungen an Menü/Aufbau/Impressum/Datenschutz;
-  Impressum- und Datenschutztext liegen in `werkzeuge/teile/`)
+- `werkzeuge/seiten_erzeugen.py` – erzeugt die Seitengerüste neu (nur bei Änderungen an Menü oder Aufbau)
 
 ## Admin-Bereich
 Aufruf: `<website>/admin/`. Speicherorte (siehe `admin/config.js`):

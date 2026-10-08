@@ -1,0 +1,39 @@
+{
+  "titel": "Datenschutzerklärung",
+  "hinweis": "Entwurf: Gelb markierte Angaben bitte vor der Veröffentlichung prüfen bzw. ergänzen. Dieser Text ist keine Rechtsberatung.",
+  "abschnitte": [
+    {
+      "ueberschrift": "1. Verantwortlicher",
+      "text": "{name}\n{strasse}, {ort}\nTelefon: {telefon}\nE-Mail: {email}"
+    },
+    {
+      "ueberschrift": "2. Das Wichtigste in Kürze",
+      "text": "Diese Website setzt **keine Cookies**, verwendet **keine Analyse- oder Tracking-Werkzeuge** und bindet **keine Inhalte von Drittanbietern** ein (keine Karten, Videos oder Social-Media-Schaltflächen). Die Schriftarten liegen auf unserem eigenen Server. Personenbezogene Daten werden nur verarbeitet, soweit das für den Betrieb der Website technisch nötig ist oder wenn Sie uns von sich aus kontaktieren."
+    },
+    {
+      "ueberschrift": "3. Hosting und Server-Logfiles",
+      "text": "Die Website wird bei ==greatnet.de (Name und Anschrift des Anbieters eintragen)== gehostet. Beim Aufruf der Seiten speichert der Server automatisch Informationen, die Ihr Browser übermittelt:\n\n- IP-Adresse des anfragenden Geräts\n- Datum und Uhrzeit des Zugriffs\n- aufgerufene Seite bzw. Datei\n- zuvor besuchte Seite (Referrer-URL)\n- verwendeter Browser und Betriebssystem\n\nDiese Daten sind nötig, um die Website auszuliefern und ihre Sicherheit und Stabilität zu gewährleisten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO; unser berechtigtes Interesse liegt im sicheren und fehlerfreien Betrieb der Website. Die Logfiles werden nach ==7 Tagen== gelöscht. Mit dem Hoster besteht ein Vertrag über die Auftragsverarbeitung nach Art. 28 DSGVO."
+    },
+    {
+      "ueberschrift": "4. Kontakt per E-Mail oder Telefon",
+      "text": "Wenn Sie uns per E-Mail oder Telefon kontaktieren, verarbeiten wir Ihre Angaben (z. B. Name, Kontaktdaten, Anliegen), um Ihre Anfrage zu bearbeiten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, wenn Ihre Anfrage mit einem Auftrag oder dessen Anbahnung zusammenhängt, ansonsten Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung von Anfragen). Wir löschen die Daten, sobald sie nicht mehr erforderlich sind, es sei denn, gesetzliche Aufbewahrungspflichten (z. B. nach Handels- und Steuerrecht bis zu 10 Jahre) stehen dem entgegen."
+    },
+    {
+      "ueberschrift": "5. Verschlüsselung",
+      "text": "Die Website wird über eine verschlüsselte Verbindung (SSL/TLS) ausgeliefert. Sie erkennen das am „https://“ und am Schloss-Symbol in der Adresszeile Ihres Browsers."
+    },
+    {
+      "ueberschrift": "6. Ihre Rechte",
+      "text": "Sie haben jederzeit das Recht auf\n\n- Auskunft über Ihre gespeicherten Daten (Art. 15 DSGVO),\n- Berichtigung unrichtiger Daten (Art. 16 DSGVO),\n- Löschung (Art. 17 DSGVO),\n- Einschränkung der Verarbeitung (Art. 18 DSGVO),\n- Datenübertragbarkeit (Art. 20 DSGVO).\n\n**Widerspruchsrecht:** Soweit wir Daten auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO verarbeiten, können Sie dieser Verarbeitung aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit widersprechen (Art. 21 DSGVO).\n\nWenden Sie sich dazu einfach an die oben genannten Kontaktdaten."
+    },
+    {
+      "ueberschrift": "7. Beschwerderecht bei der Aufsichtsbehörde",
+      "text": "Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Für uns zuständig ist:\n\nDer Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg\nLautenschlagerstraße 20, 70173 Stuttgart\nwww.baden-wuerttemberg.datenschutz.de"
+    },
+    {
+      "ueberschrift": "8. Keine automatisierte Entscheidungsfindung",
+      "text": "Eine automatisierte Entscheidungsfindung einschließlich Profiling findet nicht statt."
+    }
+  ],
+  "stand": "Oktober 2026"
+}
