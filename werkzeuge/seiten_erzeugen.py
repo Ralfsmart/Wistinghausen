@@ -20,7 +20,7 @@ INHALT = WURZEL / "inhalt"
 # ---- Einstellungen ---------------------------------------------------------------------------
 ADRESSE = "https://ralfsmart.github.io/Wistinghausen/"   # beim Umzug: "https://www.schreinerei-wistinghausen.de/"
 ENTWURF = True        # True = Suchmaschinen aussperren (noindex). Zum Livegang auf False setzen.
-VERSION = "13"        # bei Änderungen an CSS/JS erhöhen, damit Browser neu laden
+VERSION = "14"        # bei Änderungen an CSS/JS erhöhen, damit Browser neu laden
 FIRMENNAME_KURZ = "Schreinerei Wistinghausen"
 
 MENUE = [
@@ -189,6 +189,7 @@ KONTAKT = """
 <div class="strip wood" aria-hidden="true"></div>
 <section class="wrap" id="kontakt" style="padding-top:48px">
   <h2>Kontakt</h2>
+  <div class="kontakt-reihe">
   <div class="contact">
     <div><h3 data-firma="name"></h3><p><span data-firma="strasse"></span><br><span data-firma="ort"></span></p></div>
     <div><h3>Werkstatt</h3><p><span data-firma="werkstatt_strasse"></span><br><span data-firma="werkstatt_ort"></span></p></div>
@@ -200,6 +201,7 @@ KONTAKT = """
          alt="Anfahrtsskizze: von der B31-Ausfahrt Uhldingen-Mühlhofen über die Bahnhofstraße nach Mühlhofen zur Unteren Weitfeld Straße">
     <figcaption><a href="{KARTE}" target="_blank" rel="noopener">Route in Google Maps planen ↗</a></figcaption>
   </figure>
+  </div>
 </section>"""
 
 
