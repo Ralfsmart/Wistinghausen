@@ -199,7 +199,7 @@ KONTAKT = """
   <figure class="anfahrt">
     <img src="bilder/anfahrt.svg" width="800" height="560" loading="lazy"
          alt="Anfahrtsskizze: von der B31-Ausfahrt Uhldingen-Mühlhofen über die Bahnhofstraße nach Mühlhofen zur Unteren Weitfeld Straße">
-    <figcaption><a href="{KARTE}" target="_blank" rel="noopener">Route in Google Maps planen ↗</a></figcaption>
+    <figcaption><a href="{KARTE}" target="_blank" rel="noopener">Route zur Schreinerei v. Wistinghausen in Google Maps ↗</a></figcaption>
   </figure>
   </div>
 </section>"""
@@ -300,7 +300,7 @@ if __name__ == "__main__":
     d = laden("start")
     titel, beschr = seo(d, f"{FIRMENNAME_KURZ} – Schreiner-Meisterbetrieb am Bodensee", d.get("hero_text"))
     ld = f'\n<script type="application/ld+json">\n{firmendaten_json_ld()}\n</script>'
-    karte = "https://www.google.com/maps/search/?api=1&amp;query=" + quote_plus(f"{FIRMA.get('strasse')}, {FIRMA.get('ort')}")
+    karte = "https://www.google.com/maps/search/?api=1&amp;query=" + quote_plus(f"{FIRMA.get('name')}, {FIRMA.get('strasse')}, {FIRMA.get('ort')}")
     kontakt = KONTAKT.replace("{KARTE}", karte)
     seite("index.html", "start", titel, beschr, f'<main class="wrap" id="inhalt">{startseite(d)}\n</main>\n{kontakt}', ld)
 
