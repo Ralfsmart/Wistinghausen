@@ -104,3 +104,34 @@ footer a{color:#F6EFE6}
   .nav-icons .ni{margin:0;width:26px;height:26px}
 }
 .nav-icons .hero{padding-bottom:56px}
+
+/* Variante: Medaillons, die zu einem Drittel unter der Holzleiste herausragen */
+.nav-badges header.site{position:relative;z-index:2}
+.nav-badges .top{padding:24px 0 0;align-items:stretch}
+.nav-badges .brand{align-self:center;padding-bottom:14px}
+.nav-badges nav.main ul{gap:4px;align-items:flex-end;height:100%}
+.nav-badges nav.main a{display:flex;flex-direction:column-reverse;align-items:center;gap:6px;font-size:14px;padding:0 3px;margin-bottom:-20px;background:none}
+.nav-badges nav.main a:hover,.nav-badges nav.main a[aria-current]{background:none}
+.nav-badges .ni{display:block;width:60px;height:60px;border-radius:50%;background:#F8F6F3 center/34px no-repeat;
+  border:2px solid #E3D9CC;box-shadow:0 3px 8px rgba(62,42,30,.28);transition:transform .15s,border-color .15s}
+.nav-badges nav.main a:hover .ni{transform:translateY(-2px);border-color:var(--accent)}
+.nav-badges nav.main a[aria-current] .ni{border-color:var(--accent);border-width:3px}
+.nav-badges .hero{padding-top:72px}
+@media (max-width:860px){
+  .nav-badges .top{padding:14px 0;align-items:center}
+  .nav-badges .brand{padding-bottom:0}
+  .nav-badges nav.main ul{align-items:stretch}
+  .nav-badges nav.main a{flex-direction:row;justify-content:flex-start;gap:12px;margin:0;font-size:17px;padding:4px 0}
+  .nav-badges .ni{width:38px;height:38px;background-size:24px;box-shadow:none}
+  .nav-badges .hero{padding-top:48px}
+}
+@media (min-width:861px){
+  .nav-badges nav.main ul{flex-wrap:nowrap}
+  .nav-badges .brand{min-width:0}
+}
+@media (min-width:861px) and (max-width:1100px){
+  .nav-badges nav.main a{font-size:13px;margin-bottom:-17px;padding:0 1px}
+  .nav-badges .ni{width:50px;height:50px;background-size:28px}
+  .nav-badges .brand b{font-size:20px}
+  .nav-badges .brand img{width:52px;height:52px}
+}
