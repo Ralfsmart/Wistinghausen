@@ -93,3 +93,14 @@ footer a{color:#F6EFE6}
 .legal p,.legal li{color:var(--text-soft)}
 .legal address{font-style:normal;color:var(--text-soft)}
 .todo{background:#FFF7D6;border-bottom:2px dashed #C9A94B;color:#5A4A1A;padding:0 3px;border-radius:3px}
+
+/* Variante: Symbole in der Navigationsleiste */
+.ni{display:none}
+.nav-icons .ni{display:block;width:30px;height:30px;margin:0 auto 4px;background:currentColor;
+  -webkit-mask:center/contain no-repeat;mask:center/contain no-repeat}
+.nav-icons nav.main a{display:block;text-align:center;font-size:14px;padding:8px 8px 6px;min-width:76px}
+@media (max-width:860px){
+  .nav-icons nav.main a{display:flex;align-items:center;gap:12px;text-align:left;font-size:17px}
+  .nav-icons .ni{margin:0;width:26px;height:26px}
+}
+.nav-icons .hero{padding-bottom:56px}
