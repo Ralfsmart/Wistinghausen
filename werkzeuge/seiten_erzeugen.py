@@ -12,6 +12,7 @@ import json
 import re
 from datetime import date
 from pathlib import Path
+from urllib.parse import quote_plus
 
 WURZEL = Path(__file__).resolve().parent.parent
 INHALT = WURZEL / "inhalt"
@@ -19,7 +20,7 @@ INHALT = WURZEL / "inhalt"
 # ---- Einstellungen ---------------------------------------------------------------------------
 ADRESSE = "https://ralfsmart.github.io/Wistinghausen/"   # beim Umzug: "https://www.schreinerei-wistinghausen.de/"
 ENTWURF = True        # True = Suchmaschinen aussperren (noindex). Zum Livegang auf False setzen.
-VERSION = "12"        # bei Änderungen an CSS/JS erhöhen, damit Browser neu laden
+VERSION = "13"        # bei Änderungen an CSS/JS erhöhen, damit Browser neu laden
 FIRMENNAME_KURZ = "Schreinerei Wistinghausen"
 
 MENUE = [
@@ -194,6 +195,11 @@ KONTAKT = """
     <div><h3>Telefon</h3><p><a data-firma-tel="telefon" data-firma="telefon" href="#"></a><br>Mobil <a data-firma-tel="mobil" data-firma="mobil" href="#"></a></p></div>
     <div><h3>E-Mail</h3><p><a data-firma-mail data-firma="email" href="#"></a></p></div>
   </div>
+  <figure class="anfahrt">
+    <img src="bilder/anfahrt.svg" width="800" height="560" loading="lazy"
+         alt="Anfahrtsskizze: von der B31-Ausfahrt Uhldingen-Mühlhofen über die Bahnhofstraße nach Mühlhofen zur Unteren Weitfeld Straße">
+    <figcaption><a href="{KARTE}" target="_blank" rel="noopener">Route in Google Maps planen ↗</a></figcaption>
+  </figure>
 </section>"""
 
 
@@ -292,7 +298,9 @@ if __name__ == "__main__":
     d = laden("start")
     titel, beschr = seo(d, f"{FIRMENNAME_KURZ} – Schreiner-Meisterbetrieb am Bodensee", d.get("hero_text"))
     ld = f'\n<script type="application/ld+json">\n{firmendaten_json_ld()}\n</script>'
-    seite("index.html", "start", titel, beschr, f'<main class="wrap" id="inhalt">{startseite(d)}\n</main>\n{KONTAKT}', ld)
+    karte = "https://www.google.com/maps/search/?api=1&amp;query=" + quote_plus(f"{FIRMA.get('strasse')}, {FIRMA.get('ort')}")
+    kontakt = KONTAKT.replace("{KARTE}", karte)
+    seite("index.html", "start", titel, beschr, f'<main class="wrap" id="inhalt">{startseite(d)}\n</main>\n{kontakt}', ld)
 
     # Rubriken
     for kennung in RUBRIKEN:

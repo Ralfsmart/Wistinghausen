@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 800 560" role="img" aria-labelledby="t d">
+<title id="t">Anfahrtsskizze Schreinerei Wistinghausen</title>
+<desc id="d">Vereinfachte Skizze: Von der B31 Ausfahrt Uhldingen-Mühlhofen über die Bahnhofstraße nach Mühlhofen, Untere Weitfeld Straße 14.</desc>
+<defs>
+  <filter id="schatten" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#3E2A1E" flood-opacity=".35"/></filter>
+  <clipPath id="rund"><circle cx="0" cy="0" r="27"/></clipPath>
+</defs>
+<style>
+  .ort{font:600 22px 'Source Serif 4',Georgia,serif;fill:#5C3A21}
+  .ortklein{font:600 15px 'Source Sans 3',Arial,sans-serif;fill:#7A4E2D;letter-spacing:.12em}
+  .str{font:italic 13px 'Source Sans 3',Arial,sans-serif;fill:#7A4E2D}
+  .ziel{font:600 14px 'Source Sans 3',Arial,sans-serif;fill:#7A4E2D}
+  .klein{font:12px 'Source Sans 3',Arial,sans-serif;fill:#9A8070}
+  .titel{font:600 16px 'Source Serif 4',Georgia,serif;fill:#7B3F22}
+  .adr{font:14px 'Source Sans 3',Arial,sans-serif;fill:#5C3A21}
+</style>
+
+<rect width="800" height="560" fill="#F3EFE8"/>
+<!-- Ortsflächen -->
+<path d="M185 255 Q250 215 340 240 Q440 250 450 330 Q440 420 330 450 Q220 470 175 400 Q150 320 185 255Z" fill="#E7DED2"/>
+<path d="M430 165 Q520 120 640 150 Q740 175 760 260 Q770 360 690 390 Q590 410 520 360 Q450 320 440 250 Q425 205 430 165Z" fill="#E7DED2"/>
+
+<!-- Bach -->
+<path d="M560 20 Q590 110 600 175 Q610 240 650 300 Q700 360 800 410" fill="none" stroke="#A9CBDD" stroke-width="5" stroke-linecap="round"/>
+<path d="M0 470 Q120 430 230 400 Q330 380 470 330 Q560 300 610 265" fill="none" stroke="#A9CBDD" stroke-width="4" stroke-linecap="round"/>
+
+<!-- Bahnlinie -->
+<path d="M0 205 Q180 250 360 290 Q520 300 800 232" fill="none" stroke="#B9AC9C" stroke-width="3" stroke-dasharray="10 6"/>
+<g transform="translate(360 290)"><rect x="-11" y="-11" width="22" height="22" rx="6" fill="#5C3A21"/>
+<rect x="-6" y="-7" width="12" height="10" rx="2.5" fill="none" stroke="#fff" stroke-width="1.8"/><path d="M-6 -2h12" stroke="#fff" stroke-width="1.5"/><circle cx="-3" cy="6" r="1.4" fill="#fff"/><circle cx="3" cy="6" r="1.4" fill="#fff"/></g>
+<text x="372" y="318" class="klein">Bahnhof</text>
+
+<!-- Nebenstraßen -->
+<g fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round">
+  <path d="M265 262 Q300 170 350 110 Q385 60 405 0"/>
+  <path d="M451 186 Q500 170 562 194"/>
+  <path d="M562 194 Q560 225 548 256"/>
+  <path d="M620 240 Q600 330 560 420 Q535 490 528 560"/>
+</g>
+<g fill="none" stroke="#CDBFAF" stroke-width="1.5" stroke-linecap="round">
+  <path d="M265 262 Q300 170 350 110 Q385 60 405 0"/>
+  <path d="M451 186 Q500 170 562 194"/>
+  <path d="M562 194 Q560 225 548 256"/>
+  <path d="M620 240 Q600 330 560 420 Q535 490 528 560"/>
+</g>
+
+<!-- Hauptstraße: B31-Ausfahrt -> Bahnhofstraße -> Mühlhofen -> Salem -->
+<path id="bahnhofstr" d="M215 268 Q300 300 360 286 Q430 300 470 285 Q545 255 615 235 Q700 160 800 70" fill="none" stroke="#B7A28C" stroke-width="12" stroke-linecap="round"/>
+<path d="M215 268 Q300 300 360 286 Q430 300 470 285 Q545 255 615 235 Q700 160 800 70" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/>
+<text class="str" dy="-10"><textPath href="#bahnhofstr" startOffset="37%">Bahnhofstraße</textPath></text>
+
+<!-- B31 -->
+<path d="M0 112 Q140 170 202 262 Q214 300 200 380 Q180 470 158 560" fill="none" stroke="#8E8173" stroke-width="16" stroke-linecap="round"/>
+<path d="M0 112 Q140 170 202 262 Q214 300 200 380 Q180 470 158 560" fill="none" stroke="#D9CFC3" stroke-width="9" stroke-linecap="round"/>
+<circle cx="208" cy="268" r="14" fill="none" stroke="#8E8173" stroke-width="5"/>
+<g transform="translate(176 300)"><rect x="-18" y="-12" width="36" height="24" rx="4" fill="#F2C94C" stroke="#5C3A21" stroke-width="2"/>
+<text x="0" y="5.5" text-anchor="middle" style="font:700 15px Arial,sans-serif;fill:#3E2A1E">B31</text></g>
+<text x="95" y="248" class="klein" text-anchor="middle">Ausfahrt</text>
+<text x="95" y="263" class="klein" text-anchor="middle">Uhldingen-Mühlhofen</text>
+
+<!-- Ziele am Rand -->
+<text x="18" y="96" class="ziel">↖ Überlingen</text>
+<text x="196" y="545" class="ziel">↓ Meersburg · Bodensee</text>
+<text x="782" y="104" class="ziel" text-anchor="end">Salem ↗</text>
+<text x="420" y="24" class="ziel">↑ Tüfingen</text>
+
+<!-- Ortsnamen -->
+<text x="300" y="372" class="ort" text-anchor="middle">Uhldingen-Mühlhofen</text>
+<text x="660" y="300" class="ortklein" text-anchor="middle">MÜHLHOFEN</text>
+<text x="506" y="214" class="str" text-anchor="middle">Untere Weitfeld Str.</text>
+
+<!-- Ziel: Medaillon mit Wappen -->
+<g transform="translate(499 128)" filter="url(#schatten)">
+  <path d="M0 58 L-14 30 A34 34 0 1 1 14 30 Z" fill="#7B3F22"/>
+  <circle cx="0" cy="0" r="30" fill="#F8F6F3"/>
+  <image href="data:image/gif;base64,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" xlink:href="data:image/gif;base64,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" x="-27" y="-27" width="54" height="54" clip-path="url(#rund)"/>
+</g>
+
+<!-- Adresskarte -->
+<g transform="translate(520 438)">
+  <rect width="262" height="100" rx="12" fill="#F8F6F3" stroke="#D9D4CC"/>
+  <rect width="8" height="100" rx="4" fill="#8B5A36"/>
+  <text x="22" y="30" class="titel">Schreinerei Wistinghausen</text>
+  <text x="22" y="54" class="adr">Untere Weitfeld Str. 14</text>
+  <text x="22" y="74" class="adr">88690 Uhldingen-Mühlhofen</text>
+  <text x="22" y="92" class="klein">Skizze, nicht maßstabsgetreu</text>
+</g>
+
+<!-- Nordpfeil -->
+<g transform="translate(752 160)"><circle r="18" fill="#F8F6F3" stroke="#D9D4CC"/><path d="M0 -12 L6 6 L0 2 L-6 6Z" fill="#7B3F22"/><text y="-22" text-anchor="middle" class="klein">N</text></g>
+</svg>
