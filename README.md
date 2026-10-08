@@ -7,4 +7,7 @@ Modernisierungsentwurf für www.schreinerei-wistinghausen.de.
 - `icons/*.svg` – 8 Linien-Icons (64er-Raster, Linienstärke 2,5, Farbe #8A4B34)
 - `bilder/` – Wappen und Fotos der bisherigen Seite (nur Platzhalter, zu klein für den Endstand)
 
-Offen: Unterseiten, Impressum, Datenschutz, neue Fotos, CMS zur Selbstpflege.
+- `impressum.html`, `datenschutz.html` – Rechtstexte (gelb markierte Stellen vor Veröffentlichung prüfen)
+- `css/style.css`, `fonts/` – gemeinsames Stylesheet, Schriften lokal (keine Google-Fonts-Verbindung)
+
+Offen: Unterseiten, neue Fotos, CMS zur Selbstpflege.
