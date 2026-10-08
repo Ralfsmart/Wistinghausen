@@ -135,3 +135,5 @@ footer a{color:#F6EFE6}
   .nav-badges .brand b{font-size:20px}
   .nav-badges .brand img{width:52px;height:52px}
 }
+.nav-badges .legal{padding-top:76px}
+@media (max-width:860px){.nav-badges .legal{padding-top:40px}}
