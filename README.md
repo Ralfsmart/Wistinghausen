@@ -11,7 +11,9 @@ GitHub Pages und auf jedem Webspace (FTP-Upload genügt).
 - `admin/` – Admin-Bereich zum Bearbeiten (Texte, Stichpunkte, Fotos, Kontaktdaten, Impressum, Datenschutz)
 - `css/style.css`, `fonts/`, `icons/` – Gestaltung, lokale Schriften, Menüsymbole
 - `bilder/` – Fotos; neue Uploads landen in `bilder/uploads/`
-- `werkzeuge/seiten_erzeugen.py` – erzeugt die Seitengerüste neu (nur bei Änderungen an Menü oder Aufbau)
+- `werkzeuge/seiten_erzeugen.py` – erzeugt alle Seiten mit fest eingeschriebenen Inhalten (für Suchmaschinen),
+  dazu `sitemap.xml` und `robots.txt`. Läuft auf GitHub automatisch (`.github/workflows/website.yml`);
+  vor einem FTP-Upload einmal von Hand ausführen. Dort auch `ADRESSE` und `ENTWURF` (noindex) einstellen.
 
 ## Admin-Bereich
 Aufruf: `<website>/admin/`. Speicherorte (siehe `admin/config.js`):

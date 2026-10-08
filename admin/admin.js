@@ -18,6 +18,11 @@
     { key: 'leistungen', label: 'Stichpunkte', typ: 'liste', neu: 'Stichpunkt hinzufügen' },
     { gruppe: 'Fotos' },
     { key: 'bilder', label: 'Fotos', typ: 'fotos', beschreibung: true },
+    { gruppe: 'Google-Suche' },
+    { key: 'seo_titel', label: 'Seitentitel bei Google', typ: 'text',
+      hilfe: 'Erscheint als blaue Überschrift in den Suchergebnissen. Ideal: bis 60 Zeichen, mit Ort, z. B. „Einbauküchen nach Maß in Salem | Schreinerei Wistinghausen“. Leer lassen = automatisch.' },
+    { key: 'seo_beschreibung', label: 'Beschreibung bei Google', typ: 'textfeld',
+      hilfe: 'Der kurze Text unter dem Titel in den Suchergebnissen. Ideal: 120–155 Zeichen. Leer lassen = Untertitel bzw. Einstiegstext.' },
   ];
 
   const FORMAT_HILFE = 'Leerzeile = neuer Absatz · Zeilen mit „- “ am Anfang = Aufzählung · **fett** · ==gelb markieren== · '
@@ -44,6 +49,11 @@
       { key: 'abschnitt_text', label: 'Text', typ: 'textfeld', hilfe: 'Eine leere Zeile beginnt einen neuen Absatz.' },
       { key: 'abschnitt_punkte', label: 'Stichpunkte', typ: 'liste', neu: 'Stichpunkt hinzufügen' },
       { key: 'fotos', label: 'Fotos (die ersten 6 werden gezeigt)', typ: 'fotos', beschreibung: false },
+      { gruppe: 'Google-Suche' },
+      { key: 'seo_titel', label: 'Seitentitel bei Google', typ: 'text',
+        hilfe: 'Erscheint als blaue Überschrift in den Suchergebnissen. Ideal: bis 60 Zeichen, mit Ort, z. B. „Einbauküchen nach Maß in Salem | Schreinerei Wistinghausen“. Leer lassen = automatisch.' },
+      { key: 'seo_beschreibung', label: 'Beschreibung bei Google', typ: 'textfeld',
+        hilfe: 'Der kurze Text unter dem Titel in den Suchergebnissen. Ideal: 120–155 Zeichen. Leer lassen = Untertitel bzw. Einstiegstext.' },
     ] },
     { id: 'firma', name: 'Kontaktdaten', icon: 'kontakt', seite: 'index.html#kontakt', felder: [
       { gruppe: 'Firma' },

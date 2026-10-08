@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /
+
+Sitemap: https://ralfsmart.github.io/Wistinghausen/sitemap.xml

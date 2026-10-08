@@ -73,9 +73,9 @@
 
   /* ---------- Rubrik-Seiten ---------- */
   function rubrik(d) {
-    document.title = `${d.titel} – Schreinerei Wistinghausen`;
+    document.title = d.seo_titel || `${d.titel} | Schreinerei Wistinghausen`;
     const meta = document.querySelector('meta[name="description"]');
-    if (meta && d.untertitel) meta.content = d.untertitel;
+    if (meta && (d.seo_beschreibung || d.untertitel)) meta.content = d.seo_beschreibung || d.untertitel;
 
     const leistungen = (d.leistungen || []).filter(Boolean).map(l => `<li>${esc(l)}</li>`).join('');
     const bilder = (d.bilder || []).filter(b => b.datei).map(b => `
@@ -149,7 +149,7 @@
 
   /* ---------- Impressum, Datenschutz ---------- */
   function textseite(d) {
-    document.title = `${d.titel} – Schreinerei Wistinghausen`;
+    document.title = `${d.titel} | Schreinerei Wistinghausen`;
     const teile = (d.abschnitte || []).map(a =>
       `${a.ueberschrift ? `<h2>${esc(a.ueberschrift)}</h2>` : ''}${absaetze(a.text)}`).join('');
     document.getElementById('inhalt').innerHTML = `
