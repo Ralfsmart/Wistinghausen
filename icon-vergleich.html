@@ -1,0 +1,24 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Icon-Vergleich Küchen & Innenausbau</title><meta name="robots" content="noindex">
+<link rel="stylesheet" href="css/style.css?v=6">
+<style>
+body{padding:24px 0 48px}h1{font:600 28px/1.2 var(--serif);margin:0 0 4px}h2{margin:36px 0 12px}
+.row{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.c{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center}
+.c>b{display:block;font:600 18px var(--serif);margin-bottom:8px}
+.big{width:112px;height:112px;margin:0 auto 10px}
+.sizes{display:flex;gap:10px;justify-content:center;align-items:end;margin-bottom:12px}
+.wood.strip2{border-radius:10px;padding:12px 8px 0;display:flex;justify-content:center;gap:14px;align-items:flex-end;height:64px}
+.med{width:50px;height:50px;border-radius:50%;background:#F8F6F3 center/28px no-repeat;border:2px solid #E3D9CC;box-shadow:0 3px 8px rgba(62,42,30,.28);margin-bottom:-16px}
+.wh{width:30px;height:30px;background:#fff;-webkit-mask:center/contain no-repeat;mask:center/contain no-repeat;margin-bottom:14px}
+small{display:block;color:var(--text-soft);margin-top:24px}
+</style></head><body><main class="wrap">
+<h1>Neue Vorschläge: Küchen & Innenausbau</h1><p style="color:var(--text-soft);margin:0">Jeweils groß, in Menügrößen (48 / 32 / 24 px), als Medaillon und weiß auf Holz. „Bisher“ zum Vergleich.</p>
+<h2>Küchen</h2><div class="row" id="k"></div>
+<h2>Innenausbau</h2><div class="row" id="i"></div>
+</main>
+<script>
+const card=(src,name,note)=>`<div class="c"><b>${name}</b><img class="big" src="${src}" alt=""><div class="sizes"><img src="${src}" width="48" height="48" alt=""><img src="${src}" width="32" height="32" alt=""><img src="${src}" width="24" height="24" alt=""></div><div class="wood strip2"><span class="med" style="background-image:url(${src})"></span><span class="wh" style="-webkit-mask-image:url(${src});mask-image:url(${src})"></span></div><small>${note}</small></div>`;
+k.innerHTML=[["icons/kuechen.svg","Bisher","Ober-, Unterschränke, Haube"],["icons/alternativen/kuechen-a.svg","Vorschlag A","Dunstabzug über Unterschrank mit Backofen"],["icons/alternativen/kuechen-b.svg","Vorschlag B","Herd mit Topf"],["icons/alternativen/kuechen-c.svg","Vorschlag C","Ober-/Unterschrank mit Spüle"]].map(a=>card(...a)).join("");
+i.innerHTML=[["icons/innenausbau.svg","Bisher","Treppe mit Handlauf"],["icons/alternativen/innenausbau-a.svg","Vorschlag A","Treppe als geschlossene Form"],["icons/alternativen/innenausbau-b.svg","Vorschlag B","Dachschräge mit Einbauschrank"],["icons/alternativen/innenausbau-c.svg","Vorschlag C","Raumecke mit Holzdecke und Tür"]].map(a=>card(...a)).join("");
+</script></body></html>
