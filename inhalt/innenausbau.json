@@ -2,9 +2,9 @@
   "titel": "Innenausbau",
   "untertitel": "Böden, Wände, Treppen und Einbauten – damit Räume besser funktionieren",
   "beispieltext": true,
-  "einleitung": "Oft sind es die kleinen Eingriffe, die einen Raum verändern: ein neuer Boden, eine versetzte Wand, eine renovierte Treppe oder Stauraum dort, wo vorher nur ungenutzter Platz war – unter der Treppe oder in der Dachschräge.\n\nIch schaue mir die Situation bei Ihnen vor Ort an und mache Ihnen einen Vorschlag. Die Arbeiten stimme ich mit Ihnen und anderen Handwerkern zeitlich ab und achte auf eine saubere Baustelle. Vieles fertige ich vorab in der Werkstatt, damit die Zeit bei Ihnen im Haus möglichst kurz bleibt.",
+  "einleitung": "Oft sind es die kleinen Eingriffe, die einen Raum verändern: ein neuer Boden, eine versetzte Wand, eine renovierte Treppe oder Stauraum dort, wo vorher nur ungenutzter Platz war, etwa unter der Treppe oder in der Dachschräge.\n\nIch schaue mir die Situation bei Ihnen vor Ort an und mache Ihnen einen Vorschlag. Die Arbeiten stimme ich mit Ihnen und anderen Handwerkern zeitlich ab und achte auf eine saubere Baustelle. Vieles fertige ich vorab in der Werkstatt, damit die Zeit bei Ihnen im Haus möglichst kurz bleibt.",
   "leistungen": [
-    "Fußböden: Massiv- oder Fertigparkett, Kork, Laminat – verlegen, ausbessern, abschleifen",
+    "Fußböden: Massiv- oder Fertigparkett, Kork oder Laminat verlegen, ausbessern, abschleifen",
     "Trennwände stellen, versetzen oder entfernen",
     "Fenster und Türen montieren",
     "Treppen ändern oder renovieren",
@@ -14,7 +14,7 @@
     {
       "datei": "bilder/innen1.jpg",
       "titel": "Auszugsschrank unter der Treppe",
-      "beschreibung": "Rollbarer Auszug für Schuhe und Helme – der Platz unter der Treppe wird voll genutzt."
+      "beschreibung": "Rollbarer Auszug für Schuhe und Helme. Der Platz unter der Treppe wird voll genutzt."
     },
     {
       "datei": "bilder/innen3.jpg",

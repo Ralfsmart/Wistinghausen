@@ -31,13 +31,13 @@ firma = {
 
 start = {
     "hero_titel": "In der kleinen Werkstatt am Ralzhof entstehen Träume aus Holz",
-    "hero_text": "Massive Bauweise, fast alle Wünsche realisierbar – alles aus einer Hand, von der Planung bis zur Montage.",
+    "hero_text": "Massive Bauweise, fast alle Wünsche realisierbar. Alles aus einer Hand, von der Planung bis zur Montage.",
     "abschnitt_titel": "Handwerk mit Sorgfalt",
     "abschnitt_text": "Eine schnelle und sorgfältige Durchführung der Aufträge ist mir ein besonderes Anliegen.",
     "abschnitt_punkte": [
         "Individuelle, passgenaue Einbauküchen",
         "Möbel und Innenausbau nach Maß",
-        "Rührfässer für die biodynamische Landwirtschaft, 75 – 750 L",
+        "Rührfässer für die biodynamische Landwirtschaft, 75 bis 750 Liter",
     ],
     "fotos": [
         bild("kueche-7.jpg", "Küche"),
@@ -56,11 +56,11 @@ rubriken = {
         "beispieltext": True,
         "einleitung": (
             "Die Küche ist der Raum, in dem am meisten gelebt wird. Deshalb plane ich jede Küche individuell: "
-            "passend zu Ihrem Raum, Ihren Abläufen und Ihrem Geschmack – mit Massivholzfronten, lackierten "
+            "passend zu Ihrem Raum, Ihren Abläufen und Ihrem Geschmack. Mit Massivholzfronten, lackierten "
             "Oberflächen oder einer Kombination aus beidem.\n\n"
             "So läuft es ab: Zuerst komme ich zu Ihnen, wir besprechen Ihre Wünsche und ich nehme genau Maß. "
             "Danach erhalten Sie einen Entwurf mit Angebot. Nach Ihrer Freigabe fertige ich die Schränke in "
-            "meiner Werkstatt am Ralzhof und montiere die Küche zum vereinbarten Termin bei Ihnen – sauber "
+            "meiner Werkstatt am Ralzhof und montiere die Küche zum vereinbarten Termin bei Ihnen, sauber "
             "eingepasst an Wände, Nischen und Schrägen.\n\n"
             "Auch vorhandene Küchen bekommen bei mir ein zweites Leben: Ich erweitere sie, baue sie um oder "
             "ziehe sie mit Ihnen in die neue Wohnung um."
@@ -85,16 +85,16 @@ rubriken = {
         "beispieltext": True,
         "einleitung": (
             "Ein gutes Möbelstück begleitet einen über viele Jahre. Ich baue Betten, Schränke, Kommoden und "
-            "Tische genau nach Ihren Maßen und Vorstellungen – als freistehendes Einzelstück oder als Einbau, "
+            "Tische genau nach Ihren Maßen und Vorstellungen: als freistehendes Einzelstück oder als Einbau, "
             "der eine Nische oder Dachschräge optimal nutzt.\n\n"
             "Am Anfang steht ein Gespräch, gern mit einer Skizze oder einem Foto als Idee. Gemeinsam wählen wir "
-            "Holzart, Konstruktion und Oberfläche aus – ob geölt, gewachst oder lackiert. Dann entsteht das Möbel "
+            "Holzart, Konstruktion und Oberfläche aus, ob geölt, gewachst oder lackiert. Dann entsteht das Möbel "
             "in meiner Werkstatt, mit klassischen Holzverbindungen dort, wo sie Sinn machen. Zum Schluss liefere "
             "ich es aus und baue es bei Ihnen auf."
         ),
         "leistungen": [
             "Betten, Schränke und Kommoden",
-            "Tische – auch mit natürlicher Baumkante",
+            "Tische, auch mit natürlicher Baumkante",
             "Einbaumöbel für Nischen und Dachschrägen",
             "Einzelstücke und Kleinserien",
             "Massivholz oder Plattenwerkstoff",
@@ -106,7 +106,7 @@ rubriken = {
             bild("moebel12.jpg", "Tisch mit Baumkante", "Die natürliche Kante des Stammes bleibt sichtbar."),
             bild("moebel2.jpg", "Schreibtisch mit Rollcontainer", "Geschwungene Tischplatte mit passendem Schubkastenelement."),
             bild("moebel11.jpg", "Tischbein im Detail", "Schräg gestellte Beine aus dunklem Massivholz."),
-            bild("moebel5.jpg", "Holzverbindung in Handarbeit", "Gezinkte Eckverbindung – stabil und schön anzusehen."),
+            bild("moebel5.jpg", "Holzverbindung in Handarbeit", "Gezinkte Eckverbindung, stabil und schön anzusehen."),
             bild("moebel13.jpg", "Einbauschrank unter der Dachschräge", "Aus astigem Nadelholz, passgenau an die Schräge angepasst."),
             bild("moebel8.JPG", "Schrank mit Wandborden", "Zweitüriger Schrank mit Griffloch, links und rechts schwebende Ablagen."),
         ],
@@ -117,21 +117,21 @@ rubriken = {
         "beispieltext": True,
         "einleitung": (
             "Oft sind es die kleinen Eingriffe, die einen Raum verändern: ein neuer Boden, eine versetzte Wand, "
-            "eine renovierte Treppe oder Stauraum dort, wo vorher nur ungenutzter Platz war – unter der Treppe "
+            "eine renovierte Treppe oder Stauraum dort, wo vorher nur ungenutzter Platz war, etwa unter der Treppe "
             "oder in der Dachschräge.\n\n"
             "Ich schaue mir die Situation bei Ihnen vor Ort an und mache Ihnen einen Vorschlag. Die Arbeiten "
             "stimme ich mit Ihnen und anderen Handwerkern zeitlich ab und achte auf eine saubere Baustelle. "
             "Vieles fertige ich vorab in der Werkstatt, damit die Zeit bei Ihnen im Haus möglichst kurz bleibt."
         ),
         "leistungen": [
-            "Fußböden: Massiv- oder Fertigparkett, Kork, Laminat – verlegen, ausbessern, abschleifen",
+            "Fußböden: Massiv- oder Fertigparkett, Kork oder Laminat verlegen, ausbessern, abschleifen",
             "Trennwände stellen, versetzen oder entfernen",
             "Fenster und Türen montieren",
             "Treppen ändern oder renovieren",
             "Stauraum unter Treppen und Dachschrägen",
         ],
         "bilder": [
-            bild("innen1.jpg", "Auszugsschrank unter der Treppe", "Rollbarer Auszug für Schuhe und Helme – der Platz unter der Treppe wird voll genutzt."),
+            bild("innen1.jpg", "Auszugsschrank unter der Treppe", "Rollbarer Auszug für Schuhe und Helme. Der Platz unter der Treppe wird voll genutzt."),
             bild("innen3.jpg", "Treppe renoviert", "Neue Massivholzstufen auf einer alten Treppe."),
             bild("innen2.jpg", "Treppe mit Regalfächern", "Offene Fächer unter den Stufen als Stauraum im Flur."),
             bild("innen4.jpg", "Schiebetüren unter der Dachschräge", "Leichte Rahmentüren verschließen den Stauraum hinter dem Kniestock."),
@@ -144,7 +144,7 @@ rubriken = {
         "beispieltext": True,
         "einleitung": (
             "Die Haustür ist die Visitenkarte eines Hauses. Gerade in Altbauten und Bauernhäusern passen "
-            "Standardtüren oft nicht – hier fertige ich Türen und Tore genau nach Maß und passend zum Stil "
+            "Standardtüren oft nicht. Hier fertige ich Türen und Tore genau nach Maß und passend zum Stil "
             "des Gebäudes.\n\n"
             "Nach dem Aufmaß beraten wir gemeinsam über Holzart, Gestaltung, Verglasung und Beschläge. Die Tür "
             "entsteht in meiner Werkstatt und wird von mir eingebaut und eingestellt, damit sie dicht schließt "
@@ -171,7 +171,7 @@ rubriken = {
         "beispieltext": True,
         "einleitung": (
             "Holz im Freien muss Wind und Wetter standhalten. Deshalb achte ich auf die passende Holzart und "
-            "auf eine Bauweise, bei der Wasser gut ablaufen kann und das Holz schnell wieder trocknet – so "
+            "auf eine Bauweise, bei der Wasser gut ablaufen kann und das Holz schnell wieder trocknet. So "
             "bleibt es lange schön.\n\n"
             "Ob Gartenlaube, Zaun, Terrasse oder Vordach: Wir besprechen Ihr Vorhaben vor Ort, ich mache Ihnen "
             "einen Vorschlag mit Angebot, fertige die Teile in der Werkstatt vor und baue sie bei Ihnen auf."
@@ -190,7 +190,7 @@ rubriken = {
             bild("aussen2.jpg", "Holzterrasse", "Terrasse mit Stufe am Haus."),
             bild("aussen6.jpg", "Geräteschrank", "Schrank mit Lamellenverkleidung und kleinem Vordach."),
             bild("aussen8.jpg", "Kleiner Unterstand", "Lattenkonstruktion mit Ziegeldach an einer alten Mauer."),
-            bild("aussen7.jpg", "Baumbank", "Rundbank um einen Baumstamm – ein Lieblingsplatz im Schatten."),
+            bild("aussen7.jpg", "Baumbank", "Rundbank um einen Baumstamm. Ein Lieblingsplatz im Schatten."),
         ],
     },
     "faesser": {
@@ -202,7 +202,7 @@ rubriken = {
             "Größe von 75 bis 750 Litern. Die Fässer werden aus einzelnen Holzdauben gebaut und mit Reifen "
             "zusammengehalten.\n\n"
             "Ebenso eignen sie sich zum Sammeln von Regenwasser oder für andere Zwecke im Garten. Sagen Sie mir, "
-            "welche Größe und welches Zubehör – zum Beispiel einen Auslaufhahn – Sie brauchen. Lieferung oder "
+            "welche Größe und welches Zubehör, zum Beispiel einen Auslaufhahn, Sie brauchen. Lieferung oder "
             "Abholung nach Absprache."
         ),
         "leistungen": [
@@ -213,7 +213,7 @@ rubriken = {
         "bilder": [
             bild("faesser1.jpg", "Holzfass", "Aus Holzdauben gebaut und von Metallreifen gehalten."),
             bild("faesser3.jpg", "Auslaufhahn", "Messinghahn zum Entnehmen von Regenwasser."),
-            bild("faesser2.jpg", "Fässer in verschiedenen Größen", "Von klein bis groß – die Größe richtet sich nach dem Bedarf."),
+            bild("faesser2.jpg", "Fässer in verschiedenen Größen", "Von klein bis groß. Die Größe richtet sich nach dem Bedarf."),
         ],
     },
 }
