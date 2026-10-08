@@ -26,7 +26,7 @@ firma = {
     "fax": "07556 / 932 949",
     "email": "info@schreinerei-wistinghausen.de",
     "aufruf_titel": "Sie haben eine Idee?",
-    "aufruf_text": "Erzählen Sie mir davon – gemeinsam finden wir die passende Lösung aus Holz.",
+    "aufruf_text": "Erzählen Sie mir davon. Gemeinsam finden wir die passende Lösung aus Holz.",
 }
 
 start = {
