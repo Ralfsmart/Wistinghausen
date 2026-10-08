@@ -7,8 +7,9 @@
   --bg:#ECEAE6;          /* warmes Hellgrau */
   --surface:#F8F6F3;
   --line:#D9D4CC;
-  --text:#3E2A1E;        /* dunkles Nussbraun */
-  --text-soft:#6B5444;
+  --text:#5C3A21;        /* Nussbraun – Fließtext */
+  --heading:#7B3F22;     /* Kastanienbraun – Überschriften */
+  --text-soft:#7A4E2D;   /* Mittelbraun – Nebentexte */
   --accent:#8A4B34;      /* Rostbraun der Icons */
   --accent-dark:#6E3A27;
   --wood-a:#8B5A36; --wood-b:#6F4428;
@@ -180,3 +181,5 @@ footer a{color:#F6EFE6}
 .lb-prev{left:16px;top:50%;transform:translateY(-50%)}
 .lb-next{right:16px;top:50%;transform:translateY(-50%)}
 @media (max-width:760px){.r-head{align-items:flex-start}}
+h1,h2,h3,.r-head h1,.hero h1,.galerie figcaption b,.tile b{color:var(--heading)}
+.cta h2,.lightbox figcaption b{color:#fff}
