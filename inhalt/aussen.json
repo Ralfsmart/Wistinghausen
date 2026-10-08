@@ -1,0 +1,46 @@
+{
+  "titel": "Außenholzbau",
+  "untertitel": "Für Garten, Hof und Hauseingang",
+  "beispieltext": true,
+  "einleitung": "Holz im Freien muss Wind und Wetter standhalten. Deshalb achte ich auf die passende Holzart und auf eine Bauweise, bei der Wasser gut ablaufen kann und das Holz schnell wieder trocknet – so bleibt es lange schön.\n\nOb Gartenlaube, Zaun, Terrasse oder Vordach: Wir besprechen Ihr Vorhaben vor Ort, ich mache Ihnen einen Vorschlag mit Angebot, fertige die Teile in der Werkstatt vor und baue sie bei Ihnen auf.",
+  "leistungen": [
+    "Gartenlauben und Geräteschränke",
+    "Gartenzäune und Tore",
+    "Vordächer über der Haustür",
+    "Terrassen",
+    "Carports und Unterstände",
+    "Gartenmöbel und Baumbänke"
+  ],
+  "bilder": [
+    {
+      "datei": "bilder/aussen1.jpg",
+      "titel": "Unterstand",
+      "beschreibung": "Offener Holzunterstand, z. B. für Fahrzeuge und Geräte."
+    },
+    {
+      "datei": "bilder/aussen4.jpg",
+      "titel": "Gartentisch mit Bänken",
+      "beschreibung": "Massive Gartengarnitur für viele Gäste."
+    },
+    {
+      "datei": "bilder/aussen2.jpg",
+      "titel": "Holzterrasse",
+      "beschreibung": "Terrasse mit Stufe am Haus."
+    },
+    {
+      "datei": "bilder/aussen6.jpg",
+      "titel": "Geräteschrank",
+      "beschreibung": "Schrank mit Lamellenverkleidung und kleinem Vordach."
+    },
+    {
+      "datei": "bilder/aussen8.jpg",
+      "titel": "Kleiner Unterstand",
+      "beschreibung": "Lattenkonstruktion mit Ziegeldach an einer alten Mauer."
+    },
+    {
+      "datei": "bilder/aussen7.jpg",
+      "titel": "Baumbank",
+      "beschreibung": "Rundbank um einen Baumstamm – ein Lieblingsplatz im Schatten."
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "titel": "Rührfässer und Holzfässer",
+  "untertitel": "Präparatefässer für die biologisch-dynamische Landwirtschaft – von 75 bis 750 Litern",
+  "beispieltext": true,
+  "einleitung": "Für die biologisch-dynamische Landwirtschaft fertige ich Rührfässer für die Präparate in jeder Größe von 75 bis 750 Litern. Die Fässer werden aus einzelnen Holzdauben gebaut und mit Reifen zusammengehalten.\n\nEbenso eignen sie sich zum Sammeln von Regenwasser oder für andere Zwecke im Garten. Sagen Sie mir, welche Größe und welches Zubehör – zum Beispiel einen Auslaufhahn – Sie brauchen. Lieferung oder Abholung nach Absprache.",
+  "leistungen": [
+    "Präparate- und Rührfässer von 75 bis 750 Liter",
+    "Regenfässer mit Auslaufhahn",
+    "Sondergrößen auf Anfrage"
+  ],
+  "bilder": [
+    {
+      "datei": "bilder/faesser1.jpg",
+      "titel": "Holzfass",
+      "beschreibung": "Aus Holzdauben gebaut und von Metallreifen gehalten."
+    },
+    {
+      "datei": "bilder/faesser3.jpg",
+      "titel": "Auslaufhahn",
+      "beschreibung": "Messinghahn zum Entnehmen von Regenwasser."
+    },
+    {
+      "datei": "bilder/faesser2.jpg",
+      "titel": "Fässer in verschiedenen Größen",
+      "beschreibung": "Von klein bis groß – die Größe richtet sich nach dem Bedarf."
+    }
+  ]
+}

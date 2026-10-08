@@ -1,0 +1,44 @@
+{
+  "titel": "Türen",
+  "untertitel": "Haus- und Zimmertüren in Standard- und Sondermaßen",
+  "beispieltext": true,
+  "einleitung": "Die Haustür ist die Visitenkarte eines Hauses. Gerade in Altbauten und Bauernhäusern passen Standardtüren oft nicht – hier fertige ich Türen und Tore genau nach Maß und passend zum Stil des Gebäudes.\n\nNach dem Aufmaß beraten wir gemeinsam über Holzart, Gestaltung, Verglasung und Beschläge. Die Tür entsteht in meiner Werkstatt und wird von mir eingebaut und eingestellt, damit sie dicht schließt und lange Freude macht.",
+  "leistungen": [
+    "Haustüren",
+    "Zimmertüren",
+    "Standard- und Sondergrößen",
+    "Tore für Stall und Garage"
+  ],
+  "bilder": [
+    {
+      "datei": "bilder/tueren1.jpg",
+      "titel": "Haustür mit Oberlicht",
+      "beschreibung": "Blau lackierte Tür mit Sprossenfenstern in einem Sandsteingewände."
+    },
+    {
+      "datei": "bilder/tueren4.jpg",
+      "titel": "Haustür im Fischgrätmuster",
+      "beschreibung": "Diagonal verlegte Bretter mit Rauten-Emblem."
+    },
+    {
+      "datei": "bilder/tueren5.jpg",
+      "titel": "Eingangstür mit Sonnenmotiv",
+      "beschreibung": "Rot lackiert, mit verglasten Seitenteilen und Rundbogen."
+    },
+    {
+      "datei": "bilder/tueren2.jpg",
+      "titel": "Zweiflügeliges Tor",
+      "beschreibung": "Holztor mit Bogen und kräftigen Bändern für Scheune oder Garage."
+    },
+    {
+      "datei": "bilder/tueren3.jpg",
+      "titel": "Zimmertür mit Milchglas",
+      "beschreibung": "Rahmentür mit hellen Glasfeldern."
+    },
+    {
+      "datei": "bilder/tueren7.jpg",
+      "titel": "Verglaste Doppeltür",
+      "beschreibung": "Zweiflügelige Tür mit Rundbogen und strahlenförmigen Sprossen."
+    }
+  ]
+}

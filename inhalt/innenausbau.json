@@ -1,0 +1,40 @@
+{
+  "titel": "Innenausbau",
+  "untertitel": "Böden, Wände, Treppen und Einbauten – damit Räume besser funktionieren",
+  "beispieltext": true,
+  "einleitung": "Oft sind es die kleinen Eingriffe, die einen Raum verändern: ein neuer Boden, eine versetzte Wand, eine renovierte Treppe oder Stauraum dort, wo vorher nur ungenutzter Platz war – unter der Treppe oder in der Dachschräge.\n\nIch schaue mir die Situation bei Ihnen vor Ort an und mache Ihnen einen Vorschlag. Die Arbeiten stimme ich mit Ihnen und anderen Handwerkern zeitlich ab und achte auf eine saubere Baustelle. Vieles fertige ich vorab in der Werkstatt, damit die Zeit bei Ihnen im Haus möglichst kurz bleibt.",
+  "leistungen": [
+    "Fußböden: Massiv- oder Fertigparkett, Kork, Laminat – verlegen, ausbessern, abschleifen",
+    "Trennwände stellen, versetzen oder entfernen",
+    "Fenster und Türen montieren",
+    "Treppen ändern oder renovieren",
+    "Stauraum unter Treppen und Dachschrägen"
+  ],
+  "bilder": [
+    {
+      "datei": "bilder/innen1.jpg",
+      "titel": "Auszugsschrank unter der Treppe",
+      "beschreibung": "Rollbarer Auszug für Schuhe und Helme – der Platz unter der Treppe wird voll genutzt."
+    },
+    {
+      "datei": "bilder/innen3.jpg",
+      "titel": "Treppe renoviert",
+      "beschreibung": "Neue Massivholzstufen auf einer alten Treppe."
+    },
+    {
+      "datei": "bilder/innen2.jpg",
+      "titel": "Treppe mit Regalfächern",
+      "beschreibung": "Offene Fächer unter den Stufen als Stauraum im Flur."
+    },
+    {
+      "datei": "bilder/innen4.jpg",
+      "titel": "Schiebetüren unter der Dachschräge",
+      "beschreibung": "Leichte Rahmentüren verschließen den Stauraum hinter dem Kniestock."
+    },
+    {
+      "datei": "bilder/innen5.jpg",
+      "titel": "Theke für ein Café",
+      "beschreibung": "Verkaufstheke mit Flaschenbord darüber."
+    }
+  ]
+}

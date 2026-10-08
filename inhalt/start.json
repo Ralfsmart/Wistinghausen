@@ -1,0 +1,43 @@
+{
+  "hero_titel": "In der kleinen Werkstatt am Ralzhof entstehen Träume aus Holz",
+  "hero_text": "Massive Bauweise, fast alle Wünsche realisierbar – alles aus einer Hand, von der Planung bis zur Montage.",
+  "abschnitt_titel": "Handwerk mit Sorgfalt",
+  "abschnitt_text": "Eine schnelle und sorgfältige Durchführung der Aufträge ist mir ein besonderes Anliegen.",
+  "abschnitt_punkte": [
+    "Individuelle, passgenaue Einbauküchen",
+    "Möbel und Innenausbau nach Maß",
+    "Rührfässer für die biodynamische Landwirtschaft, 75 – 750 L"
+  ],
+  "fotos": [
+    {
+      "datei": "bilder/kueche-7.jpg",
+      "titel": "Küche",
+      "beschreibung": ""
+    },
+    {
+      "datei": "bilder/moebel12.jpg",
+      "titel": "Tisch mit Baumkante",
+      "beschreibung": ""
+    },
+    {
+      "datei": "bilder/innen2.jpg",
+      "titel": "Treppe mit Regalfächern",
+      "beschreibung": ""
+    },
+    {
+      "datei": "bilder/tueren5.jpg",
+      "titel": "Eingangstür",
+      "beschreibung": ""
+    },
+    {
+      "datei": "bilder/aussen7.jpg",
+      "titel": "Baumbank",
+      "beschreibung": ""
+    },
+    {
+      "datei": "bilder/faesser2.jpg",
+      "titel": "Holzfässer",
+      "beschreibung": ""
+    }
+  ]
+}

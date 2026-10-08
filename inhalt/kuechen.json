@@ -1,0 +1,39 @@
+{
+  "titel": "Küchen",
+  "untertitel": "Einbauküchen nach Maß – geplant, gefertigt und montiert aus einer Hand",
+  "beispieltext": true,
+  "einleitung": "Die Küche ist der Raum, in dem am meisten gelebt wird. Deshalb plane ich jede Küche individuell: passend zu Ihrem Raum, Ihren Abläufen und Ihrem Geschmack – mit Massivholzfronten, lackierten Oberflächen oder einer Kombination aus beidem.\n\nSo läuft es ab: Zuerst komme ich zu Ihnen, wir besprechen Ihre Wünsche und ich nehme genau Maß. Danach erhalten Sie einen Entwurf mit Angebot. Nach Ihrer Freigabe fertige ich die Schränke in meiner Werkstatt am Ralzhof und montiere die Küche zum vereinbarten Termin bei Ihnen – sauber eingepasst an Wände, Nischen und Schrägen.\n\nAuch vorhandene Küchen bekommen bei mir ein zweites Leben: Ich erweitere sie, baue sie um oder ziehe sie mit Ihnen in die neue Wohnung um.",
+  "leistungen": [
+    "Individuelle und passgenaue Einbauküchen",
+    "Montage von Fertigküchen",
+    "Erweiterung und Umbau gebrauchter Küchen",
+    "Umzug von Einbauküchen"
+  ],
+  "bilder": [
+    {
+      "datei": "bilder/kueche-6.JPG",
+      "titel": "Weiße Eckküche",
+      "beschreibung": "Grifflose Fronten, hohe Schrankwand und Arbeitsplatte aus Massivholz mit Unterbaubeleuchtung."
+    },
+    {
+      "datei": "bilder/kueche-5.jpg",
+      "titel": "Küche in L-Form",
+      "beschreibung": "Helles Holz, Oberschränke mit Glastüren und offenem Bord für den täglichen Bedarf."
+    },
+    {
+      "datei": "bilder/kueche-3.jpg",
+      "titel": "Schubkästen unter dem Kochfeld",
+      "beschreibung": "Massivholz-Arbeitsplatte und Auszüge, die viel Platz für Töpfe und Pfannen bieten."
+    },
+    {
+      "datei": "bilder/kueche-7.jpg",
+      "titel": "Küche in warmem Holzton",
+      "beschreibung": "Oberschränke bis unter die Decke und Backofen in bequemer Arbeitshöhe."
+    },
+    {
+      "datei": "bilder/kueche-2.jpg",
+      "titel": "Küchenzeile mit roten Fronten",
+      "beschreibung": "Hochglänzende Schubkästen unter einer durchgehenden Holzarbeitsplatte."
+    }
+  ]
+}

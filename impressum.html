@@ -1,31 +1,33 @@
 <!doctype html>
-<html lang="de">
+<html lang="de" data-basis="">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Impressum – Schreinerei Wistinghausen</title>
-<meta name="robots" content="noindex">
-<link rel="stylesheet" href="css/style.css?v=7">
+<meta name="description" content="">
+<meta name="robots" content="noindex"><!-- Entwurf: vor dem Livegang entfernen -->
+<link rel="stylesheet" href="css/style.css?v=8">
+<script src="js/site.js?v=8" defer></script>
 </head>
-<body class="nav-badges">
+<body class="nav-badges" data-seite="text">
 
 <header class="site wood">
   <div class="wrap top">
     <a class="brand" href="index.html">
       <img src="bilder/Wappen-2.gif" alt="Wappen der Schreinerei">
-      <div><b>Schreinerei Wistinghausen</b><span>Meisterbetrieb</span></div>
+      <div><b>Schreinerei Wistinghausen</b><span data-firma="zusatz">Meisterbetrieb</span></div>
     </a>
     <button class="menu-btn" aria-expanded="false" onclick="const n=document.querySelector('nav.main');this.setAttribute('aria-expanded',n.classList.toggle('open'))">☰ Menü</button>
     <nav class="main" aria-label="Hauptmenü">
       <ul>
-        <li><a href="index.html"><span class="ni" style="background-image:url(icons/start.svg)" aria-hidden="true"></span>Start</a></li>
-        <li><a href="#"><span class="ni" style="background-image:url(icons/kuechen.svg?v=2)" aria-hidden="true"></span>Küchen</a></li>
-        <li><a href="#"><span class="ni" style="background-image:url(icons/moebel.svg)" aria-hidden="true"></span>Möbel</a></li>
-        <li><a href="#"><span class="ni" style="background-image:url(icons/innenausbau.svg?v=2)" aria-hidden="true"></span>Innenausbau</a></li>
-        <li><a href="#"><span class="ni" style="background-image:url(icons/tueren.svg)" aria-hidden="true"></span>Türen</a></li>
-        <li><a href="#"><span class="ni" style="background-image:url(icons/aussen.svg)" aria-hidden="true"></span>Außen</a></li>
-        <li><a href="#"><span class="ni" style="background-image:url(icons/faesser.svg)" aria-hidden="true"></span>Fässer</a></li>
-        <li><a href="index.html#kontakt"><span class="ni" style="background-image:url(icons/kontakt.svg)" aria-hidden="true"></span>Kontakt</a></li>
+        <li><a href="index.html"><span class="ni" style="background-image:url(icons/start.svg?v=8)" aria-hidden="true"></span>Start</a></li>
+        <li><a href="kuechen.html"><span class="ni" style="background-image:url(icons/kuechen.svg?v=8)" aria-hidden="true"></span>Küchen</a></li>
+        <li><a href="moebel.html"><span class="ni" style="background-image:url(icons/moebel.svg?v=8)" aria-hidden="true"></span>Möbel</a></li>
+        <li><a href="innenausbau.html"><span class="ni" style="background-image:url(icons/innenausbau.svg?v=8)" aria-hidden="true"></span>Innenausbau</a></li>
+        <li><a href="tueren.html"><span class="ni" style="background-image:url(icons/tueren.svg?v=8)" aria-hidden="true"></span>Türen</a></li>
+        <li><a href="aussen.html"><span class="ni" style="background-image:url(icons/aussen.svg?v=8)" aria-hidden="true"></span>Außen</a></li>
+        <li><a href="faesser.html"><span class="ni" style="background-image:url(icons/faesser.svg?v=8)" aria-hidden="true"></span>Fässer</a></li>
+        <li><a href="index.html#kontakt"><span class="ni" style="background-image:url(icons/kontakt.svg?v=8)" aria-hidden="true"></span>Kontakt</a></li>
       </ul>
     </nav>
   </div>
@@ -37,21 +39,21 @@
 
   <h2>Angaben gemäß § 5 DDG</h2>
   <address>
-    Schreinerei Arnim v. Wistinghausen<br>
-    Inhaber: Arnim von Wistinghausen<br>
+    <span data-firma="name"></span><br>
+    Inhaber: <span data-firma="inhaber"></span><br>
     Untere Weitfeld Str. 14<br>
     88690 <span class="todo">Uhldingen-</span>Mühlhofen
   </address>
 
   <h3>Werkstatt</h3>
-  <address>Ralzhof 1<br>88682 Salem</address>
+  <address><span data-firma="werkstatt_strasse"></span><br><span data-firma="werkstatt_ort"></span></address>
 
   <h2>Kontakt</h2>
   <p>
-    Telefon: <a href="tel:+497556932948">07556 / 932 948</a><br>
-    <span class="todo">Fax: 07556 / 932 949</span><br>
-    Mobil: <a href="tel:+4915221621601">01522 / 162 1601</a><br>
-    E-Mail: <a href="mailto:info@schreinerei-wistinghausen.de">info@schreinerei-wistinghausen.de</a>
+    Telefon: <a data-firma-tel="telefon" data-firma="telefon" href="#"></a><br>
+    <span class="todo">Fax: <span data-firma="fax"></span></span><br>
+    Mobil: <a data-firma-tel="mobil" data-firma="mobil" href="#"></a><br>
+    E-Mail: <a data-firma-mail data-firma="email" href="#"></a>
   </p>
 
   <h2>Umsatzsteuer-ID</h2>
@@ -72,9 +74,10 @@
   <p>Fotos: Schreinerei Arnim v. Wistinghausen. Symbole: eigene Gestaltung.</p>
 </main>
 
+
 <footer class="wood">
   <div class="wrap">
-    <span>© Schreinerei Arnim v. Wistinghausen · Meisterbetrieb</span>
+    <span>© <span data-firma="name">Schreinerei Arnim v. Wistinghausen</span> · <span data-firma="zusatz">Meisterbetrieb</span></span>
     <span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
   </div>
 </footer>

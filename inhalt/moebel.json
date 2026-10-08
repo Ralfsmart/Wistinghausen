@@ -1,0 +1,60 @@
+{
+  "titel": "Möbel",
+  "untertitel": "Einzelstücke und Kleinserien – massiv oder in Plattenbauweise",
+  "beispieltext": true,
+  "einleitung": "Ein gutes Möbelstück begleitet einen über viele Jahre. Ich baue Betten, Schränke, Kommoden und Tische genau nach Ihren Maßen und Vorstellungen – als freistehendes Einzelstück oder als Einbau, der eine Nische oder Dachschräge optimal nutzt.\n\nAm Anfang steht ein Gespräch, gern mit einer Skizze oder einem Foto als Idee. Gemeinsam wählen wir Holzart, Konstruktion und Oberfläche aus – ob geölt, gewachst oder lackiert. Dann entsteht das Möbel in meiner Werkstatt, mit klassischen Holzverbindungen dort, wo sie Sinn machen. Zum Schluss liefere ich es aus und baue es bei Ihnen auf.",
+  "leistungen": [
+    "Betten, Schränke und Kommoden",
+    "Tische – auch mit natürlicher Baumkante",
+    "Einbaumöbel für Nischen und Dachschrägen",
+    "Einzelstücke und Kleinserien",
+    "Massivholz oder Plattenwerkstoff"
+  ],
+  "bilder": [
+    {
+      "datei": "bilder/moebel9.jpg",
+      "titel": "Regalwand mit Schiebetüren",
+      "beschreibung": "Offene Fächer in der Mitte, rot bespannte Schiebetüren an den Seiten."
+    },
+    {
+      "datei": "bilder/moebel10.jpg",
+      "titel": "Massiver Tisch",
+      "beschreibung": "Kräftiges Wangengestell aus Massivholz."
+    },
+    {
+      "datei": "bilder/moebel4.jpg",
+      "titel": "Detailaufnahme",
+      "beschreibung": "Bitte beschreiben."
+    },
+    {
+      "datei": "bilder/moebel12.jpg",
+      "titel": "Tisch mit Baumkante",
+      "beschreibung": "Die natürliche Kante des Stammes bleibt sichtbar."
+    },
+    {
+      "datei": "bilder/moebel2.jpg",
+      "titel": "Schreibtisch mit Rollcontainer",
+      "beschreibung": "Geschwungene Tischplatte mit passendem Schubkastenelement."
+    },
+    {
+      "datei": "bilder/moebel11.jpg",
+      "titel": "Tischbein im Detail",
+      "beschreibung": "Schräg gestellte Beine aus dunklem Massivholz."
+    },
+    {
+      "datei": "bilder/moebel5.jpg",
+      "titel": "Holzverbindung in Handarbeit",
+      "beschreibung": "Gezinkte Eckverbindung – stabil und schön anzusehen."
+    },
+    {
+      "datei": "bilder/moebel13.jpg",
+      "titel": "Einbauschrank unter der Dachschräge",
+      "beschreibung": "Aus astigem Nadelholz, passgenau an die Schräge angepasst."
+    },
+    {
+      "datei": "bilder/moebel8.JPG",
+      "titel": "Schrank mit Wandborden",
+      "beschreibung": "Zweitüriger Schrank mit Griffloch, links und rechts schwebende Ablagen."
+    }
+  ]
+}
