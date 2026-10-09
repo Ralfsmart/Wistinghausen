@@ -13,7 +13,7 @@
     { key: 'untertitel', label: 'Untertitel', typ: 'text', hilfe: 'Ein kurzer Satz unter der Überschrift. Erscheint auch bei Google.' },
     { key: 'beispieltext', label: 'Hinweis „Beispieltext“ auf der Seite anzeigen', typ: 'haken' },
     { gruppe: 'Einleitung' },
-    { key: 'einleitung', label: 'Einleitungstext', typ: 'langtext', hilfe: 'Eine leere Zeile beginnt einen neuen Absatz.' },
+    { key: 'einleitung', label: 'Einleitungstext', typ: 'langtext', format: true, hilfe: 'Eine leere Zeile beginnt einen neuen Absatz.' },
     { gruppe: 'Leistungen' },
     { key: 'leistungen', label: 'Stichpunkte', typ: 'liste', neu: 'Stichpunkt hinzufügen' },
     { gruppe: 'Fotos' },
@@ -25,8 +25,7 @@
       hilfe: 'Der kurze Text unter dem Titel in den Suchergebnissen. Ideal: 120–155 Zeichen. Leer lassen = Untertitel bzw. Einstiegstext.' },
   ];
 
-  const FORMAT_HILFE = 'Leerzeile = neuer Absatz · Zeilen mit „- “ am Anfang = Aufzählung · **fett** · ==gelb markieren== · '
-    + 'Platzhalter wie {telefon}, {email}, {name}, {strasse}, {ort} werden automatisch durch die Kontaktdaten ersetzt.';
+  const FORMAT_HILFE = 'Eine leere Zeile beginnt einen neuen Absatz. Fett, Markierung, Aufzählung und Kontaktdaten gibt es über den Knöpfen oberhalb des Feldes.';
 
   const TEXTSEITE_FELDER = [
     { typ: 'info', text: FORMAT_HILFE },
@@ -46,12 +45,12 @@
       { key: 'hero_text', label: 'Text darunter', typ: 'textfeld' },
       { gruppe: 'Abschnitt mit Fotos' },
       { key: 'abschnitt_titel', label: 'Überschrift', typ: 'text' },
-      { key: 'abschnitt_text', label: 'Text', typ: 'textfeld', hilfe: 'Eine leere Zeile beginnt einen neuen Absatz.' },
+      { key: 'abschnitt_text', label: 'Text', typ: 'textfeld', format: true, hilfe: 'Eine leere Zeile beginnt einen neuen Absatz.' },
       { key: 'abschnitt_punkte', label: 'Stichpunkte', typ: 'liste', neu: 'Stichpunkt hinzufügen' },
       { key: 'fotos', label: 'Fotos (die ersten 6 werden gezeigt)', typ: 'fotos', beschreibung: false },
       { gruppe: 'Hervorgehobener Kasten (z. B. Rührfässer)' },
       { key: 'besonderheit_titel', label: 'Überschrift', typ: 'text', hilfe: 'Leer lassen, um den Kasten auszublenden.' },
-      { key: 'besonderheit_text', label: 'Text', typ: 'textfeld', hilfe: FORMAT_HILFE },
+      { key: 'besonderheit_text', label: 'Text', typ: 'textfeld', format: true, hilfe: FORMAT_HILFE },
       { key: 'besonderheit_link', label: 'Knopf führt zu', typ: 'auswahl', optionen: [
         ['', '– kein Knopf –'], ['kuechen.html', 'Küchen'], ['moebel.html', 'Möbel'], ['innenausbau.html', 'Innenausbau'],
         ['tueren.html', 'Türen'], ['aussen.html', 'Außen'], ['faesser.html', 'Fässer'], ['#kontakt', 'Kontakt'] ] },
@@ -59,7 +58,7 @@
       { key: 'besonderheit_fotos', label: 'Foto (das erste wird gezeigt)', typ: 'fotos', beschreibung: false },
       { gruppe: 'Über mich' },
       { key: 'ueber_titel', label: 'Überschrift', typ: 'text', hilfe: 'Überschrift und Text leer lassen, um den Abschnitt auszublenden.' },
-      { key: 'ueber_text', label: 'Text', typ: 'langtext', hilfe: FORMAT_HILFE },
+      { key: 'ueber_text', label: 'Text', typ: 'langtext', format: true, hilfe: FORMAT_HILFE },
       { key: 'ueber_fotos', label: 'Foto (das erste wird gezeigt; der Titel erscheint als Bildunterschrift)', typ: 'fotos', beschreibung: false },
       { gruppe: 'Google-Suche' },
       { key: 'seo_titel', label: 'Seitentitel bei Google', typ: 'text',
@@ -306,6 +305,84 @@
     }
   }
 
+  /* ---------- Formatierungsleiste über Textfeldern ---------- */
+  const PLATZHALTER = [
+    ['telefon', 'Telefon'], ['mobil', 'Mobil'], ['email', 'E-Mail'], ['name', 'Firmenname'], ['inhaber', 'Inhaber'],
+    ['strasse', 'Straße'], ['ort', 'PLZ und Ort'], ['werkstatt_strasse', 'Werkstatt: Straße'],
+    ['werkstatt_ort', 'Werkstatt: PLZ und Ort'], ['fax', 'Fax'],
+  ];
+
+  // Text im Feld ersetzen und dabei die Rückgängig-Funktion (Strg+Z) des Browsers erhalten
+  function ersetze(ta, von, bis, neu, selVon, selBis) {
+    ta.focus();
+    ta.setSelectionRange(von, bis);
+    if (!document.execCommand('insertText', false, neu)) {
+      ta.setRangeText(neu, von, bis, 'end');
+      ta.dispatchEvent(new Event('input', { bubbles: true }));
+    }
+    ta.setSelectionRange(selVon, selBis);
+  }
+
+  // Markierten Text mit Zeichen umschließen (z. B. ** für fett). Nochmal klicken nimmt sie wieder weg.
+  function umschliessen(ta, zeichen, beispiel) {
+    const { selectionStart: a, selectionEnd: b, value } = ta;
+    const n = zeichen.length;
+    if (a >= n && value.slice(a - n, a) === zeichen && value.slice(b, b + n) === zeichen) {
+      ersetze(ta, a - n, b + n, value.slice(a, b), a - n, b - n);
+    } else if (a === b) {
+      ersetze(ta, a, b, zeichen + beispiel + zeichen, a + n, a + n + beispiel.length);
+    } else {
+      ersetze(ta, a, b, zeichen + value.slice(a, b) + zeichen, a + n, b + n);
+    }
+  }
+
+  // Zeilen zur Aufzählung machen (oder zurück). Eine Liste braucht Leerzeilen davor und danach.
+  function aufzaehlung(ta) {
+    const { value } = ta;
+    const von = value.lastIndexOf('\n', ta.selectionStart - 1) + 1;
+    let bis = value.indexOf('\n', ta.selectionEnd);
+    if (bis === -1) bis = value.length;
+    const zeilen = value.slice(von, bis).split('\n');
+    const alleListe = zeilen.every(z => /^- /.test(z));
+    let neu = zeilen.map(z => alleListe ? z.replace(/^- /, '') : (z.trim() ? '- ' + z.replace(/^- /, '') : z)).join('\n');
+    if (!alleListe) {
+      if (von > 0 && value.slice(Math.max(0, von - 2), von) !== '\n\n') neu = (value[von - 1] === '\n' ? '\n' : '\n\n') + neu;
+      if (bis < value.length && value.slice(bis, bis + 2) !== '\n\n') neu += (value[bis + 1] === '\n' ? '\n' : '\n\n');
+    }
+    ersetze(ta, von, bis, neu, von, von + neu.length);
+  }
+
+  function knopf(inhalt, titel, aktion) {
+    return el('button', { type: 'button', className: 'a-werkzeug', title: titel, 'aria-label': titel,
+      onmousedown: e => e.preventDefault(),   // die Auswahl im Textfeld soll beim Klick erhalten bleiben
+      onclick: aktion }, inhalt);
+  }
+
+  function textFeld(f, ta) {
+    if (!f.format) return el('label', {}, f.label, hilfe(f), ta);
+    const leiste = el('div', { className: 'a-leiste-text', role: 'toolbar', 'aria-label': 'Textformatierung' },
+      knopf(el('b', {}, 'F'), 'Fett (Strg+B)', () => umschliessen(ta, '**', 'fetter Text')),
+      knopf(el('span', { className: 'a-marker' }, 'M'), 'Gelb markieren (für Stellen, die noch geprüft werden müssen)',
+        () => umschliessen(ta, '==', 'markierter Text')),
+      knopf('• Liste', 'Aufzählung (markierte Zeilen werden Stichpunkte)', () => aufzaehlung(ta)),
+      el('select', { className: 'a-platzhalter', 'aria-label': 'Kontaktdaten einfügen',
+        onchange: e => {
+          const k = e.target.value;
+          e.target.value = '';
+          if (!k) return;
+          const pos = ta.selectionStart;
+          ersetze(ta, pos, ta.selectionEnd, `{${k}}`, pos + k.length + 2, pos + k.length + 2);
+        } },
+        el('option', { value: '', textContent: 'Kontaktdaten einfügen …' }),
+        PLATZHALTER.map(([k, t]) => el('option', { value: k, textContent: t }))));
+    ta.addEventListener('keydown', e => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'b') { e.preventDefault(); umschliessen(ta, '**', 'fetter Text'); }
+    });
+    return el('div', { className: 'a-feld' },
+      el('span', { className: 'a-feldname', textContent: f.label }), hilfe(f), leiste, ta);
+  }
+
+
   function hilfe(f) { return f.hilfe ? el('span', { className: 'a-feldhilfe', textContent: f.hilfe }) : null; }
 
   function feld(f) {
@@ -316,8 +393,7 @@
           el('input', { type: 'text', value: daten[f.key] ?? '', oninput: e => setze(e.target.value) }));
       case 'textfeld':
       case 'langtext':
-        return el('label', {}, f.label, hilfe(f),
-          el('textarea', { className: f.typ === 'langtext' ? 'gross' : '', value: daten[f.key] ?? '', oninput: e => setze(e.target.value) }));
+        return textFeld(f, el('textarea', { className: f.typ === 'langtext' ? 'gross' : '', value: daten[f.key] ?? '', oninput: e => setze(e.target.value) }));
       case 'haken':
         return el('label', { className: 'a-check' },
           el('input', { type: 'checkbox', checked: !!daten[f.key], onchange: e => setze(e.target.checked) }), f.label);
@@ -393,7 +469,7 @@
                   if (!confirm('Diesen Abschnitt entfernen?')) return;
                   liste.splice(i, 1); zeichnen(); aenderungPruefen();
                 } }, '✕'))),
-          el('label', {}, 'Text',
+          textFeld({ label: 'Text', format: true },
             el('textarea', { value: a.text ?? '', oninput: e => { a.text = e.target.value; aenderungPruefen(); } })));
       });
       box.replaceChildren(...karten,

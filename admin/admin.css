@@ -77,3 +77,14 @@ legend{font:600 19px var(--serif);padding:0 6px}
 .a-abschnitt-kopf label{flex:1}
 .a-abschnitt-knoepfe{display:flex;gap:6px;margin-bottom:14px}
 .a-abschnitt textarea{min-height:140px}
+
+/* Formatierungsleiste über Textfeldern */
+.a-feld{margin:0 0 14px}
+.a-feldname{display:block;font-weight:600}
+.a-leiste-text{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:8px 0 0;padding:6px;background:#E9E3DA;border:1px solid #CFC7BC;border-bottom:0;border-radius:8px 8px 0 0}
+.a-leiste-text + textarea{margin-top:0;border-radius:0 0 8px 8px}
+.a-werkzeug{min-width:38px;height:34px;padding:0 10px;background:#fff;border:1px solid #CFC7BC;border-radius:6px;font:inherit;font-size:16px;color:var(--text);cursor:pointer}
+.a-werkzeug:hover{border-color:var(--accent);color:var(--accent)}
+.a-werkzeug b{font-weight:800}
+.a-marker{background:#FFE98A;padding:0 5px;border-radius:3px}
+.a-platzhalter{width:auto;margin:0 0 0 auto;padding:6px 8px;font-size:15px;height:34px}

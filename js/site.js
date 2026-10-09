@@ -199,22 +199,26 @@
     if (ziel) ziel.innerHTML = '<p class="note">Die Inhalte konnten nicht geladen werden. Bitte Seite neu laden.</p>';
   }
 
-  /* ---------- Leiste beim Scrollen verkleinern ---------- */
-  // mit Abstand zwischen An- und Ausschalten, damit die Leiste beim Umschalten nicht flackert
+  /* ---------- Leiste schrumpft stufenlos mit dem Scrollen ---------- */
+  // --k geht von 0 (ganz oben) bis 1 (nach 140 px gescrollt); das CSS rechnet daraus die Größen
   const wurzel = document.documentElement;
-  const kompakt = () => {
-    if (scrollY > 120) wurzel.classList.add('kompakt');
-    else if (scrollY < 30) wurzel.classList.remove('kompakt');
-  };
-  // Höhe der vollen Leiste als Platzhalter oben merken (nur im großen Zustand messen)
   const kopf = document.querySelector('header.site');
+  const STRECKE = 140;
+  let geplant = false;
+  const setzeK = () => {
+    geplant = false;
+    wurzel.style.setProperty('--k', Math.min(1, Math.max(0, scrollY / STRECKE)).toFixed(3));
+  };
+  // Platzhalter oben = Höhe der vollen Leiste, damit der Inhalt beim Schrumpfen nicht springt
   const kopfMessen = () => {
-    if (kopf && !wurzel.classList.contains('kompakt')) wurzel.style.setProperty('--kopf-h', kopf.offsetHeight + 'px');
+    if (!kopf) return;
+    wurzel.style.setProperty('--k', '0');
+    wurzel.style.setProperty('--kopf-h', kopf.offsetHeight + 'px');
+    setzeK();
   };
   kopfMessen();
   addEventListener('resize', kopfMessen);
-  addEventListener('scroll', kompakt, { passive: true });
-  kompakt();
+  addEventListener('scroll', () => { if (!geplant) { geplant = true; requestAnimationFrame(setzeK); } }, { passive: true });
 
   // Handy-Menü nach Auswahl eines Eintrags schließen (wichtig, weil die Leiste stehen bleibt)
   document.querySelectorAll('nav.main a').forEach(a => a.addEventListener('click', () => {

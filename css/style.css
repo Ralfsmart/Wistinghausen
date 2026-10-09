@@ -237,23 +237,8 @@ h1,h2,h3,.r-head h1,.hero h1,.galerie figcaption b,.tile b{color:var(--heading)}
 /* Leiste schwebt über dem Inhalt; der Platzhalter oben hat ihre volle Höhe (misst js/site.js),
    damit beim Verkleinern nichts auf der Seite springt */
 body.nav-badges{padding-top:var(--kopf-h,102px)}
-.brand img,.brand b,.brand span,.ni,.nav-badges nav.main a,.nav-badges .top,.nav-badges .brand{
-  transition:width .4s cubic-bezier(.4,0,.2,1),height .4s cubic-bezier(.4,0,.2,1),padding .4s cubic-bezier(.4,0,.2,1),
-    margin .4s cubic-bezier(.4,0,.2,1),font-size .4s cubic-bezier(.4,0,.2,1),background-size .4s cubic-bezier(.4,0,.2,1),gap .4s}
-header.site{transition:box-shadow .4s}
-.kompakt header.site{box-shadow:0 2px 12px rgba(62,42,30,.25)}
-[id]{scroll-margin-top:130px}
 
-/* kompakte Leiste, sobald gescrollt wird (Klasse setzt js/site.js) */
-@media (min-width:861px){
-  .kompakt .nav-badges .top{padding-top:8px}
-  .kompakt .nav-badges .brand{padding-bottom:8px}
-  .kompakt .brand img{width:44px;height:44px;padding:4px}
-  .kompakt .brand b{font-size:19px}
-  .kompakt .brand span{font-size:12px}
-  .kompakt .nav-badges nav.main a{font-size:12px;gap:3px;margin-bottom:-12px}
-  .kompakt .nav-badges .ni{width:40px;height:40px;background-size:22px;border-width:2px}
-}
+[id]{scroll-margin-top:130px}
 
 /* Handy: Menü-Knopf neben dem Namen, aufgeklapptes Menü scrollbar */
 @media (max-width:860px){
@@ -266,4 +251,21 @@ header.site{transition:box-shadow .4s}
   .nav-badges .top{padding:10px 0}
   nav.main.open{max-height:calc(100vh - 90px);overflow-y:auto}
   [id]{scroll-margin-top:90px}
+}
+
+/* Leiste schrumpft stufenlos mit dem Scrollen: --k läuft von 0 (oben) bis 1 (kompakt), gesetzt von js/site.js */
+@media (min-width:861px){
+  :root{--ni:60px;--logo:64px;--logo-schrift:24px;--nav-schrift:14px;--ueberhang:-20px}
+  .nav-badges .top{padding-top:calc(24px - 16px * var(--k,0))}
+  .nav-badges .brand{padding-bottom:calc(14px - 6px * var(--k,0))}
+  .nav-badges .brand img{width:calc(var(--logo) - (var(--logo) - 44px) * var(--k,0));height:calc(var(--logo) - (var(--logo) - 44px) * var(--k,0));padding:calc(6px - 2px * var(--k,0))}
+  .nav-badges .brand b{font-size:calc(var(--logo-schrift) - (var(--logo-schrift) - 19px) * var(--k,0))}
+  .nav-badges .brand span{font-size:calc(14px - 2px * var(--k,0))}
+  .nav-badges nav.main a{font-size:calc(var(--nav-schrift) - 2px * var(--k,0));gap:calc(6px - 3px * var(--k,0));
+    margin-bottom:calc(var(--ueberhang) + (var(--ueberhang) * -1 - 12px) * var(--k,0))}
+  .nav-badges .ni{width:calc(var(--ni) - (var(--ni) - 40px) * var(--k,0));height:calc(var(--ni) - (var(--ni) - 40px) * var(--k,0));background-size:56%}
+  .nav-badges header.site{box-shadow:0 2px 12px rgba(62,42,30,calc(.25 * var(--k,0)))}
+}
+@media (min-width:861px) and (max-width:1100px){
+  :root{--ni:50px;--logo:52px;--logo-schrift:20px;--nav-schrift:13px;--ueberhang:-17px}
 }
