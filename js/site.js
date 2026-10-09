@@ -199,6 +199,22 @@
     if (ziel) ziel.innerHTML = '<p class="note">Die Inhalte konnten nicht geladen werden. Bitte Seite neu laden.</p>';
   }
 
+  /* ---------- Leiste beim Scrollen verkleinern ---------- */
+  // mit Abstand zwischen An- und Ausschalten, damit die Leiste beim Umschalten nicht flackert
+  const wurzel = document.documentElement;
+  const kompakt = () => {
+    if (scrollY > 120) wurzel.classList.add('kompakt');
+    else if (scrollY < 30) wurzel.classList.remove('kompakt');
+  };
+  addEventListener('scroll', kompakt, { passive: true });
+  kompakt();
+
+  // Handy-Menü nach Auswahl eines Eintrags schließen (wichtig, weil die Leiste stehen bleibt)
+  document.querySelectorAll('nav.main a').forEach(a => a.addEventListener('click', () => {
+    document.querySelector('nav.main').classList.remove('open');
+    document.querySelector('.menu-btn')?.setAttribute('aria-expanded', 'false');
+  }));
+
   /* ---------- Ablauf ---------- */
   const TEXTSEITEN = ['impressum', 'datenschutz'];
   const darstellen = seite === 'start' ? startseite : TEXTSEITEN.includes(seite) ? textseite : rubrik;
