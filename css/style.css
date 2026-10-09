@@ -204,3 +204,8 @@ h1,h2,h3,.r-head h1,.hero h1,.galerie figcaption b,.tile b{color:var(--heading)}
 .kontakt-reihe .anfahrt{display:flex;flex-direction:column;justify-content:center}
 @media (max-width:860px){.kontakt-reihe{grid-template-columns:1fr}}
 @media (max-width:480px){.kontakt-reihe .contact{grid-template-columns:1fr}}
+
+/* Mauerwerk-Galerie: jedes Foto behält sein Format (hoch oder quer), nichts wird abgeschnitten */
+.galerie{display:block;columns:4 230px;column-gap:18px}
+.galerie figure{display:flex;break-inside:avoid;margin:0 0 18px}
+.galerie img{aspect-ratio:auto;height:auto;object-fit:contain}
