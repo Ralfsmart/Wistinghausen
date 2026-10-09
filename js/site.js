@@ -206,6 +206,13 @@
     if (scrollY > 120) wurzel.classList.add('kompakt');
     else if (scrollY < 30) wurzel.classList.remove('kompakt');
   };
+  // Höhe der vollen Leiste als Platzhalter oben merken (nur im großen Zustand messen)
+  const kopf = document.querySelector('header.site');
+  const kopfMessen = () => {
+    if (kopf && !wurzel.classList.contains('kompakt')) wurzel.style.setProperty('--kopf-h', kopf.offsetHeight + 'px');
+  };
+  kopfMessen();
+  addEventListener('resize', kopfMessen);
   addEventListener('scroll', kompakt, { passive: true });
   kompakt();
 

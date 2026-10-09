@@ -107,7 +107,7 @@ footer a{color:#F6EFE6}
 .nav-icons .hero{padding-bottom:56px}
 
 /* Variante: Medaillons, die zu einem Drittel unter der Holzleiste herausragen */
-.nav-badges header.site{position:sticky;top:0;z-index:20}
+.nav-badges header.site{position:fixed;top:0;left:0;right:0;z-index:20}
 .nav-badges .top{padding:24px 0 0;align-items:stretch}
 .nav-badges .brand{align-self:center;padding-bottom:14px}
 .nav-badges nav.main ul{gap:4px;align-items:flex-end;height:100%}
@@ -234,8 +234,14 @@ h1,h2,h3,.r-head h1,.hero h1,.galerie figcaption b,.tile b{color:var(--heading)}
 .galerie-hinweis{color:#8A5F3F;font-size:16px;margin:-6px 0 14px}
 
 /* ---------- Navigationsleiste bleibt beim Scrollen oben stehen ---------- */
-header.site{position:sticky;top:0;z-index:20}
-.brand img,.brand b,.ni,.nav-badges nav.main a,.nav-badges .top{transition:all .2s ease}
+/* Leiste schwebt über dem Inhalt; der Platzhalter oben hat ihre volle Höhe (misst js/site.js),
+   damit beim Verkleinern nichts auf der Seite springt */
+body.nav-badges{padding-top:var(--kopf-h,102px)}
+.brand img,.brand b,.brand span,.ni,.nav-badges nav.main a,.nav-badges .top,.nav-badges .brand{
+  transition:width .4s cubic-bezier(.4,0,.2,1),height .4s cubic-bezier(.4,0,.2,1),padding .4s cubic-bezier(.4,0,.2,1),
+    margin .4s cubic-bezier(.4,0,.2,1),font-size .4s cubic-bezier(.4,0,.2,1),background-size .4s cubic-bezier(.4,0,.2,1),gap .4s}
+header.site{transition:box-shadow .4s}
+.kompakt header.site{box-shadow:0 2px 12px rgba(62,42,30,.25)}
 [id]{scroll-margin-top:130px}
 
 /* kompakte Leiste, sobald gescrollt wird (Klasse setzt js/site.js) */
