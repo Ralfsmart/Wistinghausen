@@ -229,3 +229,6 @@ h1,h2,h3,.r-head h1,.hero h1,.galerie figcaption b,.tile b{color:var(--heading)}
   .besonders,.ueber{grid-template-columns:1fr;gap:18px}
   .ueber figure{max-width:320px}
 }
+
+/* Hinweis unter „Einblicke“ (hellbraun, Kontrast 4,6:1) */
+.galerie-hinweis{color:#8A5F3F;font-size:16px;margin:-6px 0 14px}

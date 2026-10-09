@@ -133,7 +133,7 @@
         <div class="r-text">${absaetze(d.einleitung)}</div>
         ${leistungen ? `<aside class="r-list"><h2>Leistungen</h2><ul>${leistungen}</ul></aside>` : ''}
       </div>
-      ${bilder ? `<h2>Einblicke</h2><div class="galerie">${bilder}</div>` : ''}
+      ${bilder ? `<h2>Einblicke</h2><p class="galerie-hinweis">Für Details einfach auf ein Foto klicken oder tippen.</p><div class="galerie">${bilder}</div>` : ''}
       <section class="cta">
         <span class="cta-leiste wood" aria-hidden="true"></span>
         <div><h2 data-firma="aufruf_titel"></h2><p data-firma="aufruf_text"></p></div>
