@@ -49,6 +49,18 @@
       { key: 'abschnitt_text', label: 'Text', typ: 'textfeld', hilfe: 'Eine leere Zeile beginnt einen neuen Absatz.' },
       { key: 'abschnitt_punkte', label: 'Stichpunkte', typ: 'liste', neu: 'Stichpunkt hinzufügen' },
       { key: 'fotos', label: 'Fotos (die ersten 6 werden gezeigt)', typ: 'fotos', beschreibung: false },
+      { gruppe: 'Hervorgehobener Kasten (z. B. Rührfässer)' },
+      { key: 'besonderheit_titel', label: 'Überschrift', typ: 'text', hilfe: 'Leer lassen, um den Kasten auszublenden.' },
+      { key: 'besonderheit_text', label: 'Text', typ: 'textfeld', hilfe: FORMAT_HILFE },
+      { key: 'besonderheit_link', label: 'Knopf führt zu', typ: 'auswahl', optionen: [
+        ['', '– kein Knopf –'], ['kuechen.html', 'Küchen'], ['moebel.html', 'Möbel'], ['innenausbau.html', 'Innenausbau'],
+        ['tueren.html', 'Türen'], ['aussen.html', 'Außen'], ['faesser.html', 'Fässer'], ['#kontakt', 'Kontakt'] ] },
+      { key: 'besonderheit_link_text', label: 'Beschriftung des Knopfes', typ: 'text' },
+      { key: 'besonderheit_fotos', label: 'Foto (das erste wird gezeigt)', typ: 'fotos', beschreibung: false },
+      { gruppe: 'Über mich' },
+      { key: 'ueber_titel', label: 'Überschrift', typ: 'text', hilfe: 'Überschrift und Text leer lassen, um den Abschnitt auszublenden.' },
+      { key: 'ueber_text', label: 'Text', typ: 'langtext', hilfe: FORMAT_HILFE },
+      { key: 'ueber_fotos', label: 'Foto (das erste wird gezeigt; der Titel erscheint als Bildunterschrift)', typ: 'fotos', beschreibung: false },
       { gruppe: 'Google-Suche' },
       { key: 'seo_titel', label: 'Seitentitel bei Google', typ: 'text',
         hilfe: 'Erscheint als blaue Überschrift in den Suchergebnissen. Ideal: bis 60 Zeichen, mit Ort, z. B. „Einbauküchen nach Maß in Salem | Schreinerei Wistinghausen“. Leer lassen = automatisch.' },
@@ -309,6 +321,10 @@
       case 'haken':
         return el('label', { className: 'a-check' },
           el('input', { type: 'checkbox', checked: !!daten[f.key], onchange: e => setze(e.target.checked) }), f.label);
+      case 'auswahl':
+        return el('label', {}, f.label, hilfe(f),
+          el('select', { onchange: e => setze(e.target.value) },
+            f.optionen.map(([wert, text]) => el('option', { value: wert, textContent: text, selected: (daten[f.key] ?? '') === wert }))));
       case 'info':
         return el('p', { className: 'a-info', textContent: f.text });
       case 'abschnitte':

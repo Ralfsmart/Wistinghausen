@@ -1,6 +1,6 @@
 {
   "hero_titel": "In der kleinen Werkstatt am Ralzhof entstehen Träume aus Holz",
-  "hero_text": "Massive Bauweise, fast alle Wünsche realisierbar. Alles aus einer Hand, von der Planung bis zur Montage.",
+  "hero_text": "Einbauküchen, Möbel, Innenausbau und Türen nach Maß. Geplant und gebaut in meiner Werkstatt am Ralzhof bei Salem.",
   "abschnitt_titel": "Handwerk mit Sorgfalt",
   "abschnitt_text": "Eine schnelle und sorgfältige Durchführung der Aufträge ist mir ein besonderes Anliegen.",
   "abschnitt_punkte": [
@@ -37,6 +37,26 @@
     {
       "datei": "bilder/faesser2.jpg",
       "titel": "Holzfässer",
+      "beschreibung": ""
+    }
+  ],
+  "besonderheit_titel": "Rührfässer für die biologisch-dynamische Landwirtschaft",
+  "besonderheit_text": "Neben Möbeln und Innenausbau fertige ich Rührfässer für die biologisch-dynamischen Präparate, in jeder Größe von 75 bis 750 Litern. Auch als Regenfass mit Auslaufhahn.",
+  "besonderheit_link": "faesser.html",
+  "besonderheit_link_text": "Mehr über die Fässer",
+  "besonderheit_fotos": [
+    {
+      "datei": "bilder/faesser2.jpg",
+      "titel": "Holzfässer in verschiedenen Größen",
+      "beschreibung": ""
+    }
+  ],
+  "ueber_titel": "Über mich",
+  "ueber_text": "Ich bin Arnim von Wistinghausen, Schreinermeister mit eigener Werkstatt am Ralzhof bei Salem. ==Hier ein paar Sätze zum Werdegang: Ausbildung, Meisterprüfung, seit wann selbstständig.==\n\nIn meiner kleinen Werkstatt entsteht jedes Stück einzeln, ob Küche, Möbel oder Fass. Von der ersten Idee über die Planung bis zur Montage haben Sie bei mir einen Ansprechpartner: mich.\n\n==Was ist Ihnen bei Ihrer Arbeit besonders wichtig? Zum Beispiel Holzauswahl, Handarbeit oder Langlebigkeit.==\n\n==Foto: am besten eines von Ihnen in der Werkstatt.==",
+  "ueber_fotos": [
+    {
+      "datei": "bilder/kontakt1.jpg",
+      "titel": "Aus der Werkstatt",
       "beschreibung": ""
     }
   ]

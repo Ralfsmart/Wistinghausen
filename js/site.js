@@ -68,6 +68,40 @@
           ${punkte ? `<ul>${punkte}</ul>` : ''}
         </div>
         <div class="photos">${fotos}</div>
+      </section>
+      ${besonderheit(d)}
+      ${ueberMich(d)}`;
+  }
+
+  const erstesFoto = liste => (liste || []).find(b => b && b.datei);
+
+  // Hervorgehobener Kasten, z. B. für die Rührfässer
+  function besonderheit(d) {
+    if (!d.besonderheit_titel) return '';
+    const foto = erstesFoto(d.besonderheit_fotos);
+    const link = d.besonderheit_link && d.besonderheit_link_text
+      ? `<a class="btn" href="${esc(url(d.besonderheit_link))}">${esc(d.besonderheit_link_text)}</a>` : '';
+    return `
+      <section class="besonders">
+        ${foto ? `<img src="${esc(url(foto.datei))}" alt="${esc(foto.titel)}">` : ''}
+        <div>
+          <h2>${esc(d.besonderheit_titel)}</h2>
+          ${absaetze(d.besonderheit_text)}
+          ${link}
+        </div>
+      </section>`;
+  }
+
+  function ueberMich(d) {
+    if (!d.ueber_titel && !d.ueber_text) return '';
+    const foto = erstesFoto(d.ueber_fotos);
+    return `
+      <section class="ueber" id="ueber-mich">
+        ${foto ? `<figure><img src="${esc(url(foto.datei))}" alt="${esc(foto.titel)}">${foto.titel ? `<figcaption>${esc(foto.titel)}</figcaption>` : ''}</figure>` : ''}
+        <div>
+          <h2>${esc(d.ueber_titel)}</h2>
+          ${absaetze(d.ueber_text)}
+        </div>
       </section>`;
   }
 

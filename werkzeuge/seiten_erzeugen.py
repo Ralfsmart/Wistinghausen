@@ -20,7 +20,7 @@ INHALT = WURZEL / "inhalt"
 # ---- Einstellungen ---------------------------------------------------------------------------
 ADRESSE = "https://ralfsmart.github.io/Wistinghausen/"   # beim Umzug: "https://www.schreinerei-wistinghausen.de/"
 ENTWURF = True        # True = Suchmaschinen aussperren (noindex). Zum Livegang auf False setzen.
-VERSION = "15"        # bei Änderungen an CSS/JS erhöhen, damit Browser neu laden
+VERSION = "16"        # bei Änderungen an CSS/JS erhöhen, damit Browser neu laden
 FIRMENNAME_KURZ = "Schreinerei Wistinghausen"
 
 MENUE = [
@@ -122,6 +122,48 @@ def startseite(d):
           {f"<ul>{punkte}</ul>" if punkte else ""}
         </div>
         <div class="photos">{fotos}</div>
+      </section>
+      {besonderheit(d)}
+      {ueber_mich(d)}"""
+
+
+def erstes_foto(liste):
+    return next((b for b in (liste or []) if b and b.get("datei")), None)
+
+
+def besonderheit(d):
+    if not d.get("besonderheit_titel"):
+        return ""
+    foto = erstes_foto(d.get("besonderheit_fotos"))
+    bild = f'<img src="{esc(foto["datei"])}" alt="{esc(foto.get("titel"))}">' if foto else ""
+    link = (f'<a class="btn" href="{esc(d["besonderheit_link"])}">{esc(d["besonderheit_link_text"])}</a>'
+            if d.get("besonderheit_link") and d.get("besonderheit_link_text") else "")
+    return f"""
+      <section class="besonders">
+        {bild}
+        <div>
+          <h2>{esc(d.get("besonderheit_titel"))}</h2>
+          {absaetze(d.get("besonderheit_text"))}
+          {link}
+        </div>
+      </section>"""
+
+
+def ueber_mich(d):
+    if not d.get("ueber_titel") and not d.get("ueber_text"):
+        return ""
+    foto = erstes_foto(d.get("ueber_fotos"))
+    bild = ""
+    if foto:
+        unterschrift = f'<figcaption>{esc(foto.get("titel"))}</figcaption>' if foto.get("titel") else ""
+        bild = f'<figure><img src="{esc(foto["datei"])}" alt="{esc(foto.get("titel"))}">{unterschrift}</figure>'
+    return f"""
+      <section class="ueber" id="ueber-mich">
+        {bild}
+        <div>
+          <h2>{esc(d.get("ueber_titel"))}</h2>
+          {absaetze(d.get("ueber_text"))}
+        </div>
       </section>"""
 
 

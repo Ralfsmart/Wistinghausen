@@ -209,3 +209,23 @@ h1,h2,h3,.r-head h1,.hero h1,.galerie figcaption b,.tile b{color:var(--heading)}
 .galerie{display:block;columns:4 230px;column-gap:18px}
 .galerie figure{display:flex;break-inside:avoid;margin:0 0 18px}
 .galerie img{aspect-ratio:auto;height:auto;object-fit:contain}
+
+/* Startseite: hervorgehobener Kasten (z. B. Rührfässer) */
+.besonders{position:relative;display:grid;grid-template-columns:minmax(200px,1fr) 2fr;gap:28px;align-items:center;
+  background:var(--surface);border:1px solid var(--line);border-left:8px solid var(--accent);border-radius:var(--radius);
+  padding:22px 28px 22px 22px;margin:0 0 56px}
+.besonders img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px}
+.besonders h2{margin-top:0}
+.besonders p{color:var(--text-soft)}
+.besonders .btn{margin-top:4px}
+
+/* Startseite: Über mich */
+.ueber{display:grid;grid-template-columns:1fr 1.6fr;gap:40px;align-items:center;margin:0 0 56px}
+.ueber figure{margin:0}
+.ueber img{width:100%;border-radius:var(--radius);box-shadow:0 6px 18px rgba(62,42,30,.15)}
+.ueber figcaption{font-size:14px;color:var(--text-soft);margin-top:8px;text-align:center}
+.ueber h2{margin-top:0}
+@media (max-width:760px){
+  .besonders,.ueber{grid-template-columns:1fr;gap:18px}
+  .ueber figure{max-width:320px}
+}
