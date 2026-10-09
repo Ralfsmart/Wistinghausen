@@ -86,5 +86,7 @@ legend{font:600 19px var(--serif);padding:0 6px}
 .a-werkzeug{min-width:38px;height:34px;padding:0 10px;background:#fff;border:1px solid #CFC7BC;border-radius:6px;font:inherit;font-size:16px;color:var(--text);cursor:pointer}
 .a-werkzeug:hover{border-color:var(--accent);color:var(--accent)}
 .a-werkzeug b{font-weight:800}
-.a-marker{background:#FFE98A;padding:0 5px;border-radius:3px}
+.a-gelb{background:#FFE98A;border-color:#C9A94B}
+.a-werkzeug i{font-style:italic;font-weight:600}
+.a-werkzeug u{text-decoration:underline;font-weight:600}
 .a-platzhalter{width:auto;margin:0 0 0 auto;padding:6px 8px;font-size:15px;height:34px}

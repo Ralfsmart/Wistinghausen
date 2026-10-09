@@ -25,7 +25,7 @@
       hilfe: 'Der kurze Text unter dem Titel in den Suchergebnissen. Ideal: 120–155 Zeichen. Leer lassen = Untertitel bzw. Einstiegstext.' },
   ];
 
-  const FORMAT_HILFE = 'Eine leere Zeile beginnt einen neuen Absatz. Fett, Markierung, Aufzählung und Kontaktdaten gibt es über den Knöpfen oberhalb des Feldes.';
+  const FORMAT_HILFE = 'Eine leere Zeile beginnt einen neuen Absatz. Fett, kursiv, unterstrichen, Aufzählung und Kontaktdaten gibt es über den Knöpfen oberhalb des Feldes.';
 
   const TEXTSEITE_FELDER = [
     { typ: 'info', text: FORMAT_HILFE },
@@ -327,7 +327,12 @@
   function umschliessen(ta, zeichen, beispiel) {
     const { selectionStart: a, selectionEnd: b, value } = ta;
     const n = zeichen.length;
-    if (a >= n && value.slice(a - n, a) === zeichen && value.slice(b, b + n) === zeichen) {
+    // Bei * (kursiv) zählen: ** ist fett, *** ist fett und kursiv. Kursiv ist an, wenn davor und danach eine ungerade Zahl * steht.
+    const lauf = (von, schritt) => { let c = 0; for (let i = von; value[i] === '*'; i += schritt) c++; return c; };
+    const schonDa = zeichen === '*'
+      ? lauf(a - 1, -1) % 2 === 1 && lauf(b, 1) % 2 === 1
+      : a >= n && value.slice(a - n, a) === zeichen && value.slice(b, b + n) === zeichen;
+    if (schonDa) {
       ersetze(ta, a - n, b + n, value.slice(a, b), a - n, b - n);
     } else if (a === b) {
       ersetze(ta, a, b, zeichen + beispiel + zeichen, a + n, a + n + beispiel.length);
@@ -360,11 +365,21 @@
 
   function textFeld(f, ta) {
     if (!f.format) return el('label', {}, f.label, hilfe(f), ta);
-    const leiste = el('div', { className: 'a-leiste-text', role: 'toolbar', 'aria-label': 'Textformatierung' },
+    // Gelbe Hinweise (==Text==) stammen aus den Beispieltexten. Der Knopf erscheint nur, wenn noch welche im Feld stehen.
+    const gelbEntfernen = knopf('Gelb entfernen', 'Alle gelben Hinweis-Markierungen in diesem Feld entfernen (der Text bleibt)', () => {
+      const neu = ta.value.replace(/==(.+?)==/gs, '$1');
+      ersetze(ta, 0, ta.value.length, neu, 0, 0);
+    });
+    gelbEntfernen.classList.add('a-gelb');
+    const gelbPruefen = () => { gelbEntfernen.hidden = !/==.+?==/s.test(ta.value); };
+    ta.addEventListener('input', gelbPruefen);
+    gelbPruefen();
+    const leiste =el('div', { className: 'a-leiste-text', role: 'toolbar', 'aria-label': 'Textformatierung' },
       knopf(el('b', {}, 'F'), 'Fett (Strg+B)', () => umschliessen(ta, '**', 'fetter Text')),
-      knopf(el('span', { className: 'a-marker' }, 'M'), 'Gelb markieren (für Stellen, die noch geprüft werden müssen)',
-        () => umschliessen(ta, '==', 'markierter Text')),
+      knopf(el('i', {}, 'K'), 'Kursiv (Strg+I)', () => umschliessen(ta, '*', 'kursiver Text')),
+      knopf(el('u', {}, 'U'), 'Unterstrichen (Strg+U)', () => umschliessen(ta, '++', 'unterstrichener Text')),
       knopf('• Liste', 'Aufzählung (markierte Zeilen werden Stichpunkte)', () => aufzaehlung(ta)),
+      gelbEntfernen,
       el('select', { className: 'a-platzhalter', 'aria-label': 'Kontaktdaten einfügen',
         onchange: e => {
           const k = e.target.value;
@@ -375,8 +390,10 @@
         } },
         el('option', { value: '', textContent: 'Kontaktdaten einfügen …' }),
         PLATZHALTER.map(([k, t]) => el('option', { value: k, textContent: t }))));
+    const TASTEN = { b: ['**', 'fetter Text'], i: ['*', 'kursiver Text'], u: ['++', 'unterstrichener Text'] };
     ta.addEventListener('keydown', e => {
-      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'b') { e.preventDefault(); umschliessen(ta, '**', 'fetter Text'); }
+      const t = (e.ctrlKey || e.metaKey) && !e.altKey && TASTEN[e.key.toLowerCase()];
+      if (t) { e.preventDefault(); umschliessen(ta, ...t); }
     });
     return el('div', { className: 'a-feld' },
       el('span', { className: 'a-feldname', textContent: f.label }), hilfe(f), leiste, ta);

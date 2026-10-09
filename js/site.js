@@ -12,7 +12,7 @@
 
   /* Einfache Textformatierung für alle Texte aus dem Admin-Bereich:
      Leerzeile = neuer Absatz · Zeilenumbruch bleibt erhalten · Zeilen mit "- " = Aufzählung
-     **fett** · ==gelb markiert== · Web-Adressen werden zu Links
+     **fett** · *kursiv* · ++unterstrichen++ · ==gelb markiert (nur für Hinweise)== · Web-Adressen werden zu Links
      {telefon}, {email}, {name} … werden durch die Kontaktdaten ersetzt */
   function zeile(text) {
     let h = esc(text)
@@ -26,7 +26,10 @@
       if (k === 'email') return `<a href="mailto:${w}">${w}</a>`;
       return w;
     });
-    return h.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    return h.replace(/\*\*\*([^\s*](?:[^*]*[^\s*])?)\*\*\*/g, '<strong><em>$1</em></strong>')
+            .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+            .replace(/\*([^\s*](?:[^*]*[^\s*])?)\*/g, '<em>$1</em>')
+            .replace(/\+\+(.+?)\+\+/g, '<u>$1</u>')
             .replace(/==(.+?)==/g, '<mark class="todo">$1</mark>');
   }
   const absaetze = s => String(s ?? '').trim().split(/\n\s*\n/).filter(Boolean).map(block => {

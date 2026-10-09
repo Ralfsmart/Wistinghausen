@@ -20,7 +20,7 @@ INHALT = WURZEL / "inhalt"
 # ---- Einstellungen ---------------------------------------------------------------------------
 ADRESSE = "https://ralfsmart.github.io/Wistinghausen/"   # beim Umzug: "https://www.schreinerei-wistinghausen.de/"
 ENTWURF = True        # True = Suchmaschinen aussperren (noindex). Zum Livegang auf False setzen.
-VERSION = "22"        # bei Änderungen an CSS/JS erhöhen, damit Browser neu laden
+VERSION = "24"        # bei Änderungen an CSS/JS erhöhen, damit Browser neu laden
 FIRMENNAME_KURZ = "Schreinerei Wistinghausen"
 
 MENUE = [
@@ -70,7 +70,10 @@ def zeile(text):
         return w
 
     h = re.sub(r"\{([a-z_]+)\}", platzhalter, h)
+    h = re.sub(r"\*\*\*([^\s*](?:[^*]*[^\s*])?)\*\*\*", r"<strong><em>\1</em></strong>", h)
     h = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", h)
+    h = re.sub(r"\*([^\s*](?:[^*]*[^\s*])?)\*", r"<em>\1</em>", h)
+    h = re.sub(r"\+\+(.+?)\+\+", r"<u>\1</u>", h)
     return re.sub(r"==(.+?)==", r'<mark class="todo">\1</mark>', h)
 
 
