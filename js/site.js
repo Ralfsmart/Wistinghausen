@@ -61,7 +61,7 @@
       <section class="hero">
         <h1>${esc(d.hero_titel)}</h1>
         <p>${esc(d.hero_text)}</p>
-        <a class="btn" data-firma-tel="telefon" href="#"><span data-firma="telefon"></span> anrufen</a>
+        <a class="btn" data-firma-tel="mobil" href="#"><span data-firma="mobil"></span> anrufen</a>
         <a class="btn ghost" href="#kontakt">Kontakt</a>
       </section>
       <section class="split">

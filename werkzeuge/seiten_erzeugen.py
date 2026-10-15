@@ -20,7 +20,7 @@ INHALT = WURZEL / "inhalt"
 # ---- Einstellungen ---------------------------------------------------------------------------
 ADRESSE = "https://ralfsmart.github.io/Wistinghausen/"   # beim Umzug: "https://www.schreinerei-wistinghausen.de/"
 ENTWURF = True        # True = Suchmaschinen aussperren (noindex). Zum Livegang auf False setzen.
-VERSION = "37"        # bei Änderungen an CSS/JS erhöhen, damit Browser neu laden
+VERSION = "38"        # bei Änderungen an CSS/JS erhöhen, damit Browser neu laden
 FIRMENNAME_KURZ = "Schreinerei Wistinghausen"
 
 MENUE = [
@@ -115,7 +115,7 @@ def startseite(d):
       <section class="hero">
         <h1>{esc(d.get("hero_titel"))}</h1>
         <p>{esc(d.get("hero_text"))}</p>
-        <a class="btn" data-firma-tel="telefon" href="#"><span data-firma="telefon"></span> anrufen</a>
+        <a class="btn" data-firma-tel="mobil" href="#"><span data-firma="mobil"></span> anrufen</a>
         <a class="btn ghost" href="#kontakt">Kontakt</a>
       </section>
       <section class="split">
