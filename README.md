@@ -44,3 +44,8 @@ Bei Änderungen an `css/`, `js/` oder `admin/`: in `einstellungen.json` die `ver
 ## Offen
 Neue Fotos von Innentüren (ein Foto von Herrn v. Wistinghausen soll es nicht geben),
 gelb markierte Stellen im Admin klären, `noindex` zum Livegang entfernen (Paket mit `upload_paket.py`).
+
+## Upload-Paket: Erstlieferung und spätere Aktualisierungen
+
+- `python werkzeuge/upload_paket.py` holt zuerst die neuesten Daten von GitHub (`git pull --rebase`; bei nicht gesicherten lokalen Änderungen bricht es ab) und baut dann das **komplette** Paket. Das gehört nur einmal zum Livegang auf den Webspace, mit allem, was Herr von Wistinghausen bis dahin im Admin geändert hat.
+- Nach dem Livegang liegen die aktuellen Inhalte auf dem Webspace. Spätere Code-Änderungen ausschließlich mit `python werkzeuge/upload_paket.py --nur-code` ausliefern (ohne `inhalt/`, `bilder/`, fertige Seiten, `.htaccess`) und danach im Admin auf „Seiten neu erzeugen“ klicken.

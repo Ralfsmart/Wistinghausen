@@ -240,6 +240,16 @@
           this.hinweisNachSpeichern = d.warnung ? d.warnung : 'Gespeichert. Die Änderung ist sofort auf der Website sichtbar.';
         }
       },
+      async seitenNeu() {
+        const r = await fetch('api.php', {
+          method: 'POST', credentials: 'same-origin',
+          headers: { 'Content-Type': 'application/json', 'X-CSRF-Token': this.token || '' },
+          body: JSON.stringify({ aktion: 'seiten' }),
+        });
+        const d = await this.json(r);
+        if (!r.ok) throw new Error(d.fehler || `Fehlgeschlagen (${r.status}).`);
+        return d.seiten;
+      },
       async abmelden() {
         try {
           await fetch('api.php', {
@@ -312,6 +322,7 @@
         $('#login').hidden = true;
         $('#app').hidden = false;
         $('#abmelden').hidden = false;
+        $('#seiten-neu').hidden = !speicher.seitenNeu;
         grundStatus = art === 'test' ? ['Testmodus – nichts wird gespeichert', 'fehler'] : [`Angemeldet (${speicher.name})`, 'ok'];
         status(...grundStatus);
         navigationAufbauen();
@@ -339,6 +350,14 @@
       anmelden('webspace', {}, true).then(ok => { if (ok) auswahl.value = 'webspace'; });
     }
 
+    $('#seiten-neu').addEventListener('click', async () => {
+      if (!speicher || !speicher.seitenNeu) return;
+      status('Seiten werden neu erzeugt …');
+      try {
+        const n = await speicher.seitenNeu();
+        status(`Fertig: ${n} Seiten neu erzeugt.`, 'ok');
+      } catch (e) { status(e.message, 'fehler'); }
+    });
     $('#abmelden').addEventListener('click', () => {
       if (daten && geaendert() && !confirm('Es gibt ungespeicherte Änderungen. Trotzdem abmelden?')) return;
       try { sessionStorage.removeItem('wst-token'); localStorage.removeItem('wst-token'); } catch { /* egal */ }

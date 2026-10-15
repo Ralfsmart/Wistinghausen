@@ -243,6 +243,16 @@ switch ($aktion) {
         }
         antwort(200, $antwort);
 
+    case 'seiten':
+        if ($methode !== 'POST') {
+            fehler(405, 'Nur POST erlaubt.');
+        }
+        try {
+            antwort(200, ['ok' => true, 'seiten' => count((new SeitenErzeuger($WURZEL))->erzeugen())]);
+        } catch (Throwable $e) {
+            fehler(500, 'Die Seiten konnten nicht neu erzeugt werden: ' . $e->getMessage());
+        }
+
     case 'datei':
         if ($methode !== 'POST') {
             fehler(405, 'Nur POST erlaubt.');
