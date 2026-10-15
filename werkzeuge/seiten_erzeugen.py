@@ -20,7 +20,7 @@ INHALT = WURZEL / "inhalt"
 # ---- Einstellungen ---------------------------------------------------------------------------
 ADRESSE = "https://ralfsmart.github.io/Wistinghausen/"   # beim Umzug: "https://www.schreinerei-wistinghausen.de/"
 ENTWURF = True        # True = Suchmaschinen aussperren (noindex). Zum Livegang auf False setzen.
-VERSION = "40"        # bei Änderungen an CSS/JS erhöhen, damit Browser neu laden
+VERSION = "41"        # bei Änderungen an CSS/JS erhöhen, damit Browser neu laden
 FIRMENNAME_KURZ = "Schreinerei Wistinghausen"
 
 MENUE = [
@@ -245,7 +245,7 @@ KONTAKT = """
   <h2>Kontakt</h2>
   <div class="kontakt-reihe">
   <div class="contact">
-    <div><h3 data-firma="name"></h3><p><span data-firma="strasse"></span><br><span data-firma="ort"></span></p></div>
+    <div><h3 class="kontakt-logo"><img src="bilder/logo-wistinghausen.png" width="1182" height="460" alt="Schreinerei A. v. Wistinghausen" loading="lazy"></h3><p><span data-firma="strasse"></span><br><span data-firma="ort"></span></p></div>
     <div><h3>Werkstatt</h3><p><span data-firma="werkstatt_strasse"></span><br><span data-firma="werkstatt_ort"></span></p></div>
     <div><h3>Telefon</h3><p><a data-firma-tel="telefon" data-firma="telefon" href="#"></a><br>Mobil <a data-firma-tel="mobil" data-firma="mobil" href="#"></a></p></div>
     <div><h3>E-Mail</h3><p><a data-firma-mail data-firma="email" href="#"></a></p></div>

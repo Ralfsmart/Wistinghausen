@@ -318,3 +318,7 @@ body.nav-badges{padding-top:var(--kopf-h,102px)}
   .lightbox figcaption{max-height:20vh;overflow:auto}
   .lb-hinweis{display:none}
 }
+
+/* Logo statt Firmenname im Kontaktbereich: die zwei Textzeilen des Logos entsprechen etwa der Überschriftgröße */
+.contact h3.kontakt-logo{margin:0 0 8px;line-height:0}
+.contact h3.kontakt-logo img{display:block;height:5em;width:auto;max-width:100%;margin-left:-4px}
