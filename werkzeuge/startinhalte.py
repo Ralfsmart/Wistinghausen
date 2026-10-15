@@ -37,15 +37,12 @@ start = {
     "abschnitt_punkte": [
         "Individuelle, passgenaue Einbauküchen",
         "Möbel und Innenausbau nach Maß",
-        "Rührfässer für die biodynamische Landwirtschaft, 75 bis 750 Liter",
     ],
     "fotos": [
         bild("kueche-7.jpg", "Küche"),
         bild("moebel12.jpg", "Tisch mit Baumkante"),
         bild("innen2.jpg", "Treppe mit Regalfächern"),
-        bild("tueren5.jpg", "Eingangstür"),
         bild("aussen7.jpg", "Baumbank"),
-        bild("faesser2.jpg", "Holzfässer"),
     ],
 }
 
@@ -140,29 +137,21 @@ rubriken = {
     },
     "tueren": {
         "titel": "Türen",
-        "untertitel": "Haus- und Zimmertüren in Standard- und Sondermaßen",
+        "untertitel": "Innentüren in Standard- und Sondermaßen",
         "beispieltext": True,
         "einleitung": (
-            "Die Haustür ist die Visitenkarte eines Hauses. Gerade in Altbauten und Bauernhäusern passen "
-            "Standardtüren oft nicht. Hier fertige ich Türen und Tore genau nach Maß und passend zum Stil "
-            "des Gebäudes.\n\n"
+            "Gerade in Altbauten und Bauernhäusern passen Standardtüren oft nicht. Hier fertige ich Innentüren "
+            "genau nach Maß und passend zum Stil des Hauses.\n\n"
             "Nach dem Aufmaß beraten wir gemeinsam über Holzart, Gestaltung, Verglasung und Beschläge. Die Tür "
-            "entsteht in meiner Werkstatt und wird von mir eingebaut und eingestellt, damit sie dicht schließt "
+            "entsteht in meiner Werkstatt und wird von mir eingebaut und eingestellt, damit sie sauber schließt "
             "und lange Freude macht."
         ),
         "leistungen": [
-            "Haustüren",
             "Zimmertüren",
             "Standard- und Sondergrößen",
-            "Tore für Stall und Garage",
         ],
         "bilder": [
-            bild("tueren1.jpg", "Haustür mit Oberlicht", "Blau lackierte Tür mit Sprossenfenstern in einem Sandsteingewände."),
-            bild("tueren4.jpg", "Haustür im Fischgrätmuster", "Diagonal verlegte Bretter mit Rauten-Emblem."),
-            bild("tueren5.jpg", "Eingangstür mit Sonnenmotiv", "Rot lackiert, mit verglasten Seitenteilen und Rundbogen."),
-            bild("tueren2.jpg", "Zweiflügeliges Tor", "Holztor mit Bogen und kräftigen Bändern für Scheune oder Garage."),
             bild("tueren3.jpg", "Zimmertür mit Milchglas", "Rahmentür mit hellen Glasfeldern."),
-            bild("tueren7.jpg", "Verglaste Doppeltür", "Zweiflügelige Tür mit Rundbogen und strahlenförmigen Sprossen."),
         ],
     },
     "aussen": {

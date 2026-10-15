@@ -5,8 +5,7 @@
   "abschnitt_text": "Eine schnelle und sorgfältige Durchführung der Aufträge ist mir ein besonderes Anliegen.",
   "abschnitt_punkte": [
     "Individuelle, passgenaue Einbauküchen",
-    "Möbel und Innenausbau nach Maß",
-    "Rührfässer für die biodynamische Landwirtschaft, 75 bis 750 Liter"
+    "Möbel und Innenausbau nach Maß"
   ],
   "fotos": [
     {
@@ -25,29 +24,8 @@
       "beschreibung": ""
     },
     {
-      "datei": "bilder/tueren5.jpg",
-      "titel": "Eingangstür",
-      "beschreibung": ""
-    },
-    {
       "datei": "bilder/aussen7.jpg",
       "titel": "Baumbank",
-      "beschreibung": ""
-    },
-    {
-      "datei": "bilder/faesser2.jpg",
-      "titel": "Holzfässer",
-      "beschreibung": ""
-    }
-  ],
-  "besonderheit_titel": "Rührfässer für die biologisch-dynamische Landwirtschaft",
-  "besonderheit_text": "Neben Möbeln und Innenausbau fertige ich Rührfässer für die biologisch-dynamischen Präparate, in jeder Größe von 75 bis 750 Litern. Auch als Regenfass mit Auslaufhahn.",
-  "besonderheit_link": "faesser.html",
-  "besonderheit_link_text": "Mehr über die Fässer",
-  "besonderheit_fotos": [
-    {
-      "datei": "bilder/faesser2.jpg",
-      "titel": "Holzfässer in verschiedenen Größen",
       "beschreibung": ""
     }
   ],
