@@ -10,6 +10,7 @@ Aufruf:
     python werkzeuge/upload_paket.py --entwurf           Seite bleibt für Suchmaschinen gesperrt
     python werkzeuge/upload_paket.py --nur-code          NACH dem Livegang: nur Programm- und Gestaltungsdateien,
                                                          keine Inhalte, Fotos oder fertigen Seiten
+    python werkzeuge/upload_paket.py --test test         Probelauf in /test/ auf dem Webspace, alte Seite bleibt unberührt
     python werkzeuge/upload_paket.py --ohne-pull         ohne vorher GitHub abzufragen (offline)
 
 Vor dem Bauen holt das Skript immer die neuesten Daten von GitHub (git pull). Gibt es lokale,
@@ -233,10 +234,20 @@ def main():
     ap.add_argument("--entwurf", action="store_true", help="Seite für Suchmaschinen gesperrt lassen")
     ap.add_argument("--nur-code", action="store_true", help="nur Programm und Gestaltung, keine Inhalte (nach dem Livegang)")
     ap.add_argument("--mit-htaccess", action="store_true", help="bei --nur-code auch die .htaccess ausliefern")
+    ap.add_argument("--test", metavar="ORDNER", help="Probelauf in einem Unterordner des Webspace (z. B. test): "
+                    "Adresse wird <adresse>ORDNER/, Seite gesperrt für Suchmaschinen, die alte Seite bleibt unberührt")
     ap.add_argument("--ohne-pull", action="store_true", help="vorher nicht von GitHub aktualisieren")
     ap.add_argument("--ziel", default=str(WURZEL / "upload_paket"))
     args = ap.parse_args()
     adresse = args.adresse if args.adresse.endswith("/") else args.adresse + "/"
+    if args.test:
+        if args.nur_code:
+            sys.exit("--test und --nur-code lassen sich nicht kombinieren.")
+        testname = args.test.strip("/")
+        if not re.fullmatch(r"[a-z0-9-]+", testname):
+            sys.exit("Der Testordner darf nur aus Kleinbuchstaben, Ziffern und Bindestrichen bestehen.")
+        adresse += testname + "/"
+        args.entwurf = True
 
     # 0. Aktuellen Stand von GitHub holen
     stand = stand_pruefen(args.ohne_pull)
@@ -278,6 +289,13 @@ def main():
         q = WURZEL / name
         if q.exists():
             shutil.copy2(q, seite / name)
+
+    if args.test and (seite / ".htaccess").exists():
+        ht = seite / ".htaccess"
+        text = ht.read_text(encoding="utf-8")
+        assert "RewriteBase /\n" in text
+        text = text.replace("RewriteBase /\n", f"RewriteBase /{testname}/\n", 1)
+        ht.write_text(text, encoding="utf-8", newline="\n")
 
     # 2. Einstellungen für die endgültige Adresse
     einst = json.loads((WURZEL / "einstellungen.json").read_text(encoding="utf-8"))
@@ -334,6 +352,11 @@ def main():
             if datei.is_file():
                 z.write(datei, datei.relative_to(seite).as_posix())
     vorlage = ANLEITUNG_CODE if args.nur_code else ANLEITUNG_ERST
+    if args.test:
+        vorlage = ("> **PROBELAUF.** Dieses Paket gehört in den Unterordner `" + testname + "/` des Webspace, nicht ins "
+                   "Hauptverzeichnis. Die alte Website bleibt unberührt. Zum Prüfen: Admin anmelden, ändern, speichern, "
+                   "Foto hochladen, „Seiten neu erzeugen“, alte Adresse wie `" + testname + "/kuechen.htm` aufrufen. "
+                   "Danach den Ordner komplett löschen.\n\n") + vorlage
     stand_md = "\n".join("> " + z.strip() for z in stand.splitlines())
     (ziel / "ANLEITUNG.md").write_text(
         vorlage.format(adresse=adresse, datum=date.today().strftime("%d.%m.%Y"), stand=stand_md), encoding="utf-8")
