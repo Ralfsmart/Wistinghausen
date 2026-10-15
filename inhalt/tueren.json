@@ -6,29 +6,50 @@
   "leistungen": [
     "Innentüren in Standard- und Sondergrößen",
     "Türen mit Glasfeldern",
+    "Rundbogentüren",
     "Schiebetüren und Raumteiler",
     "Einbau und Einstellen vor Ort"
   ],
   "bilder": [
     {
-      "datei": "bilder/tueren-1.jpg",
-      "titel": "Innentür mit Glasfeld",
-      "beschreibung": "Eine Holztür mit einem kleinen Glasfeld."
+      "datei": "bilder/innentueren-1.jpg",
+      "titel": "Zimmertür aus Holz",
+      "beschreibung": "Eine Tür aus Holz mit senkrechter Struktur, die sich ruhig in die Wand einfügt."
     },
     {
-      "datei": "bilder/tueren-2.jpg",
-      "titel": "Zimmertür mit Milchglas",
-      "beschreibung": "Eine Rahmentür mit hellen Glasfeldern, die Licht durchlassen."
+      "datei": "bilder/innentueren-2.jpg",
+      "titel": "Zimmertür mit Füllungen",
+      "beschreibung": "Eine helle Rahmentür mit Füllung, schlicht und zeitlos."
     },
     {
-      "datei": "bilder/tueren-3.jpg",
+      "datei": "bilder/innentueren-3.jpg",
+      "titel": "Tür mit Rundbogen und Glasausschnitt",
+      "beschreibung": "Der obere Abschluss folgt dem Bogen der Wand, im Türblatt sitzt ein geschwungener Glasausschnitt."
+    },
+    {
+      "datei": "bilder/innentueren-4.jpg",
+      "titel": "Rundbogentür im Flur",
+      "beschreibung": "Die ganze Tür im Überblick: Bogen, Glasausschnitt und Bretterfüllung im unteren Teil."
+    },
+    {
+      "datei": "bilder/innentueren-5.jpg",
+      "titel": "Schiebetür im japanischen Stil",
+      "beschreibung": "Schmale Holzrahmen mit hellen Feldern lassen Licht durch und gliedern die Wand."
+    },
+    {
+      "datei": "bilder/innentueren-6.jpg",
+      "titel": "Schiebetür geöffnet",
+      "beschreibung": "Zur Seite geschoben gibt sie den Durchgang frei, ohne den Platz eines Drehflügels zu brauchen."
+    },
+    {
+      "datei": "bilder/innentueren-7.jpg",
+      "titel": "Raumhohe Schiebetüren",
+      "beschreibung": "Mehrere Elemente mit hellen Feldern bilden eine ganze Wand und lassen sich verschieben."
+    },
+    {
+      "datei": "bilder/innentueren-8.jpg",
       "titel": "Schiebetüren unter der Dachschräge",
       "beschreibung": "Leichte Rahmentüren verschließen den Stauraum hinter dem Kniestock."
-    },
-    {
-      "datei": "bilder/tueren-4.jpg",
-      "titel": "Schiebetüren im japanischen Stil",
-      "beschreibung": "Holzrahmen mit hellen Füllungen, hier in der Werkstatt vor dem Einbau."
     }
   ]
 }
