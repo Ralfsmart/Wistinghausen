@@ -7,6 +7,7 @@ Admin-Bereich sofort sichtbar, auch bevor die Seiten neu erzeugt wurden).
 Läuft automatisch bei jeder Änderung auf GitHub (.github/workflows/website.yml).
 Vor einem FTP-Upload einmal von Hand ausführen:  python werkzeuge/seiten_erzeugen.py
 """
+import argparse
 import html
 import json
 import re
@@ -16,12 +17,14 @@ from urllib.parse import quote_plus
 
 WURZEL = Path(__file__).resolve().parent.parent
 INHALT = WURZEL / "inhalt"
+ZIEL = WURZEL          # Ausgabeordner; mit --ziel änderbar (z. B. für das Upload-Paket)
 
-# ---- Einstellungen ---------------------------------------------------------------------------
-ADRESSE = "https://ralfsmart.github.io/Wistinghausen/"   # beim Umzug: "https://www.schreinerei-wistinghausen.de/"
-ENTWURF = True        # True = Suchmaschinen aussperren (noindex). Zum Livegang auf False setzen.
-VERSION = "41"        # bei Änderungen an CSS/JS erhöhen, damit Browser neu laden
-FIRMENNAME_KURZ = "Schreinerei Wistinghausen"
+# ---- Einstellungen (einstellungen.json, gemeinsam mit dem PHP-Generator auf dem Webspace) ------------
+_EINSTELLUNGEN = json.loads((WURZEL / "einstellungen.json").read_text(encoding="utf-8"))
+ADRESSE = _EINSTELLUNGEN["adresse"]                  # beim Umzug: "https://www.schreinerei-wistinghausen.de/"
+ENTWURF = bool(_EINSTELLUNGEN["entwurf"])            # True = Suchmaschinen aussperren (noindex)
+VERSION = str(_EINSTELLUNGEN["version"])             # bei Änderungen an CSS/JS erhöhen (Browser-Cache)
+FIRMENNAME_KURZ = _EINSTELLUNGEN["firmenname_kurz"]
 
 MENUE = [
     ("Start", "index.html", "start"),
@@ -345,7 +348,7 @@ def seite(datei, kennung, titel, beschreibung, hauptteil, zusatz_kopf=""):
 </body>
 </html>
 """
-    (WURZEL / datei).write_text(firma_einsetzen(inhalt), encoding="utf-8")
+    (ZIEL / datei).write_text(firma_einsetzen(inhalt), encoding="utf-8")
     print("erzeugt:", datei)
 
 
@@ -354,6 +357,19 @@ def seo(d, titel_auto, beschreibung_auto):
 
 
 if __name__ == "__main__":
+    ap = argparse.ArgumentParser(description="Erzeugt alle Seiten aus inhalt/*.json")
+    ap.add_argument("--ziel", help="Ausgabeordner (Standard: Projektordner)")
+    ap.add_argument("--adresse", help="Adresse der Website, z. B. https://www.schreinerei-wistinghausen.de/")
+    ap.add_argument("--live", action="store_true", help="Seite für Suchmaschinen freigeben (kein noindex)")
+    args = ap.parse_args()
+    if args.ziel:
+        ZIEL = Path(args.ziel).resolve()
+        ZIEL.mkdir(parents=True, exist_ok=True)
+    if args.adresse:
+        ADRESSE = args.adresse if args.adresse.endswith("/") else args.adresse + "/"
+    if args.live:
+        ENTWURF = False
+
     # Startseite
     d = laden("start")
     titel, beschr = seo(d, f"{FIRMENNAME_KURZ} – Schreiner-Meisterbetrieb am Bodensee", d.get("hero_text"))
@@ -379,9 +395,9 @@ if __name__ == "__main__":
     seiten = ["index.html"] + [f"{k}.html" for k in RUBRIKEN + TEXTSEITEN]
     urls = "\n".join(f"  <url><loc>{ADRESSE}{'' if s == 'index.html' else s}</loc><lastmod>{heute}</lastmod></url>"
                      for s in seiten)
-    (WURZEL / "sitemap.xml").write_text(
+    (ZIEL / "sitemap.xml").write_text(
         f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}\n</urlset>\n',
         encoding="utf-8")
     regeln = "Disallow: /" if ENTWURF else "Disallow: /admin/\nDisallow: /werkzeuge/"
-    (WURZEL / "robots.txt").write_text(f"User-agent: *\n{regeln}\n\nSitemap: {ADRESSE}sitemap.xml\n", encoding="utf-8")
+    (ZIEL / "robots.txt").write_text(f"User-agent: *\n{regeln}\n\nSitemap: {ADRESSE}sitemap.xml\n", encoding="utf-8")
     print("erzeugt: sitemap.xml, robots.txt")

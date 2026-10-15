@@ -183,6 +183,75 @@
       hinweisNachSpeichern: 'Gespeichert. Die Website zeigt die Änderung in 1–2 Minuten.',
     },
 
+    webspace: {
+      name: 'Webspace',
+      token: null,
+      version: {},
+      hinweisNachSpeichern: 'Gespeichert. Die Änderung ist sofort auf der Website sichtbar.',
+      async json(r) {
+        try {
+          return await r.json();
+        } catch {
+          throw new Error('Der Server hat keine gültige Antwort gegeben. Läuft hier PHP? (Auf GitHub Pages ist dieser Speicherort nicht möglich.)');
+        }
+      },
+      async start({ passwort } = {}) {
+        this.version = {};
+        let s;
+        try {
+          s = await this.json(await fetch('api.php?aktion=status', { credentials: 'same-origin', cache: 'no-store' }));
+        } catch (e) {
+          throw e.message.startsWith('Der Server') ? e : new Error('Der Server antwortet nicht. Bitte die Internetverbindung prüfen.');
+        }
+        if (!s.eingerichtet) throw new Error('Der Admin-Bereich ist auf diesem Webspace noch nicht eingerichtet (die Datei zugang.php fehlt).');
+        if (s.angemeldet) { this.token = s.token; return; }
+        if (!passwort) throw new Error('Bitte das Passwort eingeben.');
+        const r = await fetch('api.php', {
+          method: 'POST', credentials: 'same-origin',
+          headers: { 'Content-Type': 'application/json', 'X-Admin': '1' },
+          body: JSON.stringify({ aktion: 'login', passwort }),
+        });
+        const d = await this.json(r);
+        if (!r.ok) throw new Error(d.fehler || `Anmeldung fehlgeschlagen (${r.status}).`);
+        this.token = d.token;
+      },
+      async lesen(pfad) {
+        const r = await fetch(`api.php?aktion=lesen&pfad=${encodeURIComponent(pfad)}`, { credentials: 'same-origin', cache: 'no-store' });
+        const d = await this.json(r);
+        if (r.status === 401) throw new Error('Die Anmeldung ist abgelaufen. Bitte die Seite neu laden und erneut anmelden.');
+        if (!r.ok) throw new Error(d.fehler || `${pfad} konnte nicht geladen werden (${r.status}).`);
+        this.version[pfad] = d.version;
+        return d.daten;
+      },
+      async schreiben(pfad, base64, nachricht) {
+        const istJson = pfad.endsWith('.json');
+        const body = istJson
+          ? { aktion: 'schreiben', pfad, inhalt: base64ZuUtf8(base64), version: this.version[pfad] || '' }
+          : { aktion: 'datei', pfad, base64 };
+        const r = await fetch('api.php', {
+          method: 'POST', credentials: 'same-origin',
+          headers: { 'Content-Type': 'application/json', 'X-CSRF-Token': this.token || '' },
+          body: JSON.stringify(body),
+        });
+        const d = await this.json(r);
+        if (r.status === 401) throw new Error('Die Anmeldung ist abgelaufen. Bitte die Seite neu laden und erneut anmelden.');
+        if (!r.ok) throw new Error(d.fehler || `Speichern von ${pfad} fehlgeschlagen (${r.status}).`);
+        if (istJson) {
+          this.version[pfad] = d.version;
+          this.hinweisNachSpeichern = d.warnung ? d.warnung : 'Gespeichert. Die Änderung ist sofort auf der Website sichtbar.';
+        }
+      },
+      async abmelden() {
+        try {
+          await fetch('api.php', {
+            method: 'POST', credentials: 'same-origin',
+            headers: { 'Content-Type': 'application/json', 'X-CSRF-Token': this.token || '' },
+            body: JSON.stringify({ aktion: 'logout' }),
+          });
+        } catch { /* egal, die Sitzung läuft ohnehin ab */ }
+      },
+    },
+
     test: {
       name: 'Testmodus',
       async start() { this.speicher = {}; },
@@ -229,20 +298,16 @@
     if (gemerkt) { $('#token').value = gemerkt; $('#merken').checked = !!localStorage.getItem('wst-token'); }
     zeigeFelder();
 
-    $('#login-form').addEventListener('submit', async e => {
-      e.preventDefault();
-      const art = auswahl.value;
-      const token = $('#token').value.trim();
+    async function anmelden(art, anmeldedaten, still = false) {
       $('#login-fehler').textContent = '';
-      if (art === 'github' && !token) { $('#login-fehler').textContent = 'Bitte den Zugangsschlüssel eingeben.'; return; }
       try {
-        status('Anmeldung läuft …');
-        await SPEICHER[art].start({ token });
+        if (!still) status('Anmeldung läuft …');
+        await SPEICHER[art].start(anmeldedaten);
         speicher = SPEICHER[art];
         if (art === 'github') {
           try {
-            sessionStorage.setItem('wst-token', token);
-            if ($('#merken').checked) localStorage.setItem('wst-token', token); else localStorage.removeItem('wst-token');
+            sessionStorage.setItem('wst-token', anmeldedaten.token);
+            if ($('#merken').checked) localStorage.setItem('wst-token', anmeldedaten.token); else localStorage.removeItem('wst-token');
           } catch { /* Speicher gesperrt – dann eben ohne Merken */ }
         }
         $('#login').hidden = true;
@@ -252,16 +317,33 @@
         status(...grundStatus);
         navigationAufbauen();
         oeffnen(BEREICHE[0]);
+        return true;
       } catch (err) {
         status('');
-        $('#login-fehler').textContent = err.message;
+        if (!still) $('#login-fehler').textContent = err.message;
+        return false;
       }
+    }
+
+    $('#login-form').addEventListener('submit', async e => {
+      e.preventDefault();
+      const art = auswahl.value;
+      const token = $('#token').value.trim();
+      const passwort = $('#passwort') ? $('#passwort').value : '';
+      if (art === 'github' && !token) { $('#login-fehler').textContent = 'Bitte den Zugangsschlüssel eingeben.'; return; }
+      if (art === 'webspace' && !passwort) { $('#login-fehler').textContent = 'Bitte das Passwort eingeben.'; return; }
+      await anmelden(art, art === 'webspace' ? { passwort } : { token });
     });
+
+    // Läuft schon eine Sitzung auf dem Webspace (Seite neu geladen), ohne Passwort-Eingabe weitermachen
+    if (CFG.speicherorte.includes('webspace')) {
+      anmelden('webspace', {}, true).then(ok => { if (ok) auswahl.value = 'webspace'; });
+    }
 
     $('#abmelden').addEventListener('click', () => {
       if (daten && geaendert() && !confirm('Es gibt ungespeicherte Änderungen. Trotzdem abmelden?')) return;
       try { sessionStorage.removeItem('wst-token'); localStorage.removeItem('wst-token'); } catch { /* egal */ }
-      location.reload();
+      Promise.resolve(speicher && speicher.abmelden ? speicher.abmelden() : null).finally(() => location.reload());
     });
   }
 

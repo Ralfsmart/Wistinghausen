@@ -1,0 +1,7 @@
+# Sicherungen und fertige Upload-Pakete
+# Zugang zum Admin-Bereich auf dem Webspace nie ins Repository
+*.zip
+admin/_sperre.json
+admin/zugang.php
+inhalt/_sicherung/
+upload_paket/

@@ -1,0 +1,73 @@
+# Einstellungen für den Apache-Webspace (greatnet.de).
+# Auf GitHub Pages hat diese Datei keine Wirkung.
+#
+# Wichtig: Diese Datei auf dem Webspace nicht löschen. Sie leitet die Adressen der alten Website
+# auf die neuen Seiten um und schützt interne Dateien.
+
+Options -Indexes
+DirectoryIndex index.html
+AddDefaultCharset UTF-8
+
+# ---- Alte Adressen -> neue Seiten (301 = dauerhaft, damit Google das Ansehen der alten Seiten übernimmt) ----
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+# HTTPS erzwingen: erst einschalten, wenn das SSL-Zertifikat beim Hoster aktiv ist.
+# Dazu die drei folgenden Zeilen entkommentieren (das # am Anfang entfernen).
+#RewriteCond %{HTTPS} !=on
+#RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+#RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteRule ^index\.htm$ index.html [R=301,L]
+RewriteRule ^kuechen\.htm$ kuechen.html [R=301,L]
+RewriteRule ^moebel\.htm$ moebel.html [R=301,L]
+RewriteRule ^innenausbau\.htm$ innenausbau.html [R=301,L]
+RewriteRule ^tueren\.htm$ tueren.html [R=301,L]
+RewriteRule ^aussen\.htm$ aussen.html [R=301,L]
+RewriteRule ^faesser\.htm$ faesser.html [R=301,L]
+RewriteRule ^adressen\.htm$ faesser.html [R=301,L]
+RewriteRule ^Praeparatefass\.pdf$ faesser.html [R=301,L]
+RewriteRule ^kontakt\.htm$ index.html#kontakt [R=301,NE,L]
+</IfModule>
+
+# ---- Interne Dateien nicht ausliefern ----
+<FilesMatch "^(zugang\.php|_sperre\.json|\.htaccess|\.gitignore|\.nojekyll|README\.md)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+RewriteRule ^(\.git|\.github|werkzeuge)(/|$) - [R=404,L]
+RewriteRule ^inhalt/_sicherung(/|$) - [R=404,L]
+</IfModule>
+
+# ---- Sicherheits-Header ----
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# ---- Schneller laden: Bilder und Schriften dürfen im Browser zwischengespeichert werden ----
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/gif "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType image/x-icon "access plus 1 month"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType text/css "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
+  ExpiresByType text/javascript "access plus 1 week"
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript text/javascript application/json image/svg+xml
+</IfModule>
