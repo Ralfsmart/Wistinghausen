@@ -276,3 +276,14 @@ body.nav-badges{padding-top:var(--kopf-h,102px)}
 .ueber .beleg{max-width:320px}
 .ueber a{display:block}
 .ueber .portrait img{max-height:440px;width:auto;max-width:100%;margin:0 auto;object-fit:contain}
+
+/* Großansicht: zoombar (Mausrad, + / −, Ziehen, Doppelklick, Pinch) */
+.lb-zoom{display:block;overflow:hidden;border-radius:8px;width:fit-content;max-width:100%;margin:0 auto;touch-action:none;
+  cursor:zoom-in;user-select:none;-webkit-user-select:none}
+.lb-zoom.vergroessert{cursor:grab}
+.lb-zoom.vergroessert:active{cursor:grabbing}
+.lb-zoom img{display:block;transform-origin:0 0;will-change:transform;-webkit-user-drag:none;border-radius:0;margin:0}
+.lb-werkzeuge{position:fixed;top:16px;left:16px;display:flex;gap:8px;z-index:2}
+.lb-werkzeuge .lb-btn{position:static;font-size:26px}
+.lb-hinweis{color:rgba(246,239,230,.7);font-size:13px;margin:8px auto 0;max-width:60ch}
+@media (max-width:600px){.lb-hinweis{display:none}}

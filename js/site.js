@@ -162,28 +162,125 @@
       <button type="button" class="lb-btn lb-close" aria-label="Schließen">×</button>
       <button type="button" class="lb-btn lb-prev" aria-label="Vorheriges Foto">‹</button>
       <button type="button" class="lb-btn lb-next" aria-label="Nächstes Foto">›</button>
-      <figure><img alt=""><figcaption></figcaption></figure>`;
+      <div class="lb-werkzeuge">
+        <button type="button" class="lb-btn lb-plus" aria-label="Vergrößern" title="Vergrößern (+)">+</button>
+        <button type="button" class="lb-btn lb-minus" aria-label="Verkleinern" title="Verkleinern (−)">−</button>
+        <button type="button" class="lb-btn lb-eins" aria-label="Ganzes Foto zeigen" title="Ganzes Foto (0)">⤢</button>
+      </div>
+      <figure>
+        <div class="lb-zoom"><img alt=""></div>
+        <figcaption></figcaption>
+        <p class="lb-hinweis">Zoomen mit Mausrad oder + und −, verschieben mit gedrückter Maustaste, Doppelklick zum Heranzoomen.</p>
+      </figure>`;
     document.body.append(dlg);
     const img = dlg.querySelector('img'), cap = dlg.querySelector('figcaption');
+    const zoomBox = dlg.querySelector('.lb-zoom');
     let i = 0;
+
+    /* Zoom: s = Vergrößerung, x/y = Verschiebung in Pixeln (negativ = Bild nach links/oben geschoben) */
+    const z = { s: 1, x: 0, y: 0, max: 4 };
+    const anwenden = glatt => {
+      const w = zoomBox.offsetWidth, h = zoomBox.offsetHeight;
+      z.s = Math.min(z.max, Math.max(1, z.s));
+      // das Bild darf den Rahmen nicht verlassen
+      z.x = z.s === 1 ? 0 : Math.min(0, Math.max(w - w * z.s, z.x));
+      z.y = z.s === 1 ? 0 : Math.min(0, Math.max(h - h * z.s, z.y));
+      img.style.transition = glatt ? 'transform .18s ease-out' : 'none';
+      img.style.transform = `translate(${z.x}px, ${z.y}px) scale(${z.s})`;
+      zoomBox.classList.toggle('vergroessert', z.s > 1);
+    };
+    // auf neue Stufe zoomen, der Punkt (px, py) im Rahmen bleibt dabei an seiner Stelle
+    const zoomUm = (neu, px, py, glatt) => {
+      const s2 = Math.min(z.max, Math.max(1, neu));
+      z.x = px - (px - z.x) * s2 / z.s;
+      z.y = py - (py - z.y) * s2 / z.s;
+      z.s = s2;
+      anwenden(glatt);
+    };
+    const mitte = () => [zoomBox.offsetWidth / 2, zoomBox.offsetHeight / 2];
+    const ganzes = glatt => { z.s = 1; z.x = z.y = 0; anwenden(glatt); };
+    const imRahmen = e => {
+      const r = zoomBox.getBoundingClientRect();
+      return [Math.min(r.width, Math.max(0, e.clientX - r.left)), Math.min(r.height, Math.max(0, e.clientY - r.top))];
+    };
+
     const zeige = n => {
       i = (n + items.length) % items.length;
       const b = items[i].querySelector('button'), c = items[i].querySelector('figcaption');
       img.style.maxWidth = '';
+      ganzes(false);
       img.src = b.dataset.voll;
       img.alt = b.querySelector('img').alt;
       cap.innerHTML = c ? c.innerHTML : '';
     };
-    // kleine Fotos höchstens auf doppelte Größe aufziehen, sonst werden sie unscharf
-    img.onload = () => { img.style.maxWidth = Math.min(img.naturalWidth * 2, innerWidth * 0.9) + 'px'; };
+    // kleine Fotos höchstens auf doppelte Größe aufziehen, sonst werden sie unscharf;
+    // gezoomt wird bis etwa zur doppelten Pixelgröße des Fotos (höchstens 8-fach)
+    img.onload = () => {
+      img.style.maxWidth = Math.min(img.naturalWidth * 2, innerWidth * 0.9) + 'px';
+      ganzes(false);
+      z.max = Math.min(8, Math.max(2, img.naturalWidth / Math.max(1, zoomBox.offsetWidth) * 2));
+    };
+
+    // Mausrad (und Trackpad-Pinch): um die Mausposition zoomen
+    dlg.addEventListener('wheel', e => {
+      e.preventDefault();
+      const [px, py] = imRahmen(e);
+      zoomUm(z.s * Math.exp(-e.deltaY * 0.0018), px, py, false);
+    }, { passive: false });
+
+    // Ziehen mit gedrückter Maustaste bzw. Finger, Pinch mit zwei Fingern
+    const zeiger = new Map();
+    let letzterAbstand = 0;
+    zoomBox.addEventListener('pointerdown', e => {
+      try { zoomBox.setPointerCapture(e.pointerId); } catch { /* nicht jedes Gerät erlaubt es */ }
+      zeiger.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      letzterAbstand = 0;
+    });
+    zoomBox.addEventListener('pointermove', e => {
+      const p = zeiger.get(e.pointerId);
+      if (!p) return;
+      const dx = e.clientX - p.x, dy = e.clientY - p.y;
+      zeiger.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      if (zeiger.size === 2) {
+        const [a, b] = [...zeiger.values()];
+        const d = Math.hypot(a.x - b.x, a.y - b.y);
+        if (letzterAbstand) {
+          const r = zoomBox.getBoundingClientRect();
+          zoomUm(z.s * d / letzterAbstand, (a.x + b.x) / 2 - r.left, (a.y + b.y) / 2 - r.top, false);
+        }
+        letzterAbstand = d;
+      } else if (z.s > 1 && (dx || dy)) {
+        z.x += dx;
+        z.y += dy;
+        anwenden(false);
+      }
+    });
+    const loslassen = e => { zeiger.delete(e.pointerId); letzterAbstand = 0; };
+    zoomBox.addEventListener('pointerup', loslassen);
+    zoomBox.addEventListener('pointercancel', loslassen);
+    zoomBox.addEventListener('dblclick', e => {
+      if (z.s > 1) ganzes(true);
+      else { const [px, py] = imRahmen(e); zoomUm(Math.min(z.max, 2.5), px, py, true); }
+    });
+    dlg.querySelector('.lb-plus').onclick = () => zoomUm(z.s * 1.5, ...mitte(), true);
+    dlg.querySelector('.lb-minus').onclick = () => zoomUm(z.s / 1.5, ...mitte(), true);
+    dlg.querySelector('.lb-eins').onclick = () => ganzes(true);
     items.forEach((it, n) => it.querySelector('button').addEventListener('click', () => { zeige(n); dlg.showModal(); }));
     dlg.querySelector('.lb-close').onclick = () => dlg.close();
     dlg.querySelector('.lb-prev').onclick = () => zeige(i - 1);
     dlg.querySelector('.lb-next').onclick = () => zeige(i + 1);
     dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
     dlg.addEventListener('keydown', e => {
-      if (e.key === 'ArrowLeft') zeige(i - 1);
-      if (e.key === 'ArrowRight') zeige(i + 1);
+      if (e.ctrlKey || e.metaKey || e.altKey) return;   // Browser-Zoom und Kürzel nicht stören
+      const k = e.key, gezoomt = z.s > 1;
+      if (k === '+' || k === '=' || k === 'Add') { e.preventDefault(); zoomUm(z.s * 1.4, ...mitte(), true); }
+      else if (k === '-' || k === '_' || k === 'Subtract') { e.preventDefault(); zoomUm(z.s / 1.4, ...mitte(), true); }
+      else if (k === '0') ganzes(true);
+      // im gezoomten Foto verschieben die Pfeiltasten das Bild, sonst blättern sie
+      else if (k === 'ArrowLeft') { e.preventDefault(); if (gezoomt) { z.x += 70; anwenden(true); } else zeige(i - 1); }
+      else if (k === 'ArrowRight') { e.preventDefault(); if (gezoomt) { z.x -= 70; anwenden(true); } else zeige(i + 1); }
+      else if (gezoomt && k === 'ArrowUp') { e.preventDefault(); z.y += 70; anwenden(true); }
+      else if (gezoomt && k === 'ArrowDown') { e.preventDefault(); z.y -= 70; anwenden(true); }
     });
   }
 
