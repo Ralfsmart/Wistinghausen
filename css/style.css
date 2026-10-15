@@ -287,3 +287,10 @@ body.nav-badges{padding-top:var(--kopf-h,102px)}
 .lb-werkzeuge .lb-btn{position:static;font-size:26px}
 .lb-hinweis{color:rgba(246,239,230,.7);font-size:13px;margin:8px auto 0;max-width:60ch}
 @media (max-width:600px){.lb-hinweis{display:none}}
+
+/* Hinweis unter „Einblicke“: am Computer Maus, auf dem Handy Finger */
+.galerie-hinweis .nur-touch{display:none}
+@media (hover:none),(pointer:coarse){
+  .galerie-hinweis .nur-maus{display:none}
+  .galerie-hinweis .nur-touch{display:inline}
+}

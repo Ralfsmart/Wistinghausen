@@ -20,7 +20,7 @@ INHALT = WURZEL / "inhalt"
 # ---- Einstellungen ---------------------------------------------------------------------------
 ADRESSE = "https://ralfsmart.github.io/Wistinghausen/"   # beim Umzug: "https://www.schreinerei-wistinghausen.de/"
 ENTWURF = True        # True = Suchmaschinen aussperren (noindex). Zum Livegang auf False setzen.
-VERSION = "31"        # bei Änderungen an CSS/JS erhöhen, damit Browser neu laden
+VERSION = "32"        # bei Änderungen an CSS/JS erhöhen, damit Browser neu laden
 FIRMENNAME_KURZ = "Schreinerei Wistinghausen"
 
 MENUE = [
@@ -192,7 +192,7 @@ def rubrik(kennung, d):
                'den Haken bei „Beispieltext“ entfernen.</p>') if d.get("beispieltext") else ""
     untertitel = f'<p class="lead">{esc(d.get("untertitel"))}</p>' if d.get("untertitel") else ""
     liste = f'<aside class="r-list"><h2>Leistungen</h2><ul>{leistungen}</ul></aside>' if leistungen else ""
-    galerie = (f'<h2>Einblicke</h2><p class="galerie-hinweis">Für Details einfach auf ein Foto klicken oder tippen.</p><div class="galerie">{bilder}</div>'
+    galerie = (f'<h2>Einblicke</h2><p class="galerie-hinweis"><span class="nur-maus">Für Details einfach auf ein Foto klicken. Mit dem Mausrad lässt sich hinein- und herauszoomen.</span><span class="nur-touch">Für Details einfach auf ein Foto tippen. Mit zwei Fingern lässt sich hinein- und herauszoomen.</span></p><div class="galerie">{bilder}</div>'
                if bilder else "")
     return f"""
       <div class="r-head">
