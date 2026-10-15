@@ -1,54 +1,57 @@
 {
   "titel": "Küchen",
   "untertitel": "Einbauküchen nach Maß – geplant, gefertigt und montiert aus einer Hand",
-  "beispieltext": true,
-  "einleitung": "Die Küche ist der Raum, in dem am meisten gelebt wird. Deshalb plane ich jede Küche individuell: passend zu Ihrem Raum, Ihren Abläufen und Ihrem Geschmack. Mit Massivholzfronten, lackierten Oberflächen oder einer Kombination aus beidem.\n\nSo läuft es ab: Zuerst komme ich zu Ihnen, wir besprechen Ihre Wünsche und ich nehme genau Maß. Danach erhalten Sie einen Entwurf mit Angebot. Nach Ihrer Freigabe fertige ich die Schränke in meiner Werkstatt am Ralzhof und montiere die Küche zum vereinbarten Termin bei Ihnen, sauber eingepasst an Wände, Nischen und Schrägen.\n\nAuch vorhandene Küchen bekommen bei mir ein zweites Leben: Ich erweitere sie, baue sie um oder ziehe sie mit Ihnen in die neue Wohnung um.",
+  "beispieltext": false,
+  "einleitung": "Eine Küche entsteht bei mir individuell und passgenau, ob aus Massivholz oder aus beschichtetem Material. Zur Wahl stehen Holzarten wie Buche, Eiche, Erle, Esche oder Ahorn, auf Wunsch farbig oder weiß lackiert. Fast alle Wünsche in Form und Ausstattung sind realisierbar.\n\nIch montiere und baue auch Fertigküchen der Industrie ein und erweitere oder verändere gebrauchte Einrichtungen. Von der Planung bis zur Montage bekommen Sie alles aus einer Hand.\n\n==So läuft es ab: Zuerst komme ich zu Ihnen, wir besprechen Ihre Wünsche und ich nehme genau Maß. Danach erhalten Sie einen Entwurf mit Angebot. Nach Ihrer Freigabe fertige ich die Schränke in meiner Werkstatt am Ralzhof und montiere die Küche zum vereinbarten Termin bei Ihnen.==\n\nGemeinsam mit Ihnen finden wir die beste Lösung für Ihre Bedürfnisse. Ich berate Sie gerne.",
   "leistungen": [
-    "Individuelle und passgenaue Einbauküchen",
-    "Montage von Fertigküchen",
-    "Erweiterung und Umbau gebrauchter Küchen",
-    "Umzug von Einbauküchen"
+    "Individuell und passgenau, aus Massivholz oder beschichtetem Material",
+    "Holzarten wie Buche, Eiche, Erle, Esche oder Ahorn",
+    "Farbig oder weiß lackiert",
+    "Montage und Einbau von Fertigküchen der Industrie",
+    "Erweiterung und Umbau von gebrauchten Einrichtungen",
+    "Umzug von Einbauküchen",
+    "Von der Planung bis zur Montage alles aus einer Hand"
   ],
   "bilder": [
     {
-      "datei": "bilder/kuechen-1.jpg",
+      "datei": "bilder/kuechen-1-v3.jpg",
       "titel": "Weiße Eckküche mit Unterbaubeleuchtung",
       "beschreibung": "Grifflose Fronten, eine hohe Schrankwand und eine Arbeitsplatte aus Holz. Das Licht unter den Oberschränken setzt die Arbeitsfläche in Szene."
     },
     {
-      "datei": "bilder/kuechen-2-v2.jpg",
+      "datei": "bilder/kuechen-2-v3.jpg",
       "titel": "Küche unter der Dachschräge",
       "beschreibung": "Die Oberschränke folgen der Schräge, dazu gibt es ein offenes Regal an der Seite und Licht unter den Schränken."
     },
     {
-      "datei": "bilder/kuechen-3-v2.jpg",
-      "titel": "Küche mit Kochinsel",
-      "beschreibung": "Eine Insel mit Holzplatte und Kochfeld steht in der Mitte, darüber hängt die Dunstabzugshaube. Dahinter liegen hohe Schränke."
-    },
-    {
-      "datei": "bilder/kuechen-4.jpg",
+      "datei": "bilder/kuechen-3-v3.jpg",
       "titel": "Küche mit lebhaft gemaserten Fronten",
       "beschreibung": "Die Maserung des Holzes bleibt sichtbar. Dazu gibt es ein offenes Regal und eine helle Glasrückwand."
     },
     {
-      "datei": "bilder/kuechen-5.jpg",
+      "datei": "bilder/kuechen-4-v3.jpg",
       "titel": "Rustikale Küche mit Kochinsel",
       "beschreibung": "Fronten mit kräftiger Holzstruktur, eine Kochinsel in der Mitte und ein dunkler Fliesenboden."
     },
     {
-      "datei": "bilder/kuechen-6.jpg",
-      "titel": "Küchenzeile mit roten Fronten",
-      "beschreibung": "Rot glänzende Schubkästen mit Holzkanten unter einer durchgehenden Arbeitsplatte aus Holz."
+      "datei": "bilder/kuechen-5-v3.jpg",
+      "titel": "U-Küche unter der Dachschräge",
+      "beschreibung": "Helle, grifflose Fronten und eine Arbeitsplatte aus Holz. Der Boden in warmen Terrakotta-Tönen passt dazu."
     },
     {
-      "datei": "bilder/kuechen-7.jpg",
-      "titel": "U-Küche in Rot und Schwarz",
-      "beschreibung": "Rote Fronten und eine schwarze Arbeitsplatte setzen einen klaren Kontrast zum hellen Raum."
+      "datei": "bilder/kuechen-6-v3.jpg",
+      "titel": "Küche mit Eckregal",
+      "beschreibung": "Hohe Schränke mit Holzfronten, ein offenes Regal an der Ecke und Licht unter den Oberschränken."
     },
     {
-      "datei": "bilder/kuechen-8-v2.jpg",
-      "titel": "Küche mit Holztresen",
-      "beschreibung": "Ein freistehender Tresen aus Holz trennt die Küche vom Raum. Dahinter liegen die Küchenzeile und das Fenster."
+      "datei": "bilder/kuechen-7-v3.jpg",
+      "titel": "Moderne Küche mit dunklem Becken",
+      "beschreibung": "Helle Fronten, eine Arbeitsplatte aus Holz und ein dunkles Becken, dazu eine Beleuchtung in der Decke."
+    },
+    {
+      "datei": "bilder/kuechen-8-v3.jpg",
+      "titel": "Küche mit Zugang zum Garten",
+      "beschreibung": "Die Küchenzeile aus Holz steht vor einer großen Terrassentür, über dem Raum liegt eine Decke aus Holz."
     }
   ]
 }

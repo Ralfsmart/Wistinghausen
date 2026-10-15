@@ -1,53 +1,49 @@
 {
   "titel": "Rührfässer und Holzfässer",
-  "untertitel": "Präparatefässer für die biologisch-dynamische Landwirtschaft – von 75 bis 750 Litern",
-  "beispieltext": true,
-  "einleitung": "Für die biologisch-dynamische Landwirtschaft fertige ich Rührfässer für die Präparate in jeder Größe von 75 bis 750 Litern. Die Fässer werden aus einzelnen Holzdauben gebaut und mit Reifen zusammengehalten.\n\nEbenso eignen sie sich zum Sammeln von Regenwasser oder für andere Zwecke im Garten. Sagen Sie mir, welche Größe und welches Zubehör, zum Beispiel einen Auslaufhahn, Sie brauchen. Lieferung oder Abholung nach Absprache.",
+  "untertitel": "Fässer, Truhen und Kisten für die biologisch-dynamischen Präparate",
+  "beispieltext": false,
+  "einleitung": "Für die biologisch-dynamische Landwirtschaft fertige ich Holzfässer zum Rühren der Präparate aus heimischer Lärche, in fast allen Größen von 75 bis 700 Litern.\n\nDazu kommen Truhen zur Aufbewahrung der Präparate und Handkisten zum Transport und Verarbeiten der Kompostpräparate. Kurz gesagt: Alles, was zur Anwendung der biologisch-dynamischen Präparate benötigt wird, kann ich liefern.\n\nAuch als Regenfass mit Auslaufhahn für den Garten eignen sich die Holzfässer.",
   "leistungen": [
-    "Präparate- und Rührfässer von 75 bis 750 Liter",
-    "Regenfässer mit Auslaufhahn",
-    "Sondergrößen auf Anfrage"
+    "Rührfässer aus heimischer Lärche, 75 bis 700 Liter",
+    "Truhen zur Aufbewahrung der Präparate",
+    "Handkisten zum Transport und Verarbeiten der Kompostpräparate",
+    "Regenfässer mit Auslaufhahn"
   ],
   "bilder": [
     {
-      "datei": "bilder/faesser-1.jpg",
+      "datei": "bilder/faesser-1-v3.jpg",
       "titel": "Fässer in drei Größen",
       "beschreibung": "Aus Holzdauben gebaut und von Metallreifen gehalten."
+    },
+    {
+      "datei": "bilder/faesser-2-v3.jpg",
+      "titel": "Holzfass",
+      "beschreibung": "Ein Fass aus Holzdauben mit drei Metallreifen."
+    },
+    {
+      "datei": "bilder/faesser-3-v3.jpg",
+      "titel": "Rührgestell",
+      "beschreibung": "Das Fass steht auf einer sechseckigen Bodenplatte in einem Dreibein aus Holzstangen."
+    },
+    {
+      "datei": "bilder/faesser-4-v3.jpg",
+      "titel": "Rührgestell in der Scheune",
+      "beschreibung": "Das Dreibein aus langen Holzstangen steht im Trockenen, das Fass auf einer Bodenplatte."
+    },
+    {
+      "datei": "bilder/faesser-5-v3.jpg",
+      "titel": "Präparatekiste",
+      "beschreibung": "Eine kleine Kiste aus hellem Holz mit Tragegriff und mehreren Fächern."
+    },
+    {
+      "datei": "bilder/faesser-6-v3.jpg",
+      "titel": "Truhe mit Tragekiste",
+      "beschreibung": "Aus hellem Holz, mit Griffen und einer herausnehmbaren Kiste."
     },
     {
       "datei": "bilder/faesser-2-v2.jpg",
       "titel": "Rührhaus",
       "beschreibung": "Ein offenes Rührhaus mit Schindeldach auf einem Holzboden."
-    },
-    {
-      "datei": "bilder/faesser-3-v2.jpg",
-      "titel": "Präparatekiste",
-      "beschreibung": "Eine kleine Kiste aus hellem Holz mit Tragegriff und mehreren Fächern."
-    },
-    {
-      "datei": "bilder/faesser-4.jpg",
-      "titel": "Fass mit Deckel",
-      "beschreibung": "Auf der Palette, mit aufgelegtem Deckel."
-    },
-    {
-      "datei": "bilder/faesser-5.jpg",
-      "titel": "Rührgestell",
-      "beschreibung": "Das Fass steht auf einer sechseckigen Bodenplatte in einem Dreibein aus Holzstangen."
-    },
-    {
-      "datei": "bilder/faesser-6.jpg",
-      "titel": "Rührgestell im Hof",
-      "beschreibung": "Ein weiteres Gestell mit Fass und Bodenplatte, aufgestellt im Hof."
-    },
-    {
-      "datei": "bilder/faesser-7.jpg",
-      "titel": "Präparatekisten",
-      "beschreibung": "Viele Kisten mit gewölbter Front in Reih und Glied, in einer Serie gefertigt."
-    },
-    {
-      "datei": "bilder/faesser-8.jpg",
-      "titel": "Truhe mit Tragekiste",
-      "beschreibung": "Aus hellem Holz, mit Griffen und einer herausnehmbaren Kiste."
     }
   ]
 }

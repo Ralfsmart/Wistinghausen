@@ -13,14 +13,34 @@
   ],
   "bilder": [
     {
+      "datei": "bilder/aussen-1-v3.jpg",
+      "titel": "Gartenhütte mit Sonnensegel",
+      "beschreibung": "Eine offene Hütte mit senkrechter Holzverkleidung, davor ein Sonnensegel als Schattenplatz."
+    },
+    {
+      "datei": "bilder/aussen-2-v3.jpg",
+      "titel": "Gartenzaun mit geschwungener Oberkante",
+      "beschreibung": "Ein Holzzaun, dessen Oberkante wie eine Welle verläuft."
+    },
+    {
+      "datei": "bilder/aussen-3-v3.jpg",
+      "titel": "Gartentor mit Pergola",
+      "beschreibung": "Ein Holztor am Treppenaufgang, gerahmt von einem hölzernen Torbogen."
+    },
+    {
+      "datei": "bilder/aussen-4-v3.jpg",
+      "titel": "Lager für Brennholz",
+      "beschreibung": "Offene Lattenwände halten das Holz trocken und belüftet."
+    },
+    {
+      "datei": "bilder/aussen-5-v3.jpg",
+      "titel": "Box für Mülltonnen",
+      "beschreibung": "Eine Lattenverkleidung aus Holz, hinter der die Tonnen verschwinden."
+    },
+    {
       "datei": "bilder/aussen-1.jpg",
       "titel": "Geschwungene Holzterrasse",
       "beschreibung": "Ein Holzdeck, das sich wie ein Weg und eine Sitzfläche durch den Raum schwingt."
-    },
-    {
-      "datei": "bilder/aussen-2.jpg",
-      "titel": "Dachterrasse mit Sitzplatz und Truhe",
-      "beschreibung": "Ein Holzdeck mit Sitzbank, dazu eine große Truhe als Stauraum."
     },
     {
       "datei": "bilder/aussen-3.jpg",
@@ -28,29 +48,9 @@
       "beschreibung": "Eine Bank, die den Stamm umschließt und im Schatten viel Platz bietet."
     },
     {
-      "datei": "bilder/aussen-4.jpg",
-      "titel": "Gartenhaus mit Terrasse",
-      "beschreibung": "Ein Blockbohlenhaus mit überdachtem Vorplatz und Holzterrasse."
-    },
-    {
-      "datei": "bilder/aussen-5.jpg",
-      "titel": "Box für Mülltonnen",
-      "beschreibung": "Eine Lattenverkleidung aus Holz, hinter der die Tonnen verschwinden."
-    },
-    {
-      "datei": "bilder/aussen-6.jpg",
-      "titel": "Gartentor mit Pergola",
-      "beschreibung": "Ein Holztor am Treppenaufgang, gerahmt von einem hölzernen Torbogen."
-    },
-    {
-      "datei": "bilder/aussen-7.jpg",
-      "titel": "Lager für Brennholz",
-      "beschreibung": "Offene Lattenwände halten das Holz trocken und belüftet."
-    },
-    {
-      "datei": "bilder/aussen-8-v2.jpg",
-      "titel": "Geräteschrank mit Lamellen",
-      "beschreibung": "Lamellentüren in warmem Gelbton verkleiden den Schrank an der Hauswand."
+      "datei": "bilder/aussen-2.jpg",
+      "titel": "Dachterrasse mit Sitzplatz und Truhe",
+      "beschreibung": "Ein Holzdeck mit Sitzbank, dazu eine große Truhe als Stauraum."
     }
   ]
 }

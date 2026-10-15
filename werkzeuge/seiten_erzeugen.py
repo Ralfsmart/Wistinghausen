@@ -20,7 +20,7 @@ INHALT = WURZEL / "inhalt"
 # ---- Einstellungen ---------------------------------------------------------------------------
 ADRESSE = "https://ralfsmart.github.io/Wistinghausen/"   # beim Umzug: "https://www.schreinerei-wistinghausen.de/"
 ENTWURF = True        # True = Suchmaschinen aussperren (noindex). Zum Livegang auf False setzen.
-VERSION = "36"        # bei Änderungen an CSS/JS erhöhen, damit Browser neu laden
+VERSION = "37"        # bei Änderungen an CSS/JS erhöhen, damit Browser neu laden
 FIRMENNAME_KURZ = "Schreinerei Wistinghausen"
 
 MENUE = [

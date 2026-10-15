@@ -12,14 +12,29 @@
   ],
   "bilder": [
     {
-      "datei": "bilder/innenausbau-1-v2.jpg",
-      "titel": "Einbauten in der Dachschräge",
-      "beschreibung": "Eine durchgehende Front aus weißen Türen und Schubkästen unter der Schräge, ganz ohne sichtbare Griffe."
-    },
-    {
-      "datei": "bilder/innenausbau-2.jpg",
+      "datei": "bilder/innenausbau-1-v3.jpg",
       "titel": "Treppe mit Regalfächern",
       "beschreibung": "Unter den Stufen entstehen offene Fächer für Schuhe und Alltagsdinge."
+    },
+    {
+      "datei": "bilder/innenausbau-2-v3.jpg",
+      "titel": "Raumteiler im japanischen Stil",
+      "beschreibung": "Schiebeelemente mit hellen Feldern gliedern den Raum unter der Dachschräge, ohne ihn ganz abzuschließen."
+    },
+    {
+      "datei": "bilder/innenausbau-3-v3.jpg",
+      "titel": "Theke für ein Café",
+      "beschreibung": "Verkaufstheke mit roten Fronten und weißen Linien, darüber ein Bord für Flaschen."
+    },
+    {
+      "datei": "bilder/innenausbau-4-v3.jpg",
+      "titel": "Treppe mit hellen Holzstufen",
+      "beschreibung": "Neue Stufen aus hellem Holz, dazu ein blau gestrichenes Geländer."
+    },
+    {
+      "datei": "bilder/innenausbau-5-v3.jpg",
+      "titel": "Rückwand für eine Bühne",
+      "beschreibung": "Eine große, ruhige Wandfläche aus Holzplatten über die ganze Breite des Raumes."
     },
     {
       "datei": "bilder/innenausbau-3.jpg",
@@ -30,21 +45,6 @@
       "datei": "bilder/innenausbau-4.jpg",
       "titel": "Wandverkleidung mit Regalen",
       "beschreibung": "Eine Verkleidung aus Holz mit Regalböden und einer Ablageplatte, passgenau in den Raum eingebaut."
-    },
-    {
-      "datei": "bilder/innenausbau-5.jpg",
-      "titel": "Theke für ein Café",
-      "beschreibung": "Verkaufstheke mit roten Fronten und weißen Linien, darüber ein Bord für Flaschen. Manchmal entsteht aus dem Dialog der besondere \"Kick\" in einem Projekt."
-    },
-    {
-      "datei": "bilder/innenausbau-6.jpg",
-      "titel": "Raumteiler im japanischen Stil",
-      "beschreibung": "Schiebeelemente mit hellen Feldern gliedern den Raum, ohne ihn ganz abzuschließen."
-    },
-    {
-      "datei": "bilder/innenausbau-7.jpg",
-      "titel": "Parkett in warmem Holzton",
-      "beschreibung": "Ein Boden, der dem Raum Wärme gibt."
     },
     {
       "datei": "bilder/innenausbau-8.jpg",

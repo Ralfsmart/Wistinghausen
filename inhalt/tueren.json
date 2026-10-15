@@ -1,14 +1,15 @@
 {
   "titel": "Türen",
   "untertitel": "Innentüren nach Maß in Standard- und Sondergrößen",
-  "beispieltext": true,
-  "einleitung": "Eine gute Innentür fällt kaum auf, bis man sie benutzt: Sie schließt sauber, hängt gerade und passt zum Raum. Genau darauf achte ich beim Bau.\n\nNach dem Aufmaß vor Ort besprechen wir Holzart, Gestaltung und Oberfläche. Mit einem Glasfeld kommt mehr Licht in den Flur, und wo für einen Drehflügel der Platz fehlt, ist eine Schiebetür die bessere Lösung. Die Tür entsteht in meiner Werkstatt und wird von mir eingebaut und eingestellt.",
+  "beispieltext": false,
+  "einleitung": "Ich fertige und montiere Innentüren in Standard- oder Sondergrößen, individuell gestaltet oder als Fertigtüren.\n\nEine gute Innentür fällt kaum auf, bis man sie benutzt: Sie schließt sauber, hängt gerade und passt zum Raum. Mit einem Glasfeld kommt mehr Licht in den Flur, und wo für einen Drehflügel der Platz fehlt, ist eine Schiebetür die bessere Lösung.\n\nFür Fragen und Beratung stehe ich Ihnen gerne zur Verfügung.",
   "leistungen": [
     "Innentüren in Standard- und Sondergrößen",
+    "Individuell gestaltet oder als Fertigtür",
     "Türen mit Glasfeldern",
     "Rundbogentüren",
     "Schiebetüren und Raumteiler",
-    "Einbau und Einstellen vor Ort"
+    "Montage und Einbau"
   ],
   "bilder": [
     {
@@ -45,11 +46,6 @@
       "datei": "bilder/innentueren-7.jpg",
       "titel": "Raumhohe Schiebetüren",
       "beschreibung": "Mehrere Elemente mit hellen Feldern bilden eine ganze Wand und lassen sich verschieben."
-    },
-    {
-      "datei": "bilder/innentueren-8.jpg",
-      "titel": "Schiebetüren unter der Dachschräge",
-      "beschreibung": "Leichte Rahmentüren verschließen den Stauraum hinter dem Kniestock."
     }
   ]
 }

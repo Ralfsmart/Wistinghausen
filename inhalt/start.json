@@ -2,7 +2,7 @@
   "hero_titel": "In der kleinen Werkstatt am Ralzhof entstehen Träume aus Holz",
   "hero_text": "Einbauküchen, Möbel, Innenausbau und Innentüren nach Maß. Geplant und gebaut in meiner Werkstatt am Ralzhof bei Salem.",
   "abschnitt_titel": "Handwerk mit Sorgfalt",
-  "abschnitt_text": "Eine schnelle und sorgfältige Durchführung der Aufträge ist mir ein besonderes Anliegen.",
+  "abschnitt_text": "In vorwiegend massiver Bauweise können fast alle Wünsche realisiert werden. Von der Planung bis zur Montage: Alles aus einer Hand.\n\nEine schnelle und sorgfältige Durchführung der Aufträge ist mir ein besonderes Anliegen.",
   "abschnitt_punkte": [
     "Individuelle, passgenaue Einbauküchen",
     "Möbel und Innenausbau nach Maß",
@@ -10,24 +10,24 @@
   ],
   "fotos": [
     {
-      "datei": "bilder/kuechen-1.jpg",
+      "datei": "bilder/kuechen-1-v3.jpg",
       "titel": "Weiße Eckküche mit Unterbaubeleuchtung",
       "beschreibung": "Grifflose Fronten, eine hohe Schrankwand und eine Arbeitsplatte aus Holz. Das Licht unter den Oberschränken setzt die Arbeitsfläche in Szene."
     },
     {
-      "datei": "bilder/moebel-2.jpg",
+      "datei": "bilder/moebel-2-v3.jpg",
       "titel": "Esstisch mit Baumkante",
       "beschreibung": "Eine Tischplatte mit naturbelassener Kante auf einem schlanken Gestell."
     },
     {
-      "datei": "bilder/innenausbau-2.jpg",
+      "datei": "bilder/innenausbau-1-v3.jpg",
       "titel": "Treppe mit Regalfächern",
       "beschreibung": "Unter den Stufen entstehen offene Fächer für Schuhe und Alltagsdinge."
     },
     {
-      "datei": "bilder/moebel-1.jpg",
+      "datei": "bilder/moebel-8-v3.jpg",
       "titel": "Wandgarderobe mit Doppeltür",
-      "beschreibung": "Geöffnet zeigt sich der Einbau mit Kleiderstange und offenen Fächern. Links und rechts sitzen Ablagen aus Holz."
+      "beschreibung": "Zwei hohe Türen mit rundem Griffloch, links und rechts Ablagen aus Holz."
     },
     {
       "datei": "bilder/aussen-1.jpg",
@@ -35,7 +35,7 @@
       "beschreibung": "Ein Holzdeck, das sich wie ein Weg und eine Sitzfläche durch den Raum schwingt."
     },
     {
-      "datei": "bilder/moebel-4.jpg",
+      "datei": "bilder/moebel-1-v3.jpg",
       "titel": "Mein Meisterstück",
       "beschreibung": "Ein Schrank in Fassform: gebogene Türen mit Metallbändern und ein aufgesetztes Fach."
     }
@@ -49,7 +49,7 @@
   "ueber_text": "Ich bin Arnim von Wistinghausen, Schreinermeister mit eigener Werkstatt am Ralzhof bei Salem. 2024 durfte ich mein 25-jähriges Meisterjubiläum feiern. Die Handwerkskammer Ulm hat mir dazu den Silbernen Meisterbrief ausgestellt.\n\n==Hier ein paar Sätze zum Werdegang: Ausbildung, Wanderjahre, seit wann selbstständig.==\n\nIn meiner kleinen Werkstatt entsteht jedes Stück einzeln, ob Küche, Möbel oder Treppe. Von der ersten Idee über die Planung bis zur Montage haben Sie bei mir einen Ansprechpartner: mich.\n\n==Was ist Ihnen bei Ihrer Arbeit besonders wichtig? Zum Beispiel Holzauswahl, Handarbeit oder Langlebigkeit.==",
   "ueber_fotos": [
     {
-      "datei": "bilder/moebel-4.jpg",
+      "datei": "bilder/moebel-1-v3.jpg",
       "titel": "Mein Meisterstück",
       "beschreibung": ""
     },
