@@ -171,8 +171,8 @@
         <div class="lb-zoom"><img alt=""></div>
         <figcaption></figcaption>
         <p class="lb-hinweis">
-          <span class="nur-maus">Zoomen mit dem Mausrad oder mit + und −.<br>Mit gedrückter Maustaste verschieben.<br>Doppelklick zum Heranzoomen.</span>
-          <span class="nur-touch">Zoomen mit zwei Fingern.<br>Mit einem Finger verschieben.<br>Doppeltippen zum Heranzoomen.</span>
+          <span class="nur-maus">Zoomen mit dem Mausrad oder mit + und −. <br>Mit gedrückter Maustaste verschieben. <br>Doppelklick zum Heranzoomen.</span>
+          <span class="nur-touch">Zoomen mit zwei Fingern. <br>Mit einem Finger verschieben. <br>Doppeltippen zum Heranzoomen.</span>
         </p>
       </figure>`;
     document.body.append(dlg);
@@ -219,10 +219,10 @@
     // kleine Fotos höchstens auf doppelte Größe aufziehen, sonst werden sie unscharf;
     // gezoomt wird bis etwa zur doppelten Pixelgröße des Fotos (höchstens 8-fach)
     // Auf breiten Bildschirmen stehen Beschreibung (links) und Zoom-Hinweis (rechts) neben dem Foto;
-    // dafür bleibt rechts und links je Platz frei. Auf schmalen Bildschirmen steht der Text unter dem Foto.
+    // dafür bleibt Platz für Beschreibung (rechts) und Blätterpfeile (außen) frei. Auf schmalen Bildschirmen steht der Text unter dem Foto.
     const breit = matchMedia('(min-width:1200px)');
     const bildbreite = () => {
-      const platz = breit.matches ? innerWidth - 2 * (80 + 32 + 230) : innerWidth * 0.92;
+      const platz = breit.matches ? innerWidth - (2 * 80 + 36 + 300) : innerWidth * 0.92;
       img.style.maxWidth = Math.min(img.naturalWidth * 2, Math.max(240, platz)) + 'px';
     };
     img.onload = () => {
@@ -234,6 +234,8 @@
 
     // Mausrad (und Trackpad-Pinch): um die Mausposition zoomen
     dlg.addEventListener('wheel', e => {
+      // über einer langen Beschreibung scrollt das Mausrad den Text, nur sonst zoomt es das Foto
+      if (e.target.closest('figcaption') && cap.scrollHeight > cap.clientHeight) return;
       e.preventDefault();
       const [px, py] = imRahmen(e);
       zoomUm(z.s * Math.exp(-e.deltaY * 0.0018), px, py, false);
