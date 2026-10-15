@@ -59,7 +59,7 @@
       { gruppe: 'Über mich' },
       { key: 'ueber_titel', label: 'Überschrift', typ: 'text', hilfe: 'Überschrift und Text leer lassen, um den Abschnitt auszublenden.' },
       { key: 'ueber_text', label: 'Text', typ: 'langtext', format: true, hilfe: FORMAT_HILFE },
-      { key: 'ueber_fotos', label: 'Fotos (die ersten zwei werden gezeigt: Foto und z. B. Meisterbrief; der Titel erscheint als Bildunterschrift)', typ: 'fotos', beschreibung: false },
+      { key: 'ueber_fotos', label: 'Bilder (die ersten zwei werden gezeigt, z. B. Meisterstück und Meisterbrief; der Titel erscheint als Bildunterschrift)', typ: 'fotos', beschreibung: false },
       { gruppe: 'Google-Suche' },
       { key: 'seo_titel', label: 'Seitentitel bei Google', typ: 'text',
         hilfe: 'Erscheint als blaue Überschrift in den Suchergebnissen. Ideal: bis 60 Zeichen, mit Ort, z. B. „Einbauküchen nach Maß in Salem | Schreinerei Wistinghausen“. Leer lassen = automatisch.' },
@@ -79,7 +79,6 @@
       { gruppe: 'Erreichbarkeit' },
       { key: 'telefon', label: 'Telefon (Festnetz)', typ: 'text', hilfe: 'Erscheint nur im Kontaktbereich der Startseite.' },
       { key: 'mobil', label: 'Mobil', typ: 'text', hilfe: 'Diese Nummer gilt überall: Anruf-Knöpfe, Kontaktbereich, Impressum, Datenschutz und Google. Zum Ändern genügt dieses eine Feld.' },
-      { key: 'fax', label: 'Fax', typ: 'text', hilfe: 'Erscheint nur im Impressum.' },
       { key: 'email', label: 'E-Mail', typ: 'text', hilfe: 'Gilt überall: Kontaktbereich, Impressum, Datenschutz und die Knöpfe „E-Mail schreiben“.' },
       { gruppe: 'Aufruf am Ende jeder Rubrik' },
       { key: 'aufruf_titel', label: 'Überschrift', typ: 'text' },
@@ -392,7 +391,7 @@
   const PLATZHALTER = [
     ['telefon', 'Telefon'], ['mobil', 'Mobil'], ['email', 'E-Mail'], ['name', 'Firmenname'], ['inhaber', 'Inhaber'],
     ['strasse', 'Straße'], ['ort', 'PLZ und Ort'], ['werkstatt_strasse', 'Werkstatt: Straße'],
-    ['werkstatt_ort', 'Werkstatt: PLZ und Ort'], ['fax', 'Fax'],
+    ['werkstatt_ort', 'Werkstatt: PLZ und Ort'],
   ];
 
   // Text im Feld ersetzen und dabei die Rückgängig-Funktion (Strg+Z) des Browsers erhalten

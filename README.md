@@ -42,5 +42,5 @@ Bei Änderungen an `css/`, `js/` oder `admin/`: in `einstellungen.json` die `ver
 `admin/zugang.php` gehört nie ins Repository (steht in `.gitignore`).
 
 ## Offen
-Neue Fotos von Innentüren, Foto von Herrn v. Wistinghausen und gescannter Meisterbrief für „Über mich“,
+Neue Fotos von Innentüren (ein Foto von Herrn v. Wistinghausen soll es nicht geben),
 gelb markierte Stellen im Admin klären, `noindex` zum Livegang entfernen (Paket mit `upload_paket.py`).
