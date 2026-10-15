@@ -10,6 +10,20 @@
  */
 declare(strict_types=1);
 
+// Keine PHP-Fehlermeldungen (mit Dateipfaden) an Besucher ausgeben
+ini_set('display_errors', '0');
+ini_set('html_errors', '0');
+error_reporting(E_ALL);
+set_exception_handler(function (Throwable $e): void {
+    error_log('api.php: ' . $e->getMessage());
+    if (!headers_sent()) {
+        http_response_code(500);
+        header('Content-Type: application/json; charset=utf-8');
+        header('Cache-Control: no-store');
+    }
+    echo json_encode(['fehler' => 'Auf dem Server ist ein Fehler aufgetreten. Bitte noch einmal versuchen.'], JSON_UNESCAPED_UNICODE);
+});
+
 require_once __DIR__ . '/seiten.php';
 
 const MAX_JSON_BYTES = 600 * 1024;

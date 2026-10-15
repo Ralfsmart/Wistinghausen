@@ -56,7 +56,8 @@ Stand: erzeugt am {datum} · Adresse der Website: {adresse}
 1. **Zugangsdaten** von greatnet.de bereithalten (FTP-Benutzer, Passwort, Server). Diese Daten
    niemals in E-Mails, Chats oder ins GitHub-Repository schreiben.
 2. Im **Verwaltungsprogramm** (LiveConfig, Plesk oder Confixx) prüfen:
-   - **PHP-Version**: 8.1 oder 8.2 einstellen (greatnet bietet 5.6 bis 8.2 an).
+   - **PHP-Version**: die **neueste angebotene** einstellen, mindestens 8.2 (greatnet bietet 5.6 bis 8.2 an).
+     Alles unter 8.2 bekommt keine Sicherheitsupdates mehr. Beim Hoster nachfragen, ob 8.3 oder 8.4 kommt.
    - Ob das **SSL-Zertifikat (Let's Encrypt)** für die Domain aktiv ist.
    - Wie das **Hauptverzeichnis** der Domain heißt (Hilfe: FAQ von greatnet.de,
      „Ordnerstruktur (FTP, wohin muss meine Webseite?)“).
@@ -134,7 +135,24 @@ def main():
     ziel = Path(args.ziel)
     seite = ziel / "webseite"
     if ziel.exists():
-        shutil.rmtree(ziel)
+        # OneDrive oder ein Virenscanner halten Dateien manchmal kurz fest: mehrmals versuchen,
+        # sonst in einen neuen Ordner ausweichen
+        import os, stat, time
+
+        def freigeben(funktion, pfad, _fehler):
+            os.chmod(pfad, stat.S_IWRITE)
+            funktion(pfad)
+
+        for versuch in range(4):
+            try:
+                shutil.rmtree(ziel, onexc=freigeben)
+                break
+            except OSError:
+                time.sleep(1.5)
+        if ziel.exists():
+            ziel = ziel.with_name(ziel.name + "_" + time.strftime("%Y%m%d_%H%M%S"))
+            seite = ziel / "webseite"
+            print(f"Hinweis: der alte Ordner ließ sich nicht löschen, das Paket entsteht in {ziel.name}")
     seite.mkdir(parents=True)
 
     # 1. Dateien kopieren
