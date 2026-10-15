@@ -348,7 +348,7 @@ def seite(datei, kennung, titel, beschreibung, hauptteil, zusatz_kopf=""):
 </body>
 </html>
 """
-    (ZIEL / datei).write_text(firma_einsetzen(inhalt), encoding="utf-8")
+    (ZIEL / datei).write_text(firma_einsetzen(inhalt), encoding="utf-8", newline="\n")
     print("erzeugt:", datei)
 
 
@@ -397,7 +397,7 @@ if __name__ == "__main__":
                      for s in seiten)
     (ZIEL / "sitemap.xml").write_text(
         f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}\n</urlset>\n',
-        encoding="utf-8")
+        encoding="utf-8", newline="\n")
     regeln = "Disallow: /" if ENTWURF else "Disallow: /admin/\nDisallow: /werkzeuge/"
-    (ZIEL / "robots.txt").write_text(f"User-agent: *\n{regeln}\n\nSitemap: {ADRESSE}sitemap.xml\n", encoding="utf-8")
+    (ZIEL / "robots.txt").write_text(f"User-agent: *\n{regeln}\n\nSitemap: {ADRESSE}sitemap.xml\n", encoding="utf-8", newline="\n")
     print("erzeugt: sitemap.xml, robots.txt")
