@@ -12,7 +12,7 @@
     },
     {
       "ueberschrift": "Kontakt",
-      "text": "Telefon: {telefon}\n==Fax: {fax}==\nMobil: {mobil}\nE-Mail: {email}"
+      "text": "Telefon: {mobil}\n==Fax: {fax}==\nE-Mail: {email}"
     },
     {
       "ueberschrift": "Umsatzsteuer-ID",

@@ -144,7 +144,7 @@
         <span class="cta-leiste wood" aria-hidden="true"></span>
         <div><h2 data-firma="aufruf_titel"></h2><p data-firma="aufruf_text"></p></div>
         <div class="cta-knoepfe">
-          <a class="btn" data-firma-tel="telefon" href="#"><span data-firma="telefon"></span></a>
+          <a class="btn" data-firma-tel="mobil" href="#"><span data-firma="mobil"></span></a>
           <a class="btn ghost" data-firma-mail href="#">E-Mail schreiben</a>
         </div>
       </section>`;

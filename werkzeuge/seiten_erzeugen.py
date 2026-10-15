@@ -20,7 +20,7 @@ INHALT = WURZEL / "inhalt"
 # ---- Einstellungen ---------------------------------------------------------------------------
 ADRESSE = "https://ralfsmart.github.io/Wistinghausen/"   # beim Umzug: "https://www.schreinerei-wistinghausen.de/"
 ENTWURF = True        # True = Suchmaschinen aussperren (noindex). Zum Livegang auf False setzen.
-VERSION = "27"        # bei Änderungen an CSS/JS erhöhen, damit Browser neu laden
+VERSION = "28"        # bei Änderungen an CSS/JS erhöhen, damit Browser neu laden
 FIRMENNAME_KURZ = "Schreinerei Wistinghausen"
 
 MENUE = [
@@ -212,7 +212,7 @@ def rubrik(kennung, d):
         <span class="cta-leiste wood" aria-hidden="true"></span>
         <div><h2 data-firma="aufruf_titel"></h2><p data-firma="aufruf_text"></p></div>
         <div class="cta-knoepfe">
-          <a class="btn" data-firma-tel="telefon" href="#"><span data-firma="telefon"></span></a>
+          <a class="btn" data-firma-tel="mobil" href="#"><span data-firma="mobil"></span></a>
           <a class="btn ghost" data-firma-mail href="#">E-Mail schreiben</a>
         </div>
       </section>"""
@@ -264,7 +264,7 @@ def firmendaten_json_ld():
         "url": ADRESSE,
         "logo": ADRESSE + "bilder/Wappen-2.gif",
         "image": ADRESSE + "bilder/kuechen-1.jpg",
-        "telephone": FIRMA.get("telefon"),
+        "telephone": FIRMA.get("mobil"),
         "email": FIRMA.get("email"),
         "address": {
             "@type": "PostalAddress",

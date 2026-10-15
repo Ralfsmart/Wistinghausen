@@ -4,7 +4,7 @@
   "abschnitte": [
     {
       "ueberschrift": "1. Verantwortlicher",
-      "text": "{name}\n{strasse}, {ort}\nTelefon: {telefon}\nE-Mail: {email}"
+      "text": "{name}\n{strasse}, {ort}\nTelefon: {mobil}\nE-Mail: {email}"
     },
     {
       "ueberschrift": "2. Das Wichtigste in Kürze",
