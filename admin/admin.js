@@ -281,7 +281,8 @@
     document.querySelectorAll('#bereiche button').forEach(k => k.toggleAttribute('aria-current', k.dataset.id === b.id));
     bereich = b;
     $('#titel').textContent = b.name;
-    $('#ansehen').href = `../${b.seite}`;
+    // beide Links (oben in der Leiste und neben der Überschrift) führen zur gerade bearbeiteten Seite
+    $('#ansehen').href = $('#ansehen-oben').href = `../${b.seite}`;
     $('#editor').replaceChildren(el('p', { textContent: 'Wird geladen …' }));
     daten = null; aenderungPruefen();
     try {
