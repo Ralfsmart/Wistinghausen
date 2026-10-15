@@ -322,3 +322,18 @@ body.nav-badges{padding-top:var(--kopf-h,102px)}
 /* Logo statt Firmenname im Kontaktbereich: die zwei Textzeilen des Logos entsprechen etwa der Überschriftgröße */
 .contact h3.kontakt-logo{margin:0 0 8px;line-height:0}
 .contact h3.kontakt-logo img{display:block;height:5em;width:auto;max-width:100%;margin-left:-4px}
+
+/* Kontaktblöcke: Überschrift (bzw. Logo) und Adresse liegen in gemeinsamen Zeilen, damit die Adressen nebeneinander
+   auf gleicher Höhe stehen. Die Überschrift sitzt unten in ihrer Zeile, direkt über der Adresse. */
+@supports (grid-template-rows: subgrid) {
+  .contact{row-gap:0;column-gap:24px}
+  .contact > div{display:grid;grid-row:span 2;grid-template-rows:subgrid;row-gap:0}
+  .contact > div > h3{align-self:end;margin:0 0 8px}
+  .contact > div > h3.kontakt-logo{align-self:end;margin:0 0 8px}
+  .contact > div:nth-child(n+3) > h3{margin-top:24px}
+}
+@media (max-width:480px){
+  @supports (grid-template-rows: subgrid) {
+    .contact > div:nth-child(n+2) > h3{margin-top:24px}
+  }
+}
