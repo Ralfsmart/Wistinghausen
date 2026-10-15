@@ -12,7 +12,7 @@
     },
     {
       "ueberschrift": "Kontakt",
-      "text": "Telefon: {mobil}\n==Fax: {fax}==\nE-Mail: {email}"
+      "text": "Mobil: {mobil}\nFestnetz: {telefon}\nE-Mail: {email}"
     },
     {
       "ueberschrift": "Umsatzsteuer-ID",
@@ -20,7 +20,7 @@
     },
     {
       "ueberschrift": "Berufsbezeichnung und berufsrechtliche Regelungen",
-      "text": "Berufsbezeichnung: ==Schreinermeister== (verliehen in der Bundesrepublik Deutschland)\nZuständige Kammer: Handwerkskammer Ulm, Olgastraße 72, 89073 Ulm\nEingetragen in die Handwerksrolle der Handwerkskammer Ulm\n\nEs gilt die Handwerksordnung (HwO), einsehbar unter https://www.gesetze-im-internet.de/hwo/"
+      "text": "Berufsbezeichnung: Schreiner (verliehen in der Bundesrepublik Deutschland)\nZuständige Kammer: Handwerkskammer Ulm, Olgastraße 72, 89073 Ulm\nEingetragen in die Handwerksrolle der Handwerkskammer Ulm\n\nEs gilt die Handwerksordnung (HwO), einsehbar unter https://www.gesetze-im-internet.de/hwo/"
     },
     {
       "ueberschrift": "Verbraucherstreitbeilegung",
