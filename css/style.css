@@ -37,7 +37,7 @@ header.site{color:#F6EFE6}
 .brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit}
 .brand img{width:64px;height:64px;background:#F8F6F3;border-radius:50%;padding:6px}
 .brand b{display:block;font:600 24px/1.1 var(--serif);letter-spacing:.01em}
-.brand span{font-size:14px;opacity:.85;letter-spacing:.08em;text-transform:uppercase}
+.brand span{font-size:14px;opacity:.85;letter-spacing:.08em}
 nav.main{margin-left:auto}
 nav.main ul{list-style:none;margin:0;padding:0;display:flex;gap:4px;flex-wrap:wrap}
 nav.main a{color:#F6EFE6;text-decoration:none;font-size:16px;padding:6px 10px;border-radius:8px}

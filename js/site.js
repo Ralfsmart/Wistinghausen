@@ -47,6 +47,11 @@
   /* ---------- Firmendaten überall einsetzen ---------- */
   function firmaEinsetzen(f) {
     document.querySelectorAll('[data-firma]').forEach(el => { el.textContent = f[el.dataset.firma] ?? ''; });
+    // im Seitenkopf steht nur das erste Wort in Großbuchstaben: „MEISTERBETRIEB seit 2004“
+    document.querySelectorAll('.brand [data-firma="zusatz"]').forEach(el => {
+      const t = String(f.zusatz ?? ''), i = t.indexOf(' ');
+      el.textContent = i < 0 ? t.toUpperCase() : t.slice(0, i).toUpperCase() + t.slice(i);
+    });
     document.querySelectorAll('[data-firma-tel]').forEach(el => { el.href = telLink(f[el.dataset.firmaTel]); });
     document.querySelectorAll('[data-firma-mail]').forEach(el => { el.href = 'mailto:' + (f.email ?? ''); });
   }

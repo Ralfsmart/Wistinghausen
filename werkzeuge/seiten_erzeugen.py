@@ -20,7 +20,7 @@ INHALT = WURZEL / "inhalt"
 # ---- Einstellungen ---------------------------------------------------------------------------
 ADRESSE = "https://ralfsmart.github.io/Wistinghausen/"   # beim Umzug: "https://www.schreinerei-wistinghausen.de/"
 ENTWURF = True        # True = Suchmaschinen aussperren (noindex). Zum Livegang auf False setzen.
-VERSION = "39"        # bei Änderungen an CSS/JS erhöhen, damit Browser neu laden
+VERSION = "40"        # bei Änderungen an CSS/JS erhöhen, damit Browser neu laden
 FIRMENNAME_KURZ = "Schreinerei Wistinghausen"
 
 MENUE = [
@@ -94,6 +94,12 @@ def firma_einsetzen(seite_html):
         r'<(\w+)([^>]*?\sdata-firma="(\w+)"[^>]*)>[^<]*</\1>',
         lambda m: f'<{m.group(1)}{m.group(2)}>{esc(FIRMA.get(m.group(3), ""))}</{m.group(1)}>',
         seite_html)
+
+    # im Seitenkopf steht nur das erste Wort in Großbuchstaben: „MEISTERBETRIEB seit 2004“
+    def kopfzusatz(m):
+        erstes, _, rest = m.group(2).partition(" ")
+        return m.group(1) + erstes.upper() + (" " + rest if rest else "") + m.group(3)
+    seite_html = re.sub(r'(<div><b>[^<]*</b><span data-firma="zusatz">)([^<]*)(</span>)', kopfzusatz, seite_html)
 
     def link(m):
         tag = m.group(0)
