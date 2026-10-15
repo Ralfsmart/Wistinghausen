@@ -170,7 +170,10 @@
       <figure>
         <div class="lb-zoom"><img alt=""></div>
         <figcaption></figcaption>
-        <p class="lb-hinweis">Zoomen mit Mausrad oder + und −, verschieben mit gedrückter Maustaste, Doppelklick zum Heranzoomen.</p>
+        <p class="lb-hinweis">
+          <span class="nur-maus">Zoomen mit dem Mausrad oder mit + und −.<br>Mit gedrückter Maustaste verschieben.<br>Doppelklick zum Heranzoomen.</span>
+          <span class="nur-touch">Zoomen mit zwei Fingern.<br>Mit einem Finger verschieben.<br>Doppeltippen zum Heranzoomen.</span>
+        </p>
       </figure>`;
     document.body.append(dlg);
     const img = dlg.querySelector('img'), cap = dlg.querySelector('figcaption');
@@ -215,11 +218,19 @@
     };
     // kleine Fotos höchstens auf doppelte Größe aufziehen, sonst werden sie unscharf;
     // gezoomt wird bis etwa zur doppelten Pixelgröße des Fotos (höchstens 8-fach)
+    // Auf breiten Bildschirmen stehen Beschreibung (links) und Zoom-Hinweis (rechts) neben dem Foto;
+    // dafür bleibt rechts und links je Platz frei. Auf schmalen Bildschirmen steht der Text unter dem Foto.
+    const breit = matchMedia('(min-width:1200px)');
+    const bildbreite = () => {
+      const platz = breit.matches ? innerWidth - 2 * (80 + 32 + 230) : innerWidth * 0.92;
+      img.style.maxWidth = Math.min(img.naturalWidth * 2, Math.max(240, platz)) + 'px';
+    };
     img.onload = () => {
-      img.style.maxWidth = Math.min(img.naturalWidth * 2, innerWidth * 0.9) + 'px';
+      bildbreite();
       ganzes(false);
       z.max = Math.min(8, Math.max(2, img.naturalWidth / Math.max(1, zoomBox.offsetWidth) * 2));
     };
+    addEventListener('resize', () => { if (dlg.open && img.naturalWidth) { bildbreite(); ganzes(false); } });
 
     // Mausrad (und Trackpad-Pinch): um die Mausposition zoomen
     dlg.addEventListener('wheel', e => {

@@ -294,3 +294,24 @@ body.nav-badges{padding-top:var(--kopf-h,102px)}
   .galerie-hinweis .nur-maus{display:none}
   .galerie-hinweis .nur-touch{display:inline}
 }
+
+/* Großansicht: Beschreibung links neben dem Foto, Zoom-Hinweis rechts (nur auf breiten Bildschirmen) */
+.lb-hinweis .nur-touch{display:none}
+@media (hover:none),(pointer:coarse){
+  .lb-hinweis .nur-maus{display:none}
+  .lb-hinweis .nur-touch{display:inline}
+}
+@media (min-width:1200px){
+  .lightbox{max-width:100vw}
+  /* seitlich Platz für die Blätterpfeile am Rand lassen */
+  .lightbox figure{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:32px;align-items:center;text-align:left;padding:0 80px}
+  .lb-zoom{grid-column:2;grid-row:1}
+  .lightbox img{max-height:90vh}
+  .lightbox figcaption{grid-column:1;grid-row:1;justify-self:end;text-align:right;max-width:30ch;margin:0;max-height:86vh;overflow:auto;font-size:17px;line-height:1.5}
+  .lb-hinweis{display:block;grid-column:3;grid-row:1;justify-self:start;text-align:left;max-width:28ch;margin:0;font-size:15px;line-height:1.6}
+}
+@media (max-width:1199px){
+  .lightbox img{max-height:64vh}
+  .lightbox figcaption{max-height:20vh;overflow:auto}
+  .lb-hinweis{display:none}
+}
