@@ -97,10 +97,13 @@
 
   function ueberMich(d) {
     if (!d.ueber_titel && !d.ueber_text) return '';
-    const foto = erstesFoto(d.ueber_fotos);
+    // bis zu zwei Bilder: Foto und z. B. der Meisterbrief (Klick öffnet das Bild in voller Größe)
+    const karte = (b, klasse) => `<figure class="${klasse}"><a href="${esc(url(b.datei))}" target="_blank" rel="noopener"><img src="${esc(url(b.datei))}" alt="${esc(b.titel)}"></a>${b.titel ? `<figcaption>${esc(b.titel)}</figcaption>` : ''}</figure>`;
+    const bilder = (d.ueber_fotos || []).filter(b => b && b.datei).slice(0, 2)
+      .map((b, i) => karte(b, i ? 'beleg' : 'portrait')).join('');
     return `
       <section class="ueber" id="ueber-mich">
-        ${foto ? `<figure><img src="${esc(url(foto.datei))}" alt="${esc(foto.titel)}">${foto.titel ? `<figcaption>${esc(foto.titel)}</figcaption>` : ''}</figure>` : ''}
+        ${bilder ? `<div class="ueber-bilder">${bilder}</div>` : ''}
         <div>
           <h2>${esc(d.ueber_titel)}</h2>
           ${absaetze(d.ueber_text)}

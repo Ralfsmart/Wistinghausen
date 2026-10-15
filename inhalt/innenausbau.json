@@ -12,29 +12,44 @@
   ],
   "bilder": [
     {
-      "datei": "bilder/innen1.jpg",
-      "titel": "Auszugsschrank unter der Treppe",
-      "beschreibung": "Rollbarer Auszug für Schuhe und Helme. Der Platz unter der Treppe wird voll genutzt."
+      "datei": "bilder/innenausbau-1.jpg",
+      "titel": "Schubladen in der Dachschräge",
+      "beschreibung": "Weiße Fronten und tiefe Schubkästen nutzen den Stauraum unter der Schräge."
     },
     {
-      "datei": "bilder/innen3.jpg",
-      "titel": "Treppe renoviert",
-      "beschreibung": "Neue Massivholzstufen auf einer alten Treppe."
-    },
-    {
-      "datei": "bilder/innen2.jpg",
+      "datei": "bilder/innenausbau-2.jpg",
       "titel": "Treppe mit Regalfächern",
-      "beschreibung": "Offene Fächer unter den Stufen als Stauraum im Flur."
+      "beschreibung": "Unter den Stufen entstehen offene Fächer für Schuhe und Alltagsdinge."
     },
     {
-      "datei": "bilder/innen4.jpg",
-      "titel": "Schiebetüren unter der Dachschräge",
-      "beschreibung": "Leichte Rahmentüren verschließen den Stauraum hinter dem Kniestock."
+      "datei": "bilder/innenausbau-3.jpg",
+      "titel": "Schrank unter der Treppe",
+      "beschreibung": "Die Türen folgen der Treppenschräge und lassen keinen Platz ungenutzt."
     },
     {
-      "datei": "bilder/innen5.jpg",
+      "datei": "bilder/innenausbau-4.jpg",
+      "titel": "Wandverkleidung mit Regalen",
+      "beschreibung": "Eine Verkleidung aus Holz mit Regalböden und einer Ablageplatte, passgenau in den Raum eingebaut."
+    },
+    {
+      "datei": "bilder/innenausbau-5.jpg",
       "titel": "Theke für ein Café",
-      "beschreibung": "Verkaufstheke mit Flaschenbord darüber."
+      "beschreibung": "Verkaufstheke mit roten Fronten und weißen Linien, darüber ein Bord für Flaschen."
+    },
+    {
+      "datei": "bilder/innenausbau-6.jpg",
+      "titel": "Raumteiler im japanischen Stil",
+      "beschreibung": "Schiebeelemente mit hellen Feldern gliedern den Raum, ohne ihn ganz abzuschließen."
+    },
+    {
+      "datei": "bilder/innenausbau-7.jpg",
+      "titel": "Parkett in warmem Holzton",
+      "beschreibung": "Ein Boden, der dem Raum Wärme gibt."
+    },
+    {
+      "datei": "bilder/innenausbau-8.jpg",
+      "titel": "Bad mit Holzverkleidung",
+      "beschreibung": "Die Wannenverkleidung ist aus Holz gefertigt und hat eine Klappe für die Technik."
     }
   ]
 }

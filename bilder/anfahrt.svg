@@ -67,7 +67,7 @@
 <!-- Ortsnamen -->
 <text x="300" y="372" class="ort" text-anchor="middle">Uhldingen-Mühlhofen</text>
 <text x="660" y="300" class="ortklein" text-anchor="middle">MÜHLHOFEN</text>
-<text x="506" y="214" class="str" text-anchor="middle">Untere Weitfeld Str.</text>
+<text x="506" y="214" class="str" text-anchor="middle">Untere Weitfeldstraße</text>
 
 <!-- Ziel: Medaillon mit Wappen -->
 <g transform="translate(499 128)" filter="url(#schatten)">
@@ -81,7 +81,7 @@
   <rect width="262" height="100" rx="12" fill="#F8F6F3" stroke="#D9D4CC"/>
   <rect width="8" height="100" rx="4" fill="#8B5A36"/>
   <text x="22" y="30" class="titel">Schreinerei Wistinghausen</text>
-  <text x="22" y="54" class="adr">Untere Weitfeld Str. 14</text>
+  <text x="22" y="54" class="adr">Untere Weitfeldstraße 14</text>
   <text x="22" y="74" class="adr">88690 Uhldingen-Mühlhofen</text>
   <text x="22" y="92" class="klein">Skizze, nicht maßstabsgetreu</text>
 </g>

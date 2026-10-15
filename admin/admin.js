@@ -59,7 +59,7 @@
       { gruppe: 'Über mich' },
       { key: 'ueber_titel', label: 'Überschrift', typ: 'text', hilfe: 'Überschrift und Text leer lassen, um den Abschnitt auszublenden.' },
       { key: 'ueber_text', label: 'Text', typ: 'langtext', format: true, hilfe: FORMAT_HILFE },
-      { key: 'ueber_fotos', label: 'Foto (das erste wird gezeigt; der Titel erscheint als Bildunterschrift)', typ: 'fotos', beschreibung: false },
+      { key: 'ueber_fotos', label: 'Fotos (die ersten zwei werden gezeigt: Foto und z. B. Meisterbrief; der Titel erscheint als Bildunterschrift)', typ: 'fotos', beschreibung: false },
       { gruppe: 'Google-Suche' },
       { key: 'seo_titel', label: 'Seitentitel bei Google', typ: 'text',
         hilfe: 'Erscheint als blaue Überschrift in den Suchergebnissen. Ideal: bis 60 Zeichen, mit Ort, z. B. „Einbauküchen nach Maß in Salem | Schreinerei Wistinghausen“. Leer lassen = automatisch.' },

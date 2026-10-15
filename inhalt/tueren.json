@@ -1,44 +1,34 @@
 {
   "titel": "Türen",
-  "untertitel": "Haus- und Zimmertüren in Standard- und Sondermaßen",
+  "untertitel": "Innentüren nach Maß in Standard- und Sondergrößen",
   "beispieltext": true,
-  "einleitung": "Die Haustür ist die Visitenkarte eines Hauses. Gerade in Altbauten und Bauernhäusern passen Standardtüren oft nicht. Hier fertige ich Türen und Tore genau nach Maß und passend zum Stil des Gebäudes.\n\nNach dem Aufmaß beraten wir gemeinsam über Holzart, Gestaltung, Verglasung und Beschläge. Die Tür entsteht in meiner Werkstatt und wird von mir eingebaut und eingestellt, damit sie dicht schließt und lange Freude macht.",
+  "einleitung": "Eine gute Innentür fällt kaum auf, bis man sie benutzt: Sie schließt sauber, hängt gerade und passt zum Raum. Genau darauf achte ich beim Bau.\n\nNach dem Aufmaß vor Ort besprechen wir Holzart, Gestaltung und Oberfläche. Mit einem Glasfeld kommt mehr Licht in den Flur, und wo für einen Drehflügel der Platz fehlt, ist eine Schiebetür die bessere Lösung. Die Tür entsteht in meiner Werkstatt und wird von mir eingebaut und eingestellt.",
   "leistungen": [
-    "Haustüren",
-    "Zimmertüren",
-    "Standard- und Sondergrößen",
-    "Tore für Stall und Garage"
+    "Innentüren in Standard- und Sondergrößen",
+    "Türen mit Glasfeldern",
+    "Schiebetüren und Raumteiler",
+    "Einbau und Einstellen vor Ort"
   ],
   "bilder": [
     {
-      "datei": "bilder/tueren1.jpg",
-      "titel": "Haustür mit Oberlicht",
-      "beschreibung": "Blau lackierte Tür mit Sprossenfenstern in einem Sandsteingewände."
+      "datei": "bilder/tueren-1.jpg",
+      "titel": "Innentür mit Glasfeld",
+      "beschreibung": "Eine Holztür mit einem kleinen Glasfeld."
     },
     {
-      "datei": "bilder/tueren4.jpg",
-      "titel": "Haustür im Fischgrätmuster",
-      "beschreibung": "Diagonal verlegte Bretter mit Rauten-Emblem."
-    },
-    {
-      "datei": "bilder/tueren5.jpg",
-      "titel": "Eingangstür mit Sonnenmotiv",
-      "beschreibung": "Rot lackiert, mit verglasten Seitenteilen und Rundbogen."
-    },
-    {
-      "datei": "bilder/tueren2.jpg",
-      "titel": "Zweiflügeliges Tor",
-      "beschreibung": "Holztor mit Bogen und kräftigen Bändern für Scheune oder Garage."
-    },
-    {
-      "datei": "bilder/tueren3.jpg",
+      "datei": "bilder/tueren-2.jpg",
       "titel": "Zimmertür mit Milchglas",
-      "beschreibung": "Rahmentür mit hellen Glasfeldern."
+      "beschreibung": "Eine Rahmentür mit hellen Glasfeldern, die Licht durchlassen."
     },
     {
-      "datei": "bilder/tueren7.jpg",
-      "titel": "Verglaste Doppeltür",
-      "beschreibung": "Zweiflügelige Tür mit Rundbogen und strahlenförmigen Sprossen."
+      "datei": "bilder/tueren-3.jpg",
+      "titel": "Schiebetüren unter der Dachschräge",
+      "beschreibung": "Leichte Rahmentüren verschließen den Stauraum hinter dem Kniestock."
+    },
+    {
+      "datei": "bilder/tueren-4.jpg",
+      "titel": "Schiebetüren im japanischen Stil",
+      "beschreibung": "Holzrahmen mit hellen Füllungen, hier in der Werkstatt vor dem Einbau."
     }
   ]
 }

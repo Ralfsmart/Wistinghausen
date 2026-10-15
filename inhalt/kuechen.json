@@ -11,29 +11,44 @@
   ],
   "bilder": [
     {
-      "datei": "bilder/kueche-6.JPG",
-      "titel": "Weiße Eckküche",
-      "beschreibung": "Grifflose Fronten, hohe Schrankwand und Arbeitsplatte aus Massivholz mit Unterbaubeleuchtung."
+      "datei": "bilder/kuechen-1.jpg",
+      "titel": "Weiße Eckküche mit Unterbaubeleuchtung",
+      "beschreibung": "Grifflose Fronten, eine hohe Schrankwand und eine Arbeitsplatte aus Holz. Das Licht unter den Oberschränken setzt die Arbeitsfläche in Szene."
     },
     {
-      "datei": "bilder/kueche-5.jpg",
-      "titel": "Küche in L-Form",
-      "beschreibung": "Helles Holz, Oberschränke mit Glastüren und offenem Bord für den täglichen Bedarf."
+      "datei": "bilder/kuechen-2.jpg",
+      "titel": "Tiefer Auszug unter dem Kochfeld",
+      "beschreibung": "Ein großer Auszug aus hellem Holz, mit viel Platz für Töpfe und Pfannen."
     },
     {
-      "datei": "bilder/kueche-3.jpg",
-      "titel": "Schubkästen unter dem Kochfeld",
-      "beschreibung": "Massivholz-Arbeitsplatte und Auszüge, die viel Platz für Töpfe und Pfannen bieten."
+      "datei": "bilder/kuechen-3.jpg",
+      "titel": "Schubkästen mit Metallgriffen",
+      "beschreibung": "Arbeitsplatte aus hellem Holz mit Gaskochfeld, darunter mehrere Schubkästen. Ein Blick auf die Details."
     },
     {
-      "datei": "bilder/kueche-7.jpg",
-      "titel": "Küche in warmem Holzton",
-      "beschreibung": "Oberschränke bis unter die Decke und Backofen in bequemer Arbeitshöhe."
+      "datei": "bilder/kuechen-4.jpg",
+      "titel": "Küche mit lebhaft gemaserten Fronten",
+      "beschreibung": "Die Maserung des Holzes bleibt sichtbar. Dazu gibt es ein offenes Regal und eine helle Glasrückwand."
     },
     {
-      "datei": "bilder/kueche-2.jpg",
+      "datei": "bilder/kuechen-5.jpg",
+      "titel": "Rustikale Küche mit Kochinsel",
+      "beschreibung": "Fronten mit kräftiger Holzstruktur, eine Kochinsel in der Mitte und ein dunkler Fliesenboden."
+    },
+    {
+      "datei": "bilder/kuechen-6.jpg",
       "titel": "Küchenzeile mit roten Fronten",
-      "beschreibung": "Hochglänzende Schubkästen unter einer durchgehenden Holzarbeitsplatte."
+      "beschreibung": "Rot glänzende Schubkästen mit Holzkanten unter einer durchgehenden Arbeitsplatte aus Holz."
+    },
+    {
+      "datei": "bilder/kuechen-7.jpg",
+      "titel": "U-Küche in Rot und Schwarz",
+      "beschreibung": "Rote Fronten und eine schwarze Arbeitsplatte setzen einen klaren Kontrast zum hellen Raum."
+    },
+    {
+      "datei": "bilder/kuechen-8.jpg",
+      "titel": "Küchentresen mit Schiebetüren",
+      "beschreibung": "Ein freistehender Tresen mit Schiebetüren aus Holz. Die kräftige Maserung steht im Mittelpunkt."
     }
   ]
 }

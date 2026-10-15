@@ -269,3 +269,10 @@ body.nav-badges{padding-top:var(--kopf-h,102px)}
 @media (min-width:861px) and (max-width:1100px){
   :root{--ni:50px;--logo:52px;--logo-schrift:20px;--nav-schrift:13px;--ueberhang:-17px}
 }
+
+/* Über mich: Foto und Meisterbrief übereinander */
+.ueber-bilder{display:grid;gap:18px;align-content:start}
+.ueber .beleg img{box-shadow:none;border:1px solid var(--line)}
+.ueber .beleg{max-width:320px}
+.ueber a{display:block}
+.ueber .portrait img{max-height:440px;width:auto;max-width:100%;margin:0 auto;object-fit:contain}

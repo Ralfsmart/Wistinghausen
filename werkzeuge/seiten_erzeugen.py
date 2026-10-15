@@ -20,7 +20,7 @@ INHALT = WURZEL / "inhalt"
 # ---- Einstellungen ---------------------------------------------------------------------------
 ADRESSE = "https://ralfsmart.github.io/Wistinghausen/"   # beim Umzug: "https://www.schreinerei-wistinghausen.de/"
 ENTWURF = True        # True = Suchmaschinen aussperren (noindex). Zum Livegang auf False setzen.
-VERSION = "24"        # bei Änderungen an CSS/JS erhöhen, damit Browser neu laden
+VERSION = "26"        # bei Änderungen an CSS/JS erhöhen, damit Browser neu laden
 FIRMENNAME_KURZ = "Schreinerei Wistinghausen"
 
 MENUE = [
@@ -155,11 +155,13 @@ def besonderheit(d):
 def ueber_mich(d):
     if not d.get("ueber_titel") and not d.get("ueber_text"):
         return ""
-    foto = erstes_foto(d.get("ueber_fotos"))
-    bild = ""
-    if foto:
-        unterschrift = f'<figcaption>{esc(foto.get("titel"))}</figcaption>' if foto.get("titel") else ""
-        bild = f'<figure><img src="{esc(foto["datei"])}" alt="{esc(foto.get("titel"))}">{unterschrift}</figure>'
+    # bis zu zwei Bilder: Foto und z. B. der Meisterbrief (Klick öffnet das Bild in voller Größe)
+    karten = []
+    for i, b in enumerate([b for b in (d.get("ueber_fotos") or []) if b and b.get("datei")][:2]):
+        unterschrift = f'<figcaption>{esc(b.get("titel"))}</figcaption>' if b.get("titel") else ""
+        karten.append(f'<figure class="{"beleg" if i else "portrait"}"><a href="{esc(b["datei"])}" target="_blank" rel="noopener">'
+                      f'<img src="{esc(b["datei"])}" alt="{esc(b.get("titel"))}"></a>{unterschrift}</figure>')
+    bild = f'<div class="ueber-bilder">{"".join(karten)}</div>' if karten else ""
     return f"""
       <section class="ueber" id="ueber-mich">
         {bild}
@@ -261,7 +263,7 @@ def firmendaten_json_ld():
         "description": "Schreinerei und Meisterbetrieb: Küchen, Möbel, Innenausbau, Türen, Außenholzbau und Rührfässer.",
         "url": ADRESSE,
         "logo": ADRESSE + "bilder/Wappen-2.gif",
-        "image": ADRESSE + "bilder/kueche-6.JPG",
+        "image": ADRESSE + "bilder/kuechen-1.jpg",
         "telephone": FIRMA.get("telefon"),
         "email": FIRMA.get("email"),
         "address": {
@@ -305,7 +307,7 @@ def seite(datei, kennung, titel, beschreibung, hauptteil, zusatz_kopf=""):
 <meta property="og:title" content="{esc(titel)}">
 <meta property="og:description" content="{esc(beschreibung)}">
 <meta property="og:url" content="{url}">
-<meta property="og:image" content="{ADRESSE}bilder/kueche-6.JPG">
+<meta property="og:image" content="{ADRESSE}bilder/kuechen-1.jpg">
 <link rel="stylesheet" href="css/style.css?v={VERSION}">
 <script src="js/site.js?v={VERSION}" defer></script>{zusatz_kopf}
 </head>

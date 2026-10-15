@@ -1,62 +1,61 @@
 {
   "hero_titel": "In der kleinen Werkstatt am Ralzhof entstehen Träume aus Holz",
-  "hero_text": "Einbauküchen, Möbel, Innenausbau und Türen nach Maß. Geplant und gebaut in meiner Werkstatt am Ralzhof bei Salem.",
+  "hero_text": "Einbauküchen, Möbel, Innenausbau und Innentüren nach Maß. Geplant und gebaut in meiner Werkstatt am Ralzhof bei Salem.",
   "abschnitt_titel": "Handwerk mit Sorgfalt",
   "abschnitt_text": "Eine schnelle und sorgfältige Durchführung der Aufträge ist mir ein besonderes Anliegen.",
   "abschnitt_punkte": [
     "Individuelle, passgenaue Einbauküchen",
     "Möbel und Innenausbau nach Maß",
-    "Rührfässer für die biodynamische Landwirtschaft, 75 bis 750 Liter"
+    "Terrassen, Gartenhäuser und Gartenmöbel aus Holz"
   ],
   "fotos": [
     {
-      "datei": "bilder/kueche-7.jpg",
-      "titel": "Küche",
-      "beschreibung": ""
+      "datei": "bilder/kuechen-1.jpg",
+      "titel": "Weiße Eckküche mit Unterbaubeleuchtung",
+      "beschreibung": "Grifflose Fronten, eine hohe Schrankwand und eine Arbeitsplatte aus Holz. Das Licht unter den Oberschränken setzt die Arbeitsfläche in Szene."
     },
     {
-      "datei": "bilder/moebel12.jpg",
-      "titel": "Tisch mit Baumkante",
-      "beschreibung": ""
+      "datei": "bilder/moebel-2.jpg",
+      "titel": "Esstisch mit Baumkante",
+      "beschreibung": "Eine Tischplatte mit naturbelassener Kante auf einem schlanken Gestell."
     },
     {
-      "datei": "bilder/innen2.jpg",
+      "datei": "bilder/innenausbau-2.jpg",
       "titel": "Treppe mit Regalfächern",
-      "beschreibung": ""
+      "beschreibung": "Unter den Stufen entstehen offene Fächer für Schuhe und Alltagsdinge."
     },
     {
-      "datei": "bilder/tueren5.jpg",
-      "titel": "Eingangstür",
-      "beschreibung": ""
+      "datei": "bilder/moebel-1.jpg",
+      "titel": "Wandgarderobe mit Doppeltür",
+      "beschreibung": "Geöffnet zeigt sich der Einbau mit Kleiderstange und offenen Fächern. Links und rechts sitzen Ablagen aus Holz."
     },
     {
-      "datei": "bilder/aussen7.jpg",
-      "titel": "Baumbank",
-      "beschreibung": ""
+      "datei": "bilder/aussen-1.jpg",
+      "titel": "Geschwungene Holzterrasse",
+      "beschreibung": "Ein Holzdeck, das sich wie ein Weg und eine Sitzfläche durch den Raum schwingt."
     },
     {
-      "datei": "bilder/faesser2.jpg",
-      "titel": "Holzfässer",
-      "beschreibung": ""
+      "datei": "bilder/moebel-4.jpg",
+      "titel": "Mein Meisterstück",
+      "beschreibung": "Ein Schrank in Fassform: gebogene Türen mit Metallbändern und ein aufgesetztes Fach."
     }
   ],
-  "besonderheit_titel": "Rührfässer für die biologisch-dynamische Landwirtschaft",
-  "besonderheit_text": "Neben Möbeln und Innenausbau fertige ich Rührfässer für die biologisch-dynamischen Präparate, in jeder Größe von 75 bis 750 Litern. Auch als Regenfass mit Auslaufhahn.",
-  "besonderheit_link": "faesser.html",
-  "besonderheit_link_text": "Mehr über die Fässer",
-  "besonderheit_fotos": [
-    {
-      "datei": "bilder/faesser2.jpg",
-      "titel": "Holzfässer in verschiedenen Größen",
-      "beschreibung": ""
-    }
-  ],
+  "besonderheit_titel": "",
+  "besonderheit_text": "",
+  "besonderheit_link": "",
+  "besonderheit_link_text": "",
+  "besonderheit_fotos": [],
   "ueber_titel": "Über mich",
-  "ueber_text": "Ich bin Arnim von Wistinghausen, Schreinermeister mit eigener Werkstatt am Ralzhof bei Salem. ==Hier ein paar Sätze zum Werdegang: Ausbildung, Meisterprüfung, seit wann selbstständig.==\n\nIn meiner kleinen Werkstatt entsteht jedes Stück einzeln, ob Küche, Möbel oder Fass. Von der ersten Idee über die Planung bis zur Montage haben Sie bei mir einen Ansprechpartner: mich.\n\n==Was ist Ihnen bei Ihrer Arbeit besonders wichtig? Zum Beispiel Holzauswahl, Handarbeit oder Langlebigkeit.==\n\n==Foto: am besten eines von Ihnen in der Werkstatt.==",
+  "ueber_text": "Ich bin Arnim von Wistinghausen, Schreinermeister mit eigener Werkstatt am Ralzhof bei Salem. 2024 durfte ich mein 25-jähriges Meisterjubiläum feiern. Die Handwerkskammer Ulm hat mir dazu den Silbernen Meisterbrief ausgestellt.\n\n==Hier ein paar Sätze zum Werdegang: Ausbildung, Wanderjahre, seit wann selbstständig.==\n\nIn meiner kleinen Werkstatt entsteht jedes Stück einzeln, ob Küche, Möbel oder Treppe. Von der ersten Idee über die Planung bis zur Montage haben Sie bei mir einen Ansprechpartner: mich.\n\n==Was ist Ihnen bei Ihrer Arbeit besonders wichtig? Zum Beispiel Holzauswahl, Handarbeit oder Langlebigkeit.==",
   "ueber_fotos": [
     {
-      "datei": "bilder/kontakt1.jpg",
-      "titel": "Aus der Werkstatt",
+      "datei": "bilder/moebel-4.jpg",
+      "titel": "Mein Meisterstück",
+      "beschreibung": ""
+    },
+    {
+      "datei": "bilder/meisterbrief-platzhalter.jpg",
+      "titel": "Silberner Meisterbrief der Handwerkskammer Ulm (Platzhalter bis zum Scan des Plakats)",
       "beschreibung": ""
     }
   ]

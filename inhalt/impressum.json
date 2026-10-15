@@ -4,7 +4,7 @@
   "abschnitte": [
     {
       "ueberschrift": "Angaben gemäß § 5 DDG",
-      "text": "{name}\nInhaber: {inhaber}\n{strasse}\n{ort}\n==Ortsname prüfen: „Uhldingen-Mühlhofen“?=="
+      "text": "{name}\nInhaber: {inhaber}\n{strasse}\n{ort}"
     },
     {
       "ueberschrift": "Werkstatt",
@@ -20,7 +20,7 @@
     },
     {
       "ueberschrift": "Berufsbezeichnung und berufsrechtliche Regelungen",
-      "text": "Berufsbezeichnung: ==Schreinermeister== (verliehen in der Bundesrepublik Deutschland)\nZuständige Kammer: ==Handwerkskammer Ulm, Olgastraße 72, 89073 Ulm==\nEingetragen in die Handwerksrolle der ==Handwerkskammer Ulm==\n\nEs gilt die Handwerksordnung (HwO), einsehbar unter https://www.gesetze-im-internet.de/hwo/"
+      "text": "Berufsbezeichnung: ==Schreinermeister== (verliehen in der Bundesrepublik Deutschland)\nZuständige Kammer: Handwerkskammer Ulm, Olgastraße 72, 89073 Ulm\nEingetragen in die Handwerksrolle der Handwerkskammer Ulm\n\nEs gilt die Handwerksordnung (HwO), einsehbar unter https://www.gesetze-im-internet.de/hwo/"
     },
     {
       "ueberschrift": "Verbraucherstreitbeilegung",

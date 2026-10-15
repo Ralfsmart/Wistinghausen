@@ -10,19 +10,44 @@
   ],
   "bilder": [
     {
-      "datei": "bilder/faesser1.jpg",
-      "titel": "Holzfass",
+      "datei": "bilder/faesser-1.jpg",
+      "titel": "Fässer in drei Größen",
       "beschreibung": "Aus Holzdauben gebaut und von Metallreifen gehalten."
     },
     {
-      "datei": "bilder/faesser3.jpg",
+      "datei": "bilder/faesser-2.jpg",
       "titel": "Auslaufhahn",
-      "beschreibung": "Messinghahn zum Entnehmen von Regenwasser."
+      "beschreibung": "Ein Messinghahn am Fuß des Fasses macht es zum Regenfass."
     },
     {
-      "datei": "bilder/faesser2.jpg",
-      "titel": "Fässer in verschiedenen Größen",
-      "beschreibung": "Von klein bis groß. Die Größe richtet sich nach dem Bedarf."
+      "datei": "bilder/faesser-3.jpg",
+      "titel": "Spannverschluss am Reifen",
+      "beschreibung": "Der Metallreifen wird mit einem Verschluss gespannt und hält das Fass zusammen."
+    },
+    {
+      "datei": "bilder/faesser-4.jpg",
+      "titel": "Fass mit Deckel",
+      "beschreibung": "Auf der Palette, mit aufgelegtem Deckel."
+    },
+    {
+      "datei": "bilder/faesser-5.jpg",
+      "titel": "Rührgestell",
+      "beschreibung": "Das Fass steht auf einer sechseckigen Bodenplatte in einem Dreibein aus Holzstangen."
+    },
+    {
+      "datei": "bilder/faesser-6.jpg",
+      "titel": "Rührgestell im Hof",
+      "beschreibung": "Ein weiteres Gestell mit Fass und Bodenplatte, aufgestellt im Hof."
+    },
+    {
+      "datei": "bilder/faesser-7.jpg",
+      "titel": "Präparatekisten",
+      "beschreibung": "Viele Kisten mit gewölbter Front in Reih und Glied, in einer Serie gefertigt."
+    },
+    {
+      "datei": "bilder/faesser-8.jpg",
+      "titel": "Truhe mit Tragekiste",
+      "beschreibung": "Aus hellem Holz, mit Griffen und einer herausnehmbaren Kiste."
     }
   ]
 }

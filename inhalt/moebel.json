@@ -12,49 +12,44 @@
   ],
   "bilder": [
     {
-      "datei": "bilder/moebel9.jpg",
-      "titel": "Regalwand mit Schiebetüren",
-      "beschreibung": "Offene Fächer in der Mitte, rot bespannte Schiebetüren an den Seiten."
+      "datei": "bilder/moebel-1.jpg",
+      "titel": "Wandgarderobe mit Doppeltür",
+      "beschreibung": "Geöffnet zeigt sich der Einbau mit Kleiderstange und offenen Fächern. Links und rechts sitzen Ablagen aus Holz."
     },
     {
-      "datei": "bilder/moebel10.jpg",
-      "titel": "Massiver Tisch",
-      "beschreibung": "Kräftiges Wangengestell aus Massivholz."
+      "datei": "bilder/moebel-2.jpg",
+      "titel": "Esstisch mit Baumkante",
+      "beschreibung": "Eine Tischplatte mit naturbelassener Kante auf einem schlanken Gestell."
     },
     {
-      "datei": "bilder/moebel4.jpg",
-      "titel": "Detailaufnahme",
-      "beschreibung": "Bitte beschreiben."
+      "datei": "bilder/moebel-3.jpg",
+      "titel": "Runder Esstisch mit Kreuzfuß",
+      "beschreibung": "Die runde Platte ruht auf einem Mittelfuß mit vier Auslegern."
     },
     {
-      "datei": "bilder/moebel12.jpg",
-      "titel": "Tisch mit Baumkante",
-      "beschreibung": "Die natürliche Kante des Stammes bleibt sichtbar."
+      "datei": "bilder/moebel-4.jpg",
+      "titel": "Mein Meisterstück",
+      "beschreibung": "Ein Schrank in Fassform: gebogene Türen mit Metallbändern und ein aufgesetztes Fach."
     },
     {
-      "datei": "bilder/moebel2.jpg",
-      "titel": "Schreibtisch mit Rollcontainer",
-      "beschreibung": "Geschwungene Tischplatte mit passendem Schubkastenelement."
+      "datei": "bilder/moebel-5.jpg",
+      "titel": "Das Meisterstück geöffnet",
+      "beschreibung": "Innen finden Gläser und Geschirr Platz, mit Regalen an den Türen."
     },
     {
-      "datei": "bilder/moebel11.jpg",
-      "titel": "Tischbein im Detail",
-      "beschreibung": "Schräg gestellte Beine aus dunklem Massivholz."
+      "datei": "bilder/moebel-6.jpg",
+      "titel": "Schreibtisch mit Baumkante und Fächern",
+      "beschreibung": "Ein Seitenteil mit natürlicher Kante, Schubladen und offene Fächer auf der Platte."
     },
     {
-      "datei": "bilder/moebel5.jpg",
-      "titel": "Holzverbindung in Handarbeit",
-      "beschreibung": "Gezinkte Eckverbindung, stabil und schön anzusehen."
-    },
-    {
-      "datei": "bilder/moebel13.jpg",
+      "datei": "bilder/moebel-7.jpg",
       "titel": "Einbauschrank unter der Dachschräge",
-      "beschreibung": "Aus astigem Nadelholz, passgenau an die Schräge angepasst."
+      "beschreibung": "Der Schrank folgt der Schräge und nutzt den Raum bis in die Ecke. Das Holz ist hell und astig."
     },
     {
-      "datei": "bilder/moebel8.JPG",
-      "titel": "Schrank mit Wandborden",
-      "beschreibung": "Zweitüriger Schrank mit Griffloch, links und rechts schwebende Ablagen."
+      "datei": "bilder/moebel-8.jpg",
+      "titel": "Tisch auf altem Nähmaschinengestell",
+      "beschreibung": "Eine Tischplatte aus rauen Bohlen, getragen von einem gusseisernen Nähmaschinengestell."
     }
   ]
 }

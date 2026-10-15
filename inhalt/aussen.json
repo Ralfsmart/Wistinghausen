@@ -13,34 +13,44 @@
   ],
   "bilder": [
     {
-      "datei": "bilder/aussen1.jpg",
-      "titel": "Unterstand",
-      "beschreibung": "Offener Holzunterstand, z. B. für Fahrzeuge und Geräte."
+      "datei": "bilder/aussen-1.jpg",
+      "titel": "Geschwungene Holzterrasse",
+      "beschreibung": "Ein Holzdeck, das sich wie ein Weg und eine Sitzfläche durch den Raum schwingt."
     },
     {
-      "datei": "bilder/aussen4.jpg",
-      "titel": "Gartentisch mit Bänken",
-      "beschreibung": "Massive Gartengarnitur für viele Gäste."
+      "datei": "bilder/aussen-2.jpg",
+      "titel": "Dachterrasse mit Sitzplatz und Truhe",
+      "beschreibung": "Ein Holzdeck mit Sitzbank, dazu eine große Truhe als Stauraum."
     },
     {
-      "datei": "bilder/aussen2.jpg",
-      "titel": "Holzterrasse",
-      "beschreibung": "Terrasse mit Stufe am Haus."
+      "datei": "bilder/aussen-3.jpg",
+      "titel": "Rundbank um den Baum",
+      "beschreibung": "Eine Bank, die den Stamm umschließt und im Schatten viel Platz bietet."
     },
     {
-      "datei": "bilder/aussen6.jpg",
-      "titel": "Geräteschrank",
-      "beschreibung": "Schrank mit Lamellenverkleidung und kleinem Vordach."
+      "datei": "bilder/aussen-4.jpg",
+      "titel": "Gartenhaus mit Terrasse",
+      "beschreibung": "Ein Blockbohlenhaus mit überdachtem Vorplatz und Holzterrasse."
     },
     {
-      "datei": "bilder/aussen8.jpg",
-      "titel": "Kleiner Unterstand",
-      "beschreibung": "Lattenkonstruktion mit Ziegeldach an einer alten Mauer."
+      "datei": "bilder/aussen-5.jpg",
+      "titel": "Box für Mülltonnen",
+      "beschreibung": "Eine Lattenverkleidung aus Holz, hinter der die Tonnen verschwinden."
     },
     {
-      "datei": "bilder/aussen7.jpg",
-      "titel": "Baumbank",
-      "beschreibung": "Rundbank um einen Baumstamm. Ein Lieblingsplatz im Schatten."
+      "datei": "bilder/aussen-6.jpg",
+      "titel": "Gartentor mit Pergola",
+      "beschreibung": "Ein Holztor am Treppenaufgang, gerahmt von einem hölzernen Torbogen."
+    },
+    {
+      "datei": "bilder/aussen-7.jpg",
+      "titel": "Lager für Brennholz",
+      "beschreibung": "Offene Lattenwände halten das Holz trocken und belüftet."
+    },
+    {
+      "datei": "bilder/aussen-8.jpg",
+      "titel": "Geräteschrank mit Regalböden",
+      "beschreibung": "Hinter den Lamellentüren sind Regalböden eingebaut."
     }
   ]
 }
