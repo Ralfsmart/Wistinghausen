@@ -118,6 +118,24 @@ if ($methode === 'POST') {
     $aktion = (string) ($body['aktion'] ?? $aktion);
 }
 
+/** Mindeststände nach den Sicherheitsupdates vom 21.10.2026 (CVE-2026-109618/-109619). */
+function phpWarnung(): ?string
+{
+    $mindest = ['8.2' => '8.2.35', '8.3' => '8.3.36', '8.4' => '8.4.27', '8.5' => '8.5.12'];
+    $zweig = PHP_MAJOR_VERSION . '.' . PHP_MINOR_VERSION;
+    if (isset($mindest[$zweig])) {
+        if (version_compare(PHP_VERSION, $mindest[$zweig], '>=')) {
+            return null;
+        }
+        $grund = 'PHP ' . PHP_VERSION . ' hat die Sicherheitsupdates vom Oktober 2026 noch nicht (nötig: ' . $mindest[$zweig] . ' oder neuer).';
+    } elseif (version_compare(PHP_VERSION, '8.5', '>=')) {
+        return null;
+    } else {
+        $grund = 'PHP ' . PHP_VERSION . ' ist veraltet und bekommt keine Sicherheitsupdates mehr.';
+    }
+    return $grund . ' Bitte beim Hoster nachfragen oder eine neuere PHP-Version einstellen.';
+}
+
 $angemeldet = !empty($_SESSION['ok']) && (time() - (int) ($_SESSION['zeit'] ?? 0)) < SITZUNG_SEKUNDEN;
 
 if ($aktion === 'status') {
@@ -125,6 +143,7 @@ if ($aktion === 'status') {
         'eingerichtet' => $eingerichtet,
         'angemeldet' => $angemeldet,
         'token' => $angemeldet ? $_SESSION['token'] : null,
+        'php_warnung' => phpWarnung(),
     ]);
 }
 
@@ -195,7 +214,7 @@ switch ($aktion) {
         foreach ($ordner as $name => $pfad) {
             $schreibbar[$name] = is_dir($pfad) && is_writable($pfad);
         }
-        antwort(200, ['php' => PHP_VERSION, 'schreibbar' => $schreibbar, 'seiten_ok' => is_file($WURZEL . '/einstellungen.json')]);
+        antwort(200, ['php' => PHP_VERSION, 'php_warnung' => phpWarnung(), 'schreibbar' => $schreibbar, 'seiten_ok' => is_file($WURZEL . '/einstellungen.json')]);
 
     case 'lesen':
         $pfad = (string) ($_GET['pfad'] ?? '');

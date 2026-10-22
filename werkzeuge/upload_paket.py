@@ -116,8 +116,11 @@ Stand: erzeugt am {datum} · Adresse der Website: {adresse}
 1. **Zugangsdaten** von greatnet.de bereithalten (FTP-Benutzer, Passwort, Server). Diese Daten
    niemals in E-Mails, Chats oder ins GitHub-Repository schreiben.
 2. Im **Verwaltungsprogramm** (LiveConfig, Plesk oder Confixx) prüfen:
-   - **PHP-Version**: die **neueste angebotene** einstellen, mindestens 8.2 (greatnet bietet 5.6 bis 8.2 an).
-     Alles unter 8.2 bekommt keine Sicherheitsupdates mehr. Beim Hoster nachfragen, ob 8.3 oder 8.4 kommt.
+   - **PHP-Version**: die **neueste angebotene** einstellen und beim Hoster bestätigen lassen, dass sie die
+     Sicherheitsupdates vom 21.10.2026 (CVE-2026-109618/-109619, „php2shell“) hat: mindestens
+     **8.2.35, 8.3.36, 8.4.27 oder 8.5.12**. Ältere Versionen (8.1 und darunter) nicht verwenden. Der Admin-Bereich
+     zeigt nach der Anmeldung eine Warnung, wenn die Version zu alt ist. Hoster mit angepassten Paketen
+     (Backports) lassen die Versionsnummer manchmal unverändert; dann die Bestätigung des Hosters einholen.
    - Ob das **SSL-Zertifikat (Let's Encrypt)** für die Domain aktiv ist.
    - Wie das **Hauptverzeichnis** der Domain heißt (Hilfe: FAQ von greatnet.de,
      „Ordnerstruktur (FTP, wohin muss meine Webseite?)“).

@@ -202,6 +202,7 @@
         } catch (e) {
           throw e.message.startsWith('Der Server') ? e : new Error('Der Server antwortet nicht. Bitte die Internetverbindung prüfen.');
         }
+        this.warnung = s.php_warnung || '';
         if (!s.eingerichtet) throw new Error('Der Admin-Bereich ist auf diesem Webspace noch nicht eingerichtet (die Datei zugang.php fehlt).');
         if (s.angemeldet) { this.token = s.token; return; }
         if (!passwort) throw new Error('Bitte das Passwort eingeben.');
@@ -324,6 +325,7 @@
         $('#abmelden').hidden = false;
         $('#seiten-neu').hidden = !speicher.seitenNeu;
         grundStatus = art === 'test' ? ['Testmodus – nichts wird gespeichert', 'fehler'] : [`Angemeldet (${speicher.name})`, 'ok'];
+        if (speicher.warnung) grundStatus = [`Achtung: ${speicher.warnung}`, 'fehler'];
         status(...grundStatus);
         navigationAufbauen();
         oeffnen(BEREICHE[0]);
