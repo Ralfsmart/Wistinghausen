@@ -2,11 +2,12 @@
   "titel": "Küchen",
   "untertitel": "Einbauküchen nach Maß – geplant, gefertigt und montiert aus einer Hand",
   "beispieltext": false,
-  "einleitung": "Eine Küche entsteht bei mir individuell und passgenau, ob aus Massivholz oder aus beschichtetem Material. Zur Wahl stehen Holzarten wie Buche, Eiche, Erle, Esche oder Ahorn, auf Wunsch farbig oder weiß lackiert. Fast alle Wünsche in Form und Ausstattung sind realisierbar.\n\nIch montiere und baue auch Fertigküchen der Industrie ein und erweitere oder verändere gebrauchte Einrichtungen. Von der Planung bis zur Montage bekommen Sie alles aus einer Hand.\n\n==So läuft es ab: Zuerst komme ich zu Ihnen, wir besprechen Ihre Wünsche und ich nehme genau Maß. Danach erhalten Sie einen Entwurf mit Angebot. Nach Ihrer Freigabe fertige ich die Schränke in meiner Werkstatt am Ralzhof und montiere die Küche zum vereinbarten Termin bei Ihnen.==\n\nGemeinsam mit Ihnen finden wir die beste Lösung für Ihre Bedürfnisse. Ich berate Sie gerne.",
+  "einleitung": "Eine Küche entsteht bei mir individuell und passgenau, ob aus Massivholz oder aus beschichtetem Material. Zur Wahl stehen Holzarten wie Buche, Eiche, Erle, Esche , Ahorn und viele Andere, auf Wunsch farbig oder weiß lackiert. Fast alle Wünsche in Form und Ausstattung sind realisierbar.\nKüchengeräte wie Kühlschrank, Herd und Spülmaschinen liefere ich auf Wunsch mit.\n\nIch montiere und baue auch Fertigküchen der Industrie ein und erweitere oder verändere gebrauchte Einrichtungen. \nVon der Planung bis zur Montage bekommen Sie alles aus einer Hand.\n\nGemeinsam mit Ihnen finden wir die beste Lösung für Ihre Bedürfnisse. Ich berate Sie gerne.",
   "leistungen": [
     "Individuell und passgenau, aus Massivholz oder beschichtetem Material",
-    "Holzarten wie Buche, Eiche, Erle, Esche oder Ahorn",
+    "Holzarten wie Buche, Eiche, Erle, Esche , Ahorn oder Andere",
     "Farbig oder weiß lackiert",
+    "Küchengeräte auf Wunsch",
     "Montage und Einbau von Fertigküchen der Industrie",
     "Erweiterung und Umbau von gebrauchten Einrichtungen",
     "Umzug von Einbauküchen",
@@ -16,37 +17,37 @@
     {
       "datei": "bilder/kuechen-1-v3.jpg",
       "titel": "Weiße Eckküche mit Unterbaubeleuchtung",
-      "beschreibung": "Grifflose Fronten, eine hohe Schrankwand und eine Arbeitsplatte aus Holz. Das Licht unter den Oberschränken setzt die Arbeitsfläche in Szene."
+      "beschreibung": "Grifflose Fronten aus weiß lakiertem MDF, Arbeitsplatte aus Eiche. Das Licht unter den Oberschränken setzt die Arbeitsfläche in Szene."
     },
     {
       "datei": "bilder/kuechen-2-v3.jpg",
       "titel": "Küche unter der Dachschräge",
-      "beschreibung": "Die Oberschränke folgen der Schräge, dazu gibt es ein offenes Regal an der Seite und Licht unter den Schränken."
+      "beschreibung": "Die Kiefernfront in Hirnleisten-bausweise, der Dachschräge folgen offene Regale"
     },
     {
       "datei": "bilder/kuechen-3-v3.jpg",
       "titel": "Küche mit lebhaft gemaserten Fronten",
-      "beschreibung": "Die Maserung des Holzes bleibt sichtbar. Dazu gibt es ein offenes Regal und eine helle Glasrückwand."
+      "beschreibung": "Die Maserung des Eschenholzes bleibt sichtbar. Dazu gibt es ein offenes Regal und eine helle Glasrückwand."
     },
     {
       "datei": "bilder/kuechen-4-v3.jpg",
       "titel": "Rustikale Küche mit Kochinsel",
-      "beschreibung": "Fronten mit kräftiger Holzstruktur, eine Kochinsel in der Mitte und ein dunkler Fliesenboden."
+      "beschreibung": "Fronten mit kräftiger Holzstruktur in Eiche, eine Kochinsel in der Mitte und ein dunkler Fliesenboden."
     },
     {
       "datei": "bilder/kuechen-5-v3.jpg",
       "titel": "U-Küche unter der Dachschräge",
-      "beschreibung": "Helle, grifflose Fronten und eine Arbeitsplatte aus Holz. Der Boden in warmen Terrakotta-Tönen passt dazu."
+      "beschreibung": "Helle Fronten mit Griffleisten aus Alu und eine Arbeitsplatte aus Holz. Der Boden in warmen Terrakotta-Tönen passt dazu."
     },
     {
       "datei": "bilder/kuechen-6-v3.jpg",
       "titel": "Küche mit Eckregal",
-      "beschreibung": "Hohe Schränke mit Holzfronten, ein offenes Regal an der Ecke und Licht unter den Oberschränken."
+      "beschreibung": "Hohe Schränke mit Holzfronten, ein offenes Regal an der Ecke und Licht unter der Ablage"
     },
     {
       "datei": "bilder/kuechen-7-v3.jpg",
       "titel": "Moderne Küche mit dunklem Becken",
-      "beschreibung": "Helle Fronten, eine Arbeitsplatte aus Holz und ein dunkles Becken, dazu eine Beleuchtung in der Decke."
+      "beschreibung": "Helle Ahorn Fronten, eine Arbeitsplatte aus Eiche und ein dunkles Becken, dazu eine Beleuchtung in der Decke."
     },
     {
       "datei": "bilder/kuechen-8-v3.jpg",
