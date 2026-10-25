@@ -104,6 +104,11 @@ session_set_cookie_params([
     'samesite' => 'Strict',
 ]);
 ini_set('session.use_strict_mode', '1');
+// Manche Hoster erlauben den Standardordner für Sitzungen nicht (open_basedir): dann den temporären Ordner nehmen
+$sitzungsOrdner = session_save_path();
+if ($sitzungsOrdner === '' || !@is_dir($sitzungsOrdner) || !@is_writable($sitzungsOrdner)) {
+    session_save_path(sys_get_temp_dir());
+}
 session_start();
 
 // ---- Zugangsdaten -----------------------------------------------------------------------------------
