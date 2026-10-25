@@ -1,14 +1,15 @@
 {
   "titel": "Türen",
-  "untertitel": "Innentüren nach Maß in Standard- und Sondergrößen",
+  "untertitel": "Innentüren nach Maß in Standard- und Sondergrößen, Stalltore und Türen für Arbeitsräume",
   "beispieltext": false,
-  "einleitung": "Ich fertige und montiere Innentüren in Standard- oder Sondergrößen, individuell gestaltet oder als Fertigtüren.\n\nEine gute Innentür fällt kaum auf, bis man sie benutzt: Sie schließt sauber, hängt gerade und passt zum Raum. Mit einem Glasfeld kommt mehr Licht in den Flur, und wo für einen Drehflügel der Platz fehlt, ist eine Schiebetür die bessere Lösung.\n\nFür Fragen und Beratung stehe ich Ihnen gerne zur Verfügung.",
+  "einleitung": "Ich fertige und montiere Innentüren in Standard- oder Sondergrößen, individuell gestaltet oder als Fertigtüren.\n\nEine gute Innentür fällt kaum auf, bis man sie benutzt: Sie schließt sauber, hängt gerade und passt zum Raum. Mit einem Glasfeld kommt mehr Licht in den Flur, und wo für einen Drehflügel der Platz fehlt, ist eine Schiebetür die bessere Lösung.\n\nStalltore aus witterungsbeständigem Holz oder Eingangstüren für Arbeitsräume fertige ich auf Maß\n\nFür Fragen und Beratung stehe ich Ihnen gerne zur Verfügung.",
   "leistungen": [
     "Innentüren in Standard- und Sondergrößen",
     "Individuell gestaltet oder als Fertigtür",
     "Türen mit Glasfeldern",
     "Rundbogentüren",
     "Schiebetüren und Raumteiler",
+    "Stalltore und Türen für Arbeitsräume",
     "Montage und Einbau"
   ],
   "bilder": [
@@ -41,6 +42,16 @@
       "datei": "bilder/innentueren-7.jpg",
       "titel": "Raumhohe Schiebetüren",
       "beschreibung": "Mehrere Elemente mit hellen Feldern bilden eine ganze Wand und lassen sich verschieben."
+    },
+    {
+      "datei": "bilder/uploads/stalltuer-20261025102650.jpg",
+      "titel": "Stalltor in Lärchenholz",
+      "beschreibung": "Zweigeteiltes Stalltor in Rahmenbausweise. Der obere Teil kann separat geöffnet werden."
+    },
+    {
+      "datei": "bilder/uploads/kellertueren-emh-neubau-4-20261025104223.jpg",
+      "titel": "Kellertür",
+      "beschreibung": "Kellertür in Lärche, Sichtflächen mit Nut und Feder gefertigt und innen mit Wärmedämmung"
     }
   ]
 }
