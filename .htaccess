@@ -27,7 +27,7 @@ RewriteRule ^tueren\.htm$ tueren.html [R=301,L]
 RewriteRule ^aussen\.htm$ aussen.html [R=301,L]
 RewriteRule ^faesser\.htm$ faesser.html [R=301,L]
 RewriteRule ^adressen\.htm$ faesser.html [R=301,L]
-RewriteRule ^Praeparatefass\.pdf$ faesser.html [R=301,L]
+RewriteRule ^Praeperatefaesser\.pdf$ faesser.html [R=301,L]
 RewriteRule ^kontakt\.htm$ index.html#kontakt [R=301,NE,L]
 </IfModule>
 
