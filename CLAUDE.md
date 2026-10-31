@@ -84,6 +84,14 @@ optional `seitenNeu`/`abmelden`).
   verkleinert auf `bildMaxKante`, siehe `admin/config.js`). `admin/api.php` erlaubt beim Speichern
   serverseitig nur Dateinamen, die exakt diesem Muster entsprechen (`aktion=datei`).
 
+## Obsidian-Spiegelung
+
+Diese Datei hat eine Kopie in Obsidian:
+`C:\Users\ralfs\OneDrive\Documents\Claude\Obsidian\Schreinerei Wistinghausen\CLAUDE.md`.
+**Nach jeder inhaltlichen Änderung an dieser CLAUDE.md die Kopie dort ebenfalls aktualisieren**
+(reine Dateikopie reicht). Kein Hook, keine Automatik — der Nutzer arbeitet von mehreren Geräten,
+ein lokaler Git-Hook würde nur auf einem davon greifen.
+
 ## Testen
 
 Siehe Skill **`wistinghausen-test`** (`.claude/skills/wistinghausen-test/SKILL.md`) für den
